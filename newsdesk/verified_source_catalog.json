@@ -1,0 +1,431 @@
+{
+  "authority_26": {
+    "name": "Jefferies",
+    "row": 26,
+    "category": "券商/投行",
+    "level": "P0",
+    "entry_urls": [
+      "https://www.jefferies.com/insights/"
+    ],
+    "sample_url": "https://www.jefferies.com/insights/policy/the-future-of-carbon-removal-according-to-the-people-building-it/",
+    "self_media": false
+  },
+  "authority_30": {
+    "name": "RBC",
+    "row": 30,
+    "category": "券商/投行",
+    "level": "P1",
+    "entry_urls": [
+      "https://www.rbc.com/en/economics/monthly-forecast-update/"
+    ],
+    "sample_url": "https://www.rbc.com/en/economics/financial-markets-monthly/steady-as-she-goes-central-banks-hold-the-line-in-2026/",
+    "self_media": false
+  },
+  "authority_39": {
+    "name": "中国日报",
+    "row": 39,
+    "category": "财经媒体",
+    "level": "P0",
+    "entry_urls": [
+      "https://www.chinadaily.com.cn/"
+    ],
+    "sample_url": "https://www.chinadaily.com.cn/a/202611/05/WS6aebf490e4b03ebf8519a7b5.html",
+    "self_media": false
+  },
+  "authority_41": {
+    "name": "第一财经",
+    "row": 41,
+    "category": "财经媒体",
+    "level": "P1",
+    "entry_urls": [
+      "https://www.yicai.com/"
+    ],
+    "sample_url": "https://www.yicai.com/news/103420264.html",
+    "self_media": false
+  },
+  "authority_45": {
+    "name": "澎湃新闻",
+    "row": 45,
+    "category": "财经媒体",
+    "level": "P1",
+    "entry_urls": [
+      "https://www.thepaper.cn/"
+    ],
+    "sample_url": "https://www.thepaper.cn/newsDetail_forward_34411297",
+    "self_media": false
+  },
+  "authority_49": {
+    "name": "IDC",
+    "row": 49,
+    "category": "产业研究机构",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.idc.com/resource-center/press-releases/"
+    ],
+    "sample_url": "https://www.idc.com/resource-center/press-releases/%e7%ac%ac11%e5%b1%8a2026-idc%e4%b8%ad%e5%9b%bdcio%e5%b3%b0%e4%bc%9a%e5%9c%86%e6%bb%a1%e8%90%bd%e5%b9%95%ef%bc%8c%e6%9c%aa%e6%9d%a5%e4%bc%81%e4%b8%9a%e5%a4%a7%e5%a5%96-%e5%8d%93/",
+    "self_media": false
+  },
+  "authority_50": {
+    "name": "Counterpoint",
+    "row": 50,
+    "category": "产业研究机构",
+    "level": "P2",
+    "entry_urls": [
+      "https://counterpointresearch.com/insights"
+    ],
+    "sample_url": "https://counterpointresearch.com/en/insights/dram-super-cycle-nears-dollar-200b",
+    "self_media": false
+  },
+  "authority_51": {
+    "name": "TrendForce集邦",
+    "row": 51,
+    "category": "产业研究机构",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.trendforce.com/presscenter/news"
+    ],
+    "sample_url": "https://www.trendforce.com/presscenter/news/20261103-13294.html",
+    "self_media": false
+  },
+  "authority_53": {
+    "name": "SMM上海有色",
+    "row": 53,
+    "category": "产业研究机构",
+    "level": "P2",
+    "entry_urls": [
+      "https://news.smm.cn/"
+    ],
+    "sample_url": "https://news.smm.cn/news/104207222",
+    "self_media": false
+  },
+  "authority_56": {
+    "name": "猛哥看商业",
+    "row": 56,
+    "category": "公众号/自媒体账号",
+    "level": "P0",
+    "entry_urls": [
+      "https://k.sina.cn/aj/newmedia/list?source=js&muid=2150655&page=1"
+    ],
+    "sample_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-26/doc-inhvvqse9881131.shtml",
+    "self_media": true
+  },
+  "authority_58": {
+    "name": "王涵论宏观",
+    "row": 58,
+    "category": "公众号/自媒体账号",
+    "level": "P0",
+    "entry_urls": [
+      "https://search.sina.com.cn/api/news?q=%E5%85%B4%E8%AF%81%E7%8E%8B%E6%B6%B5&sort=1&page=1&size=40"
+    ],
+    "sample_url": "https://finance.sina.com.cn/wm/2026-05-14/doc-inhxwzrt9734431.shtml",
+    "self_media": true
+  },
+  "authority_59": {
+    "name": "草叔消费升级研究",
+    "row": 59,
+    "category": "公众号/自媒体账号",
+    "level": "P1",
+    "entry_urls": [
+      "https://k.sina.cn/aj/newmedia/list?source=js&muid=2189146&page=1"
+    ],
+    "sample_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-02-02/doc-inhkkzkk8072632.shtml",
+    "self_media": true
+  },
+  "authority_60": {
+    "name": "远川研究所",
+    "row": 60,
+    "category": "公众号/自媒体账号",
+    "level": "P1",
+    "entry_urls": [
+      "https://m.pedaily.cn/author/579"
+    ],
+    "sample_url": "https://weibo.com/ttarticle/p/show?id=2309405361528970280964",
+    "self_media": true
+  },
+  "authority_64": {
+    "name": "吴晓波频道(吴晓波)",
+    "row": 64,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://m.sohu.com/media/121956368"
+    ],
+    "sample_url": "https://m.sohu.com/a/1071815605_121956368",
+    "self_media": true
+  },
+  "authority_66": {
+    "name": "洪灏",
+    "row": 66,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://wallstreetcn.com/authors/134881"
+    ],
+    "sample_url": "https://wallstreetcn.com/member/articles/3598484",
+    "self_media": true
+  },
+  "authority_67": {
+    "name": "管清友",
+    "row": 67,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.xueqiu.com/u/2371289267"
+    ],
+    "sample_url": "https://weibo.com/1226106902/RpXSH8gEI",
+    "self_media": true
+  },
+  "authority_68": {
+    "name": "付鹏",
+    "row": 68,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://wallstreetcn.com/authors/100001415753"
+    ],
+    "sample_url": "https://wallstreetcn.com/premium/articles/3754240?layout=wscn-layout",
+    "self_media": true
+  },
+  "authority_69": {
+    "name": "秦朔朋友圈(秦朔)",
+    "row": 69,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.cyzone.cn/author/1563266"
+    ],
+    "sample_url": "https://www.cyzone.cn/article/846472.html",
+    "self_media": true
+  },
+  "authority_72": {
+    "name": "阿基米德Biotech",
+    "row": 72,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.xueqiu.com/u/3609410221"
+    ],
+    "sample_url": "https://weibo.com/6170716985/RoOlO9qBV",
+    "self_media": true
+  },
+  "authority_73": {
+    "name": "互联网怪盗团",
+    "row": 73,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://m.pedaily.cn/author/763"
+    ],
+    "sample_url": "https://m.pedaily.cn/news/570973",
+    "self_media": true
+  },
+  "authority_74": {
+    "name": "市值风云",
+    "row": 74,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.wogoo.com/"
+    ],
+    "sample_url": "https://www.wogoo.com/sq/w/0d4cbba343c44b729d41365a140693d8",
+    "self_media": true
+  },
+  "authority_75": {
+    "name": "易简财经",
+    "row": 75,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.yemacaijing.com/user/tdwz/uid/323.html"
+    ],
+    "sample_url": "https://www.yemacaijing.com/Index/view/id/95663.html",
+    "self_media": true
+  },
+  "authority_76": {
+    "name": "阿尔法工场研究院",
+    "row": 76,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.arfgc.com/alphasite2/flash/flashes?size=40&start=0&uid=0"
+    ],
+    "sample_url": "https://www.arfgc.com/newest.html?aid=100072",
+    "self_media": true
+  },
+  "authority_77": {
+    "name": "Mr蒋静的资本圈",
+    "row": 77,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://xw.qianzhan.com/analyst/profile/14536.html"
+    ],
+    "sample_url": "https://xw.qianzhan.com/analyst/detail/329/210628-f6687878.html",
+    "self_media": true
+  },
+  "authority_78": {
+    "name": "深潜atom",
+    "row": 78,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.sohu.com/media/100150"
+    ],
+    "sample_url": "https://www.sohu.com/a/1093915069_100150?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+    "self_media": true
+  },
+  "authority_79": {
+    "name": "市值观察",
+    "row": 79,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.tmtpost.com/user/4876088"
+    ],
+    "sample_url": "https://www.tmtpost.com/8191205.html",
+    "self_media": true
+  },
+  "authority_80": {
+    "name": "远川科技评论",
+    "row": 80,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.cyzone.cn/author/1545715"
+    ],
+    "sample_url": "https://www.36kr.com/p/3957753994313097",
+    "self_media": true
+  },
+  "authority_81": {
+    "name": "财经无忌",
+    "row": 81,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.tmtpost.com/user/297172"
+    ],
+    "sample_url": "https://www.tmtpost.com/8165049.html",
+    "self_media": true
+  },
+  "authority_82": {
+    "name": "达摩财经",
+    "row": 82,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://m.sohu.com/media/100011510"
+    ],
+    "sample_url": "https://www.xueqiu.com/1078525202/415693408",
+    "self_media": true
+  },
+  "authority_83": {
+    "name": "节点财经",
+    "row": 83,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.jiediancj.com/"
+    ],
+    "sample_url": "https://www.jiediancj.com/archives/46375",
+    "self_media": true
+  },
+  "authority_85": {
+    "name": "汽车K线",
+    "row": 85,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.sohu.com/media/115871"
+    ],
+    "sample_url": "https://m.sohu.com/a/1087073316_115871?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+    "self_media": true
+  },
+  "authority_86": {
+    "name": "投资作业本Pro",
+    "row": 86,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.huxiu.com/member/3350257.html"
+    ],
+    "sample_url": "https://www.huxiu.com/article/4841669.html",
+    "self_media": true
+  },
+  "authority_87": {
+    "name": "港股研究社",
+    "row": 87,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.tmtpost.com/user/3837030"
+    ],
+    "sample_url": "https://www.tmtpost.com/8192640.html",
+    "self_media": true
+  },
+  "authority_89": {
+    "name": "萝卜投研",
+    "row": 89,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://gw.datayes.com/rrp_mammon/web/feed/page?roboColumnId=278&pageNow=1&pageSize=20"
+    ],
+    "sample_url": "https://robo.datayes.com/v2/details/feed/662865",
+    "self_media": true
+  },
+  "authority_91": {
+    "name": "尺度商业",
+    "row": 91,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.sohu.com/media/157944"
+    ],
+    "sample_url": "https://www.sohu.com/a/727725189_157944",
+    "self_media": true
+  },
+  "authority_92": {
+    "name": "乔令投研",
+    "row": 92,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.xueqiu.com/u/4164170693"
+    ],
+    "sample_url": "https://www.xueqiu.com/4164170693/406167386",
+    "self_media": true
+  },
+  "authority_93": {
+    "name": "嗨牛财经",
+    "row": 93,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.laohu8.com/m/user/3557188805155421/"
+    ],
+    "sample_url": "https://www.xueqiu.com/2122410628/415361455",
+    "self_media": true
+  },
+  "authority_94": {
+    "name": "公司研究室",
+    "row": 94,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://news.stockstar.com/source_list/%E5%85%AC%E5%8F%B8%E7%A0%94%E7%A9%B6%E5%AE%A4_5.shtml"
+    ],
+    "sample_url": "https://finance.stockstar.com/IG2026061500024530.shtml",
+    "self_media": true
+  },
+  "authority_95": {
+    "name": "本原财经",
+    "row": 95,
+    "category": "公众号/自媒体账号",
+    "level": "P2",
+    "entry_urls": [
+      "https://www.tmtpost.com/user/7125739"
+    ],
+    "sample_url": "https://www.tmtpost.com/7829884.html",
+    "self_media": true
+  }
+}

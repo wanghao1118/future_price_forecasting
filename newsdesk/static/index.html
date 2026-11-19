@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f1">
+  <meta name="description" content="本地原油新闻研究台：按事件分类、记录预期差、追踪影响渠道。">
+  <title>OIL SIGNAL · 原油新闻研究台</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./contracts.js" defer></script>
+  <script src="./benchmark.js" defer></script>
+  <script src="./news-factor.js" defer></script>
+  <script src="./trading-return.js" defer></script>
+  <script src="./app.js" defer></script>
+  <script src="./source-maintenance.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" id="overview-link" href="./" aria-label="原油新闻研究台行情首页"><span class="brand-symbol"><i></i><i></i><i></i></span><span>OIL SIGNAL<small>原油新闻研究台</small></span></a>
+      <div class="sidebar-navigation">
+        <section class="research-navigation" aria-labelledby="leaderboard-heading">
+          <div class="nav-section-heading"><h2 id="leaderboard-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="leaderboard" aria-label="Leaderboard" aria-expanded="true" aria-controls="leaderboard-nav"><span>Leaderboard</span><span class="nav-heading-meta"><span class="nav-count">01</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="leaderboard-nav" aria-label="策略评估"><button type="button" class="nav-item research-nav-item summary-nav-item" data-research-section="leaderboard" data-research-subsection="overview" data-research-mode="backtest"><span>Overview</span></button><button type="button" class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="experiment-setup" data-research-mode="backtest"><span>Experiment Setup</span></button><div class="leaderboard-family"><button type="button" class="leaderboard-family-toggle" data-leaderboard-family="GPT" aria-label="GPT 模型家族" aria-expanded="true" aria-controls="leaderboard-GPT-models"><span>GPT</span><span class="nav-heading-meta"><span class="nav-count" data-leaderboard-family-count="GPT">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button><div class="leaderboard-model-nav" id="leaderboard-GPT-models" role="group" aria-label="GPT 模型"><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="gpt-6.1-sol"><span>gpt-6.1-sol</span><span class="nav-count" data-leaderboard-model-count="gpt-6.1-sol">—</span></button><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="gpt-6.1-terra"><span>gpt-6.1-terra</span><span class="nav-count" data-leaderboard-model-count="gpt-6.1-terra">—</span></button><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="gpt-6-sol"><span>gpt-6-sol</span><span class="nav-count" data-leaderboard-model-count="gpt-6-sol">—</span></button><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="gpt-6-luna"><span>gpt-6-luna</span><span class="nav-count" data-leaderboard-model-count="gpt-6-luna">—</span></button><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="gpt-6-astra"><span>gpt-6-astra</span><span class="nav-count" data-leaderboard-model-count="gpt-6-astra">—</span></button></div></div><div class="leaderboard-family"><button type="button" class="leaderboard-family-toggle" data-leaderboard-family="Claude" aria-label="Claude 模型家族" aria-expanded="false" aria-controls="leaderboard-Claude-models"><span>Claude</span><span class="nav-heading-meta"><span class="nav-count" data-leaderboard-family-count="Claude">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button><div class="leaderboard-model-nav" id="leaderboard-Claude-models" role="group" aria-label="Claude 模型" hidden><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="claude-haiku-5-5"><span>claude-haiku-5-5</span><span class="nav-count" data-leaderboard-model-count="claude-haiku-5-5">—</span></button><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="claude-fable-5-1"><span>claude-fable-5-1</span><span class="nav-count" data-leaderboard-model-count="claude-fable-5-1">—</span></button></div></div><div class="leaderboard-family"><button type="button" class="leaderboard-family-toggle" data-leaderboard-family="DeepSeek" aria-label="DeepSeek 模型家族" aria-expanded="false" aria-controls="leaderboard-DeepSeek-models"><span>DeepSeek</span><span class="nav-heading-meta"><span class="nav-count" data-leaderboard-family-count="DeepSeek">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button><div class="leaderboard-model-nav" id="leaderboard-DeepSeek-models" role="group" aria-label="DeepSeek 模型" hidden><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="deepseek-v4-pro"><span>deepseek-v4-pro</span><span class="nav-count" data-leaderboard-model-count="deepseek-v4-pro">—</span></button><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="deepseek-v4.1-flash"><span>deepseek-v4.1-flash</span><span class="nav-count" data-leaderboard-model-count="deepseek-v4.1-flash">—</span></button></div></div><div class="leaderboard-family"><button type="button" class="leaderboard-family-toggle" data-leaderboard-family="Kimi" aria-label="Kimi 模型家族" aria-expanded="false" aria-controls="leaderboard-Kimi-models"><span>Kimi</span><span class="nav-heading-meta"><span class="nav-count" data-leaderboard-family-count="Kimi">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button><div class="leaderboard-model-nav" id="leaderboard-Kimi-models" role="group" aria-label="Kimi 模型" hidden><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="kimi-k3.1-pro"><span>kimi-k3.1-pro</span><span class="nav-count" data-leaderboard-model-count="kimi-k3.1-pro">—</span></button><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="kimi-k3"><span>kimi-k3</span><span class="nav-count" data-leaderboard-model-count="kimi-k3">—</span></button></div></div><div class="leaderboard-family"><button type="button" class="leaderboard-family-toggle" data-leaderboard-family="GLM" aria-label="GLM 模型家族" aria-expanded="false" aria-controls="leaderboard-GLM-models"><span>GLM</span><span class="nav-heading-meta"><span class="nav-count" data-leaderboard-family-count="GLM">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button><div class="leaderboard-model-nav" id="leaderboard-GLM-models" role="group" aria-label="GLM 模型" hidden><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="glm-5.3"><span>glm-5.3</span><span class="nav-count" data-leaderboard-model-count="glm-5.3">—</span></button><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="glm-5.3-flash"><span>glm-5.3-flash</span><span class="nav-count" data-leaderboard-model-count="glm-5.3-flash">—</span></button></div></div><div class="leaderboard-family"><button type="button" class="leaderboard-family-toggle" data-leaderboard-family="Hy" aria-label="Hy 模型家族" aria-expanded="false" aria-controls="leaderboard-Hy-models"><span>Hy</span><span class="nav-heading-meta"><span class="nav-count" data-leaderboard-family-count="Hy">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button><div class="leaderboard-model-nav" id="leaderboard-Hy-models" role="group" aria-label="Hy 模型" hidden><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="hy3"><span>hy3</span><span class="nav-count" data-leaderboard-model-count="hy3">—</span></button><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="hy4-preview"><span>hy4-preview</span><span class="nav-count" data-leaderboard-model-count="hy4-preview">—</span></button></div></div><div class="leaderboard-family"><button type="button" class="leaderboard-family-toggle" data-leaderboard-family="Qwen" aria-label="Qwen 模型家族" aria-expanded="false" aria-controls="leaderboard-Qwen-models"><span>Qwen</span><span class="nav-heading-meta"><span class="nav-count" data-leaderboard-family-count="Qwen">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button><div class="leaderboard-model-nav" id="leaderboard-Qwen-models" role="group" aria-label="Qwen 模型" hidden><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="qwen3.7-plus"><span>qwen3.7-plus</span><span class="nav-count" data-leaderboard-model-count="qwen3.7-plus">—</span></button></div></div><div class="leaderboard-family"><button type="button" class="leaderboard-family-toggle" data-leaderboard-family="Doubao" aria-label="Doubao 模型家族" aria-expanded="false" aria-controls="leaderboard-Doubao-models"><span>Doubao</span><span class="nav-heading-meta"><span class="nav-count" data-leaderboard-family-count="Doubao">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button><div class="leaderboard-model-nav" id="leaderboard-Doubao-models" role="group" aria-label="Doubao 模型" hidden><button class="nav-item research-nav-item" data-research-section="leaderboard" data-research-subsection="doubao-seed-2-0-lite-260428"><span>doubao-seed-2-0-lite-260428</span><span class="nav-count" data-leaderboard-model-count="doubao-seed-2-0-lite-260428">—</span></button></div></div></nav>
+        </section>
+        <section class="research-navigation" aria-labelledby="environment-heading">
+          <div class="nav-section-heading"><h2 id="environment-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="environment" aria-label="Environment" aria-expanded="true" aria-controls="environment-nav"><span>Environment</span><span class="nav-heading-meta"><span class="nav-count">04</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="environment-nav" aria-label="评估环境"><button class="nav-item research-nav-item" data-research-section="environment" data-research-subsection="env00-extend"><span>env00-extend</span><span class="nav-count">闭卷</span></button><button class="nav-item research-nav-item" data-research-section="environment" data-research-subsection="env01"><span>env01</span><span class="nav-count">2 agents</span></button><button class="nav-item research-nav-item" data-research-section="environment" data-research-subsection="env00"><span>env00</span><span class="nav-count">2 agents</span></button><button class="nav-item research-nav-item" data-research-section="environment" data-research-subsection="env02"><span>env02</span><span class="nav-count">1 agent</span></button></nav>
+        </section>
+        <section class="research-navigation" aria-labelledby="benchmark-heading">
+          <div class="nav-section-heading"><h2 id="benchmark-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="benchmark" aria-label="Benchmark" aria-expanded="true" aria-controls="benchmark-nav"><span>Benchmark</span><span class="nav-heading-meta"><span class="nav-count">04</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="benchmark-nav" aria-label="Benchmark 测试集">
+            <button type="button" class="nav-item research-nav-item" data-research-section="benchmark" data-research-subsection="memory-leakage" data-research-mode="backtest"><span>记忆泄漏</span><span class="nav-count" data-memory-question-count>100</span></button>
+            <button type="button" class="nav-item research-nav-item" data-research-section="benchmark" data-research-subsection="backtest-v1" data-research-mode="backtest"><span>回测 v1</span><span class="nav-count" data-benchmark-section-count="backtest-v1">—</span></button>
+            <button type="button" class="nav-item research-nav-item" data-research-section="benchmark" data-research-subsection="backtest-v2" data-research-mode="backtest"><span>回测 v2</span><span class="nav-count" data-benchmark-section-count="backtest-v2">—</span></button>
+            <button type="button" class="nav-item research-nav-item" data-research-section="benchmark" data-research-subsection="live" data-research-mode="live"><span>实盘</span><span class="nav-count" data-benchmark-section-count="live">—</span></button>
+          </nav>
+        </section>
+        <section class="research-navigation" aria-labelledby="news-factor-heading">
+          <div class="nav-section-heading"><h2 id="news-factor-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="news-factor" aria-label="新闻因子挖掘" aria-expanded="true" aria-controls="news-factor-nav"><span>新闻因子挖掘</span><span class="nav-heading-meta"><span class="nav-count">04</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="news-factor-nav" aria-label="新闻因子挖掘"><button type="button" class="nav-item research-nav-item" data-research-section="news-factor" data-research-subsection="bmk"><span>BMK</span></button><button type="button" class="nav-item research-nav-item" data-research-section="news-factor" data-research-subsection="experiments"><span>experiments</span></button><button type="button" class="nav-item research-nav-item" data-research-section="news-factor" data-research-subsection="factor-base"><span>factor base</span></button><button type="button" class="nav-item research-nav-item" data-research-section="news-factor" data-research-subsection="strategy-base"><span>strategy base</span></button></nav>
+        </section>
+        <section class="research-navigation trading-return-navigation" aria-labelledby="trading-return-heading">
+          <div class="nav-section-heading"><h2 id="trading-return-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="trading-return" aria-label="Trading Return" aria-expanded="true" aria-controls="trading-return-nav"><span>Trading Return</span><span class="nav-heading-meta"><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="trading-return-nav" aria-label="Trading Return">
+            <div class="trading-return-base" aria-label="Base Server">
+              <button type="button" class="trading-return-base-label" data-trading-return-folder="base-server" aria-expanded="true" aria-controls="trading-return-base-server-nav"><span>Base Server</span><span class="nav-heading-meta"><span class="nav-chevron" data-icon="chevron-right"></span></span></button>
+              <div class="trading-return-subnav" id="trading-return-base-server-nav" role="group" aria-label="Base Server 子服务">
+                <button type="button" class="nav-item research-nav-item" data-research-section="trading-return" data-research-subsection="model-server"><span>Model Server</span></button>
+                <button type="button" class="nav-item research-nav-item" data-research-section="trading-return" data-research-subsection="evaluator-server"><span>Env Server</span></button>
+                <button type="button" class="nav-item research-nav-item" data-research-section="trading-return" data-research-subsection="mcp-server"><span>MCP Server</span></button>
+              </div>
+            </div>
+            <div class="trading-return-base trading-return-bmk" aria-label="BMK">
+              <button type="button" class="trading-return-base-label" data-trading-return-folder="bmk" aria-expanded="true" aria-controls="trading-return-bmk-nav"><span>BMK</span><span class="nav-heading-meta"><span class="nav-chevron" data-icon="chevron-right"></span></span></button>
+              <div class="trading-return-subnav" id="trading-return-bmk-nav" role="group" aria-label="BMK 子服务">
+                <button type="button" class="nav-item research-nav-item" data-research-section="trading-return" data-research-subsection="bmk-backtesting"><span>Backtesting v1</span></button>
+                <button type="button" class="nav-item research-nav-item" data-research-section="trading-return" data-research-subsection="bmk-live"><span>Live Trading</span></button>
+              </div>
+            </div>
+            <div class="trading-return-base trading-return-experiment" aria-label="Experiment">
+              <button type="button" class="trading-return-base-label" data-trading-return-folder="experiment" aria-expanded="true" aria-controls="trading-return-experiment-nav"><span>Experiment</span><span class="nav-heading-meta"><span class="nav-chevron" data-icon="chevron-right"></span></span></button>
+              <div class="trading-return-subnav" id="trading-return-experiment-nav" role="group" aria-label="Experiment 子服务">
+                <button type="button" class="nav-item research-nav-item" data-research-section="trading-return" data-research-subsection="experiment-leaderboard"><span>Leaderboard</span></button>
+                <button type="button" class="nav-item research-nav-item" data-research-section="trading-return" data-research-subsection="experiment-setup"><span>Setup</span></button>
+              </div>
+            </div>
+          </nav>
+        </section>
+        <section class="contract-navigation" aria-labelledby="contract-heading">
+          <div class="nav-section-heading"><h2 id="contract-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="contracts" aria-label="石油合约" aria-expanded="true" aria-controls="contract-nav"><span>石油合约</span><span class="nav-heading-meta"><span class="nav-count">3</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="contract-nav" aria-label="石油合约品种与月份"></nav>
+        </section>
+        <section class="news-navigation" aria-labelledby="global-news-heading">
+          <div class="nav-section-heading"><h2 id="global-news-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="news" aria-label="全球新闻" aria-expanded="true" aria-controls="category-nav"><span>全球新闻</span><span class="nav-heading-meta"><span class="nav-count" id="all-count">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="category-nav" aria-label="全球新闻分类"></nav>
+        </section>
+      </div>
+      <div class="sidebar-settings" id="sidebar-settings">
+        <div class="settings-popover" id="settings-popover" hidden>
+          <button type="button" id="general-settings">通用设置</button>
+          <button type="button" id="source-maintenance">信源维护</button>
+        </div>
+        <button type="button" class="settings-trigger" id="settings-button" aria-expanded="false" aria-controls="settings-popover"><span>设置</span><span data-icon="chevron-up"></span></button>
+      </div>
+    </aside>
+    <div class="main-shell">
+      <main>
+        <div class="page-heading">
+          <button class="icon-button mobile-menu" id="menu-button" aria-label="打开分类菜单" aria-expanded="false"><span data-icon="menu"></span></button>
+          <div class="page-heading-content"><div class="eyebrow">CRUDE OIL INTELLIGENCE</div><h1 id="page-title">CLZ26<span class="title-dot">.</span></h1><p id="page-subtitle">按品种和月份查看原油期货 K 线。</p></div>
+        </div>
+        <section class="market-dashboard" id="overview" aria-label="原油合约 K 线"><div class="loading-state"><div class="spinner"></div>正在载入合约图表</div></section>
+        <section class="news-workspace" id="news-workspace" aria-label="分类新闻" hidden>
+          <div class="workspace-header"><div class="section-title"><h2>事件列表</h2><span id="result-badge" class="count-badge">0</span></div><div class="workspace-header-right"><span class="saved-label" id="saved-label">本地档案</span><button class="icon-button" id="refresh-button" title="刷新新闻" aria-label="刷新新闻"><span data-icon="refresh"></span></button></div></div>
+          <div class="filter-bar">
+            <label class="search-field"><span data-icon="search"></span><input type="search" id="search-input" placeholder="搜索标题、正文、地区或事件编号…" aria-label="搜索新闻"><kbd>⌘ K</kbd></label>
+            <label class="select-filter source-filter"><select id="source-filter" aria-label="筛选新闻信源"><option value="">全部信源</option></select></label>
+            <label class="select-filter"><span data-icon="globe"></span><select id="asset-filter" aria-label="筛选期货品种"><option value="">全部品种</option><option>WTI</option><option>Brent</option><option>SC</option></select></label>
+            <label class="select-filter"><span data-icon="signal"></span><select id="direction-filter" aria-label="筛选影响方向"><option value="">全部方向</option><option>偏多</option><option>偏空</option><option>混合</option><option>不确定</option></select></label>
+            <button class="button filter-button" id="more-filters" aria-expanded="false"><span data-icon="filter"></span>筛选<span id="filter-dot"></span></button>
+          </div>
+          <div class="advanced-filters" id="advanced-filters" hidden><label>核验状态<select id="verification-filter"><option value="">全部状态</option><option>待核验</option><option>已确认</option><option>存在争议</option></select></label><label>记录类型<select id="demo-filter"><option value="">全部记录</option><option value="real" selected>正式记录</option><option value="demo">演示记录</option></select></label><label>首发时间（UTC+0）<select id="time-filter" aria-label="按首发时间筛选新闻"><option value="">全部时间</option><option value="today">今天</option><option value="7d">近 7 天</option><option value="30d">近 30 天</option><option value="90d">近 3 个月</option><option value="year">今年</option></select></label><button class="text-button" id="reset-filters">重置筛选</button></div>
+          <div class="list-toolbar"><span id="result-description">正在读取本地新闻…</span><div><select id="sort-select" aria-label="排序方式"><option value="published">首发时间最新</option><option value="updated">最近更新</option><option value="oldest">首发时间最早</option></select><div class="view-toggle" aria-label="视图切换"><button class="active" id="list-view" aria-label="列表视图" title="列表视图"><span data-icon="list"></span></button><button id="grid-view" aria-label="卡片视图" title="卡片视图"><span data-icon="grid"></span></button></div></div></div>
+          <div id="news-content" aria-live="polite"><div class="loading-state"><div class="spinner"></div>正在读取本地档案</div></div>
+          <div class="pagination" id="pagination"></div>
+        </section>
+        <section class="research-workspace" id="research-workspace" aria-label="策略评估与测试集" hidden></section>
+      </main>
+    </div>
+  </div>
+  <div id="overlay-root"></div>
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+</body>
+</html>

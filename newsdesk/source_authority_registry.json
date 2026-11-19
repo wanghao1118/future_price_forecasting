@@ -1,0 +1,1255 @@
+{
+  "version": "20261105-e569e9f59e7cc890",
+  "source_file": "/Users/jasson/Desktop/Forecasting数据库权威榜单.xlsx",
+  "source_file_sha256": "e569e9f59e7cc890f160dfe6ea5b8cd17f762e4a76e24a3100d8795692e66d3a",
+  "source_sheet": "工作表1",
+  "source_range": "A1:F96",
+  "level_column": "档位",
+  "entries": [
+    {
+      "name": "长江证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第1；本土团队第1；产业研究团队5领域均第1；分仓佣金第4(2025)",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 2,
+      "level_cell": "D2",
+      "aliases": []
+    },
+    {
+      "name": "广发证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第2；本土团队第2；总量研究团队第1；分仓佣金第3(2025)",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 3,
+      "level_cell": "D3",
+      "aliases": []
+    },
+    {
+      "name": "国泰海通",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第3；本土团队第6；分仓佣金第2(2025)",
+      "notes": "国泰君安+海通重组",
+      "sheet": "工作表1",
+      "row": 4,
+      "level_cell": "D4",
+      "aliases": [
+        "国泰海通证券",
+        "国泰君安",
+        "国泰君安证券",
+        "海通证券"
+      ]
+    },
+    {
+      "name": "申万宏源",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第4；本土团队第5；总量研究团队第4；分仓佣金第8(2025)",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 5,
+      "level_cell": "D5",
+      "aliases": [
+        "申万宏源证券"
+      ]
+    },
+    {
+      "name": "天风证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第5；本土团队第3；总量研究团队第8",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 6,
+      "level_cell": "D6",
+      "aliases": []
+    },
+    {
+      "name": "兴业证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第6；本土团队第4；总量研究团队第2；分仓佣金第6(2025)",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 7,
+      "level_cell": "D7",
+      "aliases": [
+        "兴证",
+        "兴业证券研究所",
+        "兴业证券研究所策略团队"
+      ]
+    },
+    {
+      "name": "中信建投",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第7；分仓佣金第7(2025)",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 8,
+      "level_cell": "D8",
+      "aliases": [
+        "中信建投证券"
+      ]
+    },
+    {
+      "name": "华泰证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第8；固收研究第1；总量研究团队第9；分仓佣金第5(2025)；Extel Asia Local Broker第6(2026)",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 9,
+      "level_cell": "D9",
+      "aliases": []
+    },
+    {
+      "name": "浙商证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第9；本土团队第10；总量研究团队第7；分仓佣金第10(2025)",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 10,
+      "level_cell": "D10",
+      "aliases": []
+    },
+    {
+      "name": "国盛证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "新财富2025机构影响力第10；本土团队第8；总量研究团队第5",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 11,
+      "level_cell": "D11",
+      "aliases": []
+    },
+    {
+      "name": "中信证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "分仓佣金第1(2025)",
+      "notes": "未参评新财富",
+      "sheet": "工作表1",
+      "row": 12,
+      "level_cell": "D12",
+      "aliases": []
+    },
+    {
+      "name": "中金公司",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "Extel 2026 Asia Local Broker中国区第1/亚洲第4",
+      "notes": "未参评新财富",
+      "sheet": "工作表1",
+      "row": 13,
+      "level_cell": "D13",
+      "aliases": [
+        "中金",
+        "中国国际金融股份有限公司",
+        "CICC"
+      ]
+    },
+    {
+      "name": "东吴证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "新财富2025本土团队第7；产业研究团队制造第3",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 14,
+      "level_cell": "D14",
+      "aliases": []
+    },
+    {
+      "name": "华创证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "新财富2025本土团队第9；总量研究团队第6；产业研究团队消费第8",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 15,
+      "level_cell": "D15",
+      "aliases": []
+    },
+    {
+      "name": "国联民生证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "分仓佣金第9(2025)；新财富2025产业研究团队制造第9、能源与材料第7",
+      "notes": "国联+民生合并；2024分仓第5→2025跌至第9",
+      "sheet": "工作表1",
+      "row": 16,
+      "level_cell": "D16",
+      "aliases": [
+        "国联民生",
+        "国联证券",
+        "民生证券"
+      ]
+    },
+    {
+      "name": "招商证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "新财富2025产业研究团队金融第6",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 17,
+      "level_cell": "D17",
+      "aliases": []
+    },
+    {
+      "name": "国海证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "新财富2025产业研究团队金融第10",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 18,
+      "level_cell": "D18",
+      "aliases": []
+    },
+    {
+      "name": "华源证券",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "新财富2025产业研究团队能源与材料第6",
+      "notes": "",
+      "sheet": "工作表1",
+      "row": 19,
+      "level_cell": "D19",
+      "aliases": []
+    },
+    {
+      "name": "摩根士丹利",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "Extel亚洲研究加权榜第1(2026·连续12年)；Extel All-America机构榜第2(2025)；港股股权承销国际第1/全市场第3(2025·Wind)；窝轮牛熊证发行商",
+      "notes": "All-America十年全勤(2015-2025)",
+      "sheet": "工作表1",
+      "row": 20,
+      "level_cell": "D20",
+      "aliases": [
+        "Morgan Stanley",
+        "大摩",
+        "摩根士丹利财富管理",
+        "摩根士丹利财富管理公司"
+      ]
+    },
+    {
+      "name": "摩根大通",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "Extel亚洲研究加权榜第2(2026)；Extel All-America机构榜第1(2025)；港股股权承销国际第4/全市场第9(2025·Wind)；窝轮牛熊证发行商",
+      "notes": "All-America十年全勤(2015-2025)",
+      "sheet": "工作表1",
+      "row": 21,
+      "level_cell": "D21",
+      "aliases": [
+        "JPMorgan",
+        "J.P. Morgan",
+        "摩根大通私人银行",
+        "摩根大通资产管理",
+        "摩根大通资产管理公司"
+      ]
+    },
+    {
+      "name": "瑞银",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "Extel亚洲研究加权榜第3(2026)；Extel All-America机构榜第6(2025)；港股股权承销国际第3/全市场第6(2025·Wind)；窝轮牛熊证发行商",
+      "notes": "All-America十年全勤(2015-2025)",
+      "sheet": "工作表1",
+      "row": 22,
+      "level_cell": "D22",
+      "aliases": [
+        "UBS",
+        "瑞银集团",
+        "瑞银全球财富管理"
+      ]
+    },
+    {
+      "name": "美银",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "Extel亚洲研究加权榜第4(2026)；Extel All-America机构榜第2(2025)",
+      "notes": "All-America十年全勤(2015-2025)",
+      "sheet": "工作表1",
+      "row": 23,
+      "level_cell": "D23",
+      "aliases": [
+        "美国银行",
+        "Bank of America",
+        "BofA",
+        "美银证券",
+        "美银全球研究"
+      ]
+    },
+    {
+      "name": "高盛",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "港股股权承销国际第2/全市场第5(2025·Wind)",
+      "notes": "已退出港股窝轮牛熊证业务(2021起)；未进All-America机构榜前10(2025)",
+      "sheet": "工作表1",
+      "row": 24,
+      "level_cell": "D24",
+      "aliases": [
+        "Goldman Sachs",
+        "高盛集团",
+        "高盛资产管理",
+        "高盛资产管理公司"
+      ]
+    },
+    {
+      "name": "花旗",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "Extel亚洲研究加权榜第5(2026)",
+      "notes": "美股All-America自2022起连续掉出前十",
+      "sheet": "工作表1",
+      "row": 25,
+      "level_cell": "D25",
+      "aliases": [
+        "Citigroup",
+        "Citi",
+        "花旗集团",
+        "花旗银行"
+      ]
+    },
+    {
+      "name": "Jefferies",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "Extel亚洲研究加权榜第6(2026)；Extel All-America机构榜第5(2025)",
+      "notes": "All-America 2020年起连续在榜",
+      "sheet": "工作表1",
+      "row": 26,
+      "level_cell": "D26",
+      "aliases": [
+        "杰富瑞",
+        "杰富瑞金融集团"
+      ]
+    },
+    {
+      "name": "Evercore ISI",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "Extel All-America机构榜第4(2025)；分析师佣金加权榜第1(连续4年)",
+      "notes": "All-America十年全勤(2015-2025)",
+      "sheet": "工作表1",
+      "row": 27,
+      "level_cell": "D27",
+      "aliases": [
+        "EvercoreISI"
+      ]
+    },
+    {
+      "name": "Barclays",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "Extel All-America机构榜第9(2025)",
+      "notes": "All-America十年全勤(2015-2025)",
+      "sheet": "工作表1",
+      "row": 28,
+      "level_cell": "D28",
+      "aliases": [
+        "巴克莱",
+        "巴克莱银行"
+      ]
+    },
+    {
+      "name": "Wells Fargo",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "Extel All-America机构榜第8(2025)",
+      "notes": "All-America 2018年起连续在榜",
+      "sheet": "工作表1",
+      "row": 29,
+      "level_cell": "D29",
+      "aliases": [
+        "富国银行",
+        "富国证券"
+      ]
+    },
+    {
+      "name": "RBC",
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "Extel All-America机构榜第10(2025·并列)",
+      "notes": "All-America十年断续8年在榜",
+      "sheet": "工作表1",
+      "row": 30,
+      "level_cell": "D30",
+      "aliases": [
+        "加拿大皇家银行",
+        "加拿大皇家银行资本市场",
+        "加皇银行",
+        "RBC Capital Markets"
+      ]
+    },
+    {
+      "name": "Wolfe Research",
+      "category": "独立研究机构",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "Extel All-America机构榜第7(2025)；独立研究机构(无投行业务)",
+      "notes": "All-America 2020年起连续在榜",
+      "sheet": "工作表1",
+      "row": 31,
+      "level_cell": "D31",
+      "aliases": [
+        "沃尔夫研究公司"
+      ]
+    },
+    {
+      "name": "Bernstein",
+      "category": "独立研究机构",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "Extel All-America机构榜第10(2025·并列)；独立研究机构(AllianceBernstein旗下)",
+      "notes": "All-America十年断续在榜",
+      "sheet": "工作表1",
+      "row": 32,
+      "level_cell": "D32",
+      "aliases": [
+        "伯恩斯坦",
+        "伯恩斯坦研究"
+      ]
+    },
+    {
+      "name": "中国证券报",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "证监会+国家新闻出版署指定信息披露媒体(法定披露)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 33,
+      "level_cell": "D33",
+      "aliases": []
+    },
+    {
+      "name": "上海证券报",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "证监会+国家新闻出版署指定信息披露媒体(法定披露)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 34,
+      "level_cell": "D34",
+      "aliases": []
+    },
+    {
+      "name": "证券时报",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "证监会+国家新闻出版署指定信息披露媒体(法定披露)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 35,
+      "level_cell": "D35",
+      "aliases": []
+    },
+    {
+      "name": "证券日报",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "证监会+国家新闻出版署指定信息披露媒体(法定披露)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 36,
+      "level_cell": "D36",
+      "aliases": []
+    },
+    {
+      "name": "金融时报",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "证监会+国家新闻出版署指定信息披露媒体(法定披露)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 37,
+      "level_cell": "D37",
+      "aliases": [
+        "中国金融时报",
+        "中国《金融时报》"
+      ]
+    },
+    {
+      "name": "经济参考报",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "证监会+国家新闻出版署指定信息披露媒体(法定披露)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 38,
+      "level_cell": "D38",
+      "aliases": []
+    },
+    {
+      "name": "中国日报",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "basis": "证监会+国家新闻出版署指定信息披露媒体(法定披露)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 39,
+      "level_cell": "D39",
+      "aliases": []
+    },
+    {
+      "name": "财新",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "财新传媒持互联网新闻信息服务许可证(采编发布)；非指定披露媒体",
+      "notes": "仅采信评论/深度观点；2021起未列入网信办稿源单位名单",
+      "sheet": "工作表1",
+      "row": 40,
+      "level_cell": "D40",
+      "aliases": [
+        "财新传媒",
+        "财新网"
+      ]
+    },
+    {
+      "name": "第一财经",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "互联网新闻信息服务许可证31120180001(采编发布)；SMG国有控股",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 41,
+      "level_cell": "D41",
+      "aliases": []
+    },
+    {
+      "name": "每日经济新闻",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "互联网新闻信息服务许可证51120190017(采编发布)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 42,
+      "level_cell": "D42",
+      "aliases": []
+    },
+    {
+      "name": "财联社",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "互联网新闻信息服务许可证31120170007(采编发布)；上海报业集团主管",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 43,
+      "level_cell": "D43",
+      "aliases": []
+    },
+    {
+      "name": "界面新闻",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "互联网新闻信息服务许可证31120170007(采编发布，界面财联社)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 44,
+      "level_cell": "D44",
+      "aliases": [
+        "界面快报"
+      ]
+    },
+    {
+      "name": "澎湃新闻",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "互联网新闻信息服务许可证31120170006(采编发布，上海东方报业)",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 45,
+      "level_cell": "D45",
+      "aliases": []
+    },
+    {
+      "name": "券商中国",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "证券时报旗下；证券时报网许可证10120170066",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 46,
+      "level_cell": "D46",
+      "aliases": []
+    },
+    {
+      "name": "中国基金报",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "basis": "2025中国经济媒体微信公众号原创影响力TOP10(连续4年)；持牌媒体",
+      "notes": "仅采信评论/深度观点",
+      "sheet": "工作表1",
+      "row": 47,
+      "level_cell": "D47",
+      "aliases": []
+    },
+    {
+      "name": "经济观察报",
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P2",
+      "basis": "全国性财经报纸(公开刊号出版)；经济观察网",
+      "notes": "仅采信评论/深度观点；",
+      "sheet": "工作表1",
+      "row": 48,
+      "level_cell": "D48",
+      "aliases": []
+    },
+    {
+      "name": "IDC",
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "basis": "全球IT出货量/份额数据发布方",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "sheet": "工作表1",
+      "row": 49,
+      "level_cell": "D49",
+      "aliases": []
+    },
+    {
+      "name": "Counterpoint",
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "basis": "全球手机/半导体出货量/份额数据发布方",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "sheet": "工作表1",
+      "row": 50,
+      "level_cell": "D50",
+      "aliases": []
+    },
+    {
+      "name": "TrendForce集邦",
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "basis": "半导体/存储/面板价格数据发布方(月度)",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "sheet": "工作表1",
+      "row": 51,
+      "level_cell": "D51",
+      "aliases": [
+        "TrendForce",
+        "集邦咨询",
+        "集邦"
+      ]
+    },
+    {
+      "name": "高工锂电GGII",
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "basis": "中国锂电装机量数据发布方；高工锂电峰会主办方",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "sheet": "工作表1",
+      "row": 52,
+      "level_cell": "D52",
+      "aliases": [
+        "高工锂电",
+        "GGII"
+      ]
+    },
+    {
+      "name": "SMM上海有色",
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "basis": "有色金属现货价格基准(SMM报价)发布方",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "sheet": "工作表1",
+      "row": 53,
+      "level_cell": "D53",
+      "aliases": [
+        "SMM",
+        "上海有色网",
+        "上海有色"
+      ]
+    },
+    {
+      "name": "Gartner",
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "basis": "全球IT研究；魔力象限/半导体销售额预测发布方",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "sheet": "工作表1",
+      "row": 54,
+      "level_cell": "D54",
+      "aliases": []
+    },
+    {
+      "name": "Omdia",
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "basis": "全球显示/智能手机出货量数据发布方(隶属Informa)",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "sheet": "工作表1",
+      "row": 55,
+      "level_cell": "D55",
+      "aliases": []
+    },
+    {
+      "name": "猛哥看商业",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P0",
+      "basis": "国泰海通官方账号(微信认证)",
+      "notes": "档位随机构级；偏投资操作向·需合规过滤；媒体id=1844177",
+      "sheet": "工作表1",
+      "row": 56,
+      "level_cell": "D56",
+      "aliases": []
+    },
+    {
+      "name": "覃汉研究笔记",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P0",
+      "basis": "浙商证券官方账号(微信认证)",
+      "notes": "档位随机构级；偏投资操作向·需合规过滤；媒体id=2849717",
+      "sheet": "工作表1",
+      "row": 57,
+      "level_cell": "D57",
+      "aliases": []
+    },
+    {
+      "name": "王涵论宏观",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P0",
+      "basis": "兴业证券官方账号(微信认证)",
+      "notes": "档位随机构级；偏投资操作向·需合规过滤；媒体id=1838091",
+      "sheet": "工作表1",
+      "row": 58,
+      "level_cell": "D58",
+      "aliases": []
+    },
+    {
+      "name": "草叔消费升级研究",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P1",
+      "basis": "东吴证券官方账号(微信认证)",
+      "notes": "档位随机构级；偏投资操作向·需合规过滤；媒体id=1875161",
+      "sheet": "工作表1",
+      "row": 59,
+      "level_cell": "D59",
+      "aliases": []
+    },
+    {
+      "name": "远川研究所",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P1",
+      "basis": "西瓜数据公众号原创榜第16(2026-08)",
+      "notes": "需外接；需运营核实认证主体",
+      "sheet": "工作表1",
+      "row": 60,
+      "level_cell": "D60",
+      "aliases": []
+    },
+    {
+      "name": "格隆汇",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P1",
+      "basis": "西瓜数据公众号原创榜第19(2026-05)；港美股投资研究平台",
+      "notes": "需外接；需运营核实认证主体；原创占比约1/3；2026-05为最新可查届次",
+      "sheet": "工作表1",
+      "row": 61,
+      "level_cell": "D61",
+      "aliases": []
+    },
+    {
+      "name": "泽平宏观(任泽平)",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P1",
+      "basis": "新财富2015宏观第1(大满贯)；2016/2017宏观第3",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；荣誉为2015-2017历史届次",
+      "sheet": "工作表1",
+      "row": 62,
+      "level_cell": "D62",
+      "aliases": [
+        "泽平宏观",
+        "任泽平"
+      ]
+    },
+    {
+      "name": "追寻价值之路",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "方正证券官方账号(微信认证)",
+      "notes": "方正未进机构级名单·档位待补强；偏投资操作向·需合规过滤；媒体id=1837989",
+      "sheet": "工作表1",
+      "row": 63,
+      "level_cell": "D63",
+      "aliases": []
+    },
+    {
+      "name": "吴晓波频道(吴晓波)",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "西瓜数据公众号原创榜第6(2026-08)；个人IP·账号榜降权",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核",
+      "sheet": "工作表1",
+      "row": 64,
+      "level_cell": "D64",
+      "aliases": [
+        "吴晓波频道",
+        "吴晓波"
+      ]
+    },
+    {
+      "name": "进击波财经(沈帅波)",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "西瓜数据公众号原创榜第11(2026-08)；个人IP·账号榜降权",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核",
+      "sheet": "工作表1",
+      "row": 65,
+      "level_cell": "D65",
+      "aliases": [
+        "进击波财经",
+        "沈帅波"
+      ]
+    },
+    {
+      "name": "洪灏",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "《亚洲货币》2017中国经济学家+策略师第1；彭博'中国最精准策略师'；莲华资产管理合伙人兼CIO(2025-)",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；荣誉为2017历史届次",
+      "sheet": "工作表1",
+      "row": 66,
+      "level_cell": "D66",
+      "aliases": []
+    },
+    {
+      "name": "管清友",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "如是金融研究院院长；前民生证券副总裁",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；公众影响力型·研究榜单依据待补强",
+      "sheet": "工作表1",
+      "row": 67,
+      "level_cell": "D67",
+      "aliases": []
+    },
+    {
+      "name": "付鹏",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "前东北证券首席经济学家；中国证券业协会分析师委员",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；公众影响力型·研究榜单依据待补强",
+      "sheet": "工作表1",
+      "row": 68,
+      "level_cell": "D68",
+      "aliases": []
+    },
+    {
+      "name": "秦朔朋友圈(秦朔)",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "资深媒体人；《第一财经日报》创办人",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；商业评论·非证券研究；公众影响力型",
+      "sheet": "工作表1",
+      "row": 69,
+      "level_cell": "D69",
+      "aliases": [
+        "秦朔朋友圈",
+        "秦朔"
+      ]
+    },
+    {
+      "name": "集微网",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "半导体产业研究机构；集微半导体峰会主办方",
+      "notes": "需外接；需运营核实认证主体；产业垂直媒体·缺账号级榜单·依据待补强",
+      "sheet": "工作表1",
+      "row": 70,
+      "level_cell": "D70",
+      "aliases": []
+    },
+    {
+      "name": "半导体行业观察",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "半导体产业垂直自媒体",
+      "notes": "需外接；需运营核实认证主体；缺账号级榜单·依据待补强",
+      "sheet": "工作表1",
+      "row": 71,
+      "level_cell": "D71",
+      "aliases": []
+    },
+    {
+      "name": "阿基米德Biotech",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=个人",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；偏投资操作向·需合规过滤；媒体id=2581507",
+      "sheet": "工作表1",
+      "row": 72,
+      "level_cell": "D72",
+      "aliases": []
+    },
+    {
+      "name": "互联网怪盗团",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=个人",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；偏投资操作向·需合规过滤；媒体id=1837897",
+      "sheet": "工作表1",
+      "row": 73,
+      "level_cell": "D73",
+      "aliases": []
+    },
+    {
+      "name": "市值风云",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=个人",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=475229",
+      "sheet": "工作表1",
+      "row": 74,
+      "level_cell": "D74",
+      "aliases": []
+    },
+    {
+      "name": "易简财经",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2914298",
+      "sheet": "工作表1",
+      "row": 75,
+      "level_cell": "D75",
+      "aliases": []
+    },
+    {
+      "name": "阿尔法工场研究院",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1961340",
+      "sheet": "工作表1",
+      "row": 76,
+      "level_cell": "D76",
+      "aliases": []
+    },
+    {
+      "name": "Mr蒋静的资本圈",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=个人",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=2121884",
+      "sheet": "工作表1",
+      "row": 77,
+      "level_cell": "D77",
+      "aliases": []
+    },
+    {
+      "name": "深潜atom",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=个人",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=2184487",
+      "sheet": "工作表1",
+      "row": 78,
+      "level_cell": "D78",
+      "aliases": []
+    },
+    {
+      "name": "市值观察",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2065064",
+      "sheet": "工作表1",
+      "row": 79,
+      "level_cell": "D79",
+      "aliases": []
+    },
+    {
+      "name": "远川科技评论",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=615577",
+      "sheet": "工作表1",
+      "row": 80,
+      "level_cell": "D80",
+      "aliases": []
+    },
+    {
+      "name": "财经无忌",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1880640",
+      "sheet": "工作表1",
+      "row": 81,
+      "level_cell": "D81",
+      "aliases": []
+    },
+    {
+      "name": "达摩财经",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2849940",
+      "sheet": "工作表1",
+      "row": 82,
+      "level_cell": "D82",
+      "aliases": []
+    },
+    {
+      "name": "节点财经",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=526320",
+      "sheet": "工作表1",
+      "row": 83,
+      "level_cell": "D83",
+      "aliases": []
+    },
+    {
+      "name": "连线Insight",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1323561",
+      "sheet": "工作表1",
+      "row": 84,
+      "level_cell": "D84",
+      "aliases": []
+    },
+    {
+      "name": "汽车K线",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=个人",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=1109997",
+      "sheet": "工作表1",
+      "row": 85,
+      "level_cell": "D85",
+      "aliases": []
+    },
+    {
+      "name": "投资作业本Pro",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2919469",
+      "sheet": "工作表1",
+      "row": 86,
+      "level_cell": "D86",
+      "aliases": []
+    },
+    {
+      "name": "港股研究社",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=549568",
+      "sheet": "工作表1",
+      "row": 87,
+      "level_cell": "D87",
+      "aliases": []
+    },
+    {
+      "name": "韭圈儿",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2666608",
+      "sheet": "工作表1",
+      "row": 88,
+      "level_cell": "D88",
+      "aliases": []
+    },
+    {
+      "name": "萝卜投研",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1860320",
+      "sheet": "工作表1",
+      "row": 89,
+      "level_cell": "D89",
+      "aliases": []
+    },
+    {
+      "name": "财富FORTUNE",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2754702",
+      "sheet": "工作表1",
+      "row": 90,
+      "level_cell": "D90",
+      "aliases": []
+    },
+    {
+      "name": "尺度商业",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2909969",
+      "sheet": "工作表1",
+      "row": 91,
+      "level_cell": "D91",
+      "aliases": []
+    },
+    {
+      "name": "乔令投研",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=个人",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=2892862",
+      "sheet": "工作表1",
+      "row": 92,
+      "level_cell": "D92",
+      "aliases": []
+    },
+    {
+      "name": "嗨牛财经",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1206101",
+      "sheet": "工作表1",
+      "row": 93,
+      "level_cell": "D93",
+      "aliases": []
+    },
+    {
+      "name": "公司研究室",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2627695",
+      "sheet": "工作表1",
+      "row": 94,
+      "level_cell": "D94",
+      "aliases": []
+    },
+    {
+      "name": "本原财经",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2964486",
+      "sheet": "工作表1",
+      "row": 95,
+      "level_cell": "D95",
+      "aliases": []
+    },
+    {
+      "name": "伯虎财经",
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "basis": "运营精选池(2026-08)；认证主体=公司",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2964011",
+      "sheet": "工作表1",
+      "row": 96,
+      "level_cell": "D96",
+      "aliases": []
+    }
+  ],
+  "matching_policy": "仅按已核实的原始发布机构名称或明确别名匹配；转载信源和正文提及不替代发布机构。机构级可覆盖明确的同机构研究/财富管理部门，不向名称不同的子公司、合资公司或关联账号自动传播。金融时报按中国报纸身份核对，英国 Financial Times 不匹配。等级是来源档位，表中准入依据和备注随结果保留，不替代单条新闻事实核验。"
+}

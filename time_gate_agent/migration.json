@@ -1,0 +1,32 @@
+{
+  "agent_name": "time gate agent",
+  "source_host": "Pro60002",
+  "source_hostname": "autodl-container-xacalgm6rb-61488251",
+  "source_project": "/root/autodl-tmp/wh/moonsword",
+  "migration_date": "2026-10-29",
+  "source_version": "experiment05_2_choice_verified_20261027_01",
+  "files": [
+    {
+      "source_path": "scripts/experiment05_choice_news_guard.py",
+      "local_path": "time_gate_agent/guard.py",
+      "source_sha256": "efd738195fab681638df60e56e2754b8776fcf380c8311bbb584b1bdc3421a71",
+      "migrated_sha256": "94bb11e8ee423c947030113200e6053f1dde7354b8e3b1f5ca069d897fd4e947",
+      "adaptations": [
+        "MCP serverInfo.name renamed to time gate agent"
+      ]
+    },
+    {
+      "source_path": "scripts/prepare_experiment05_choice_boundaries.py",
+      "local_path": "time_gate_agent/boundary.py",
+      "source_sha256": "ad7d6b7076aaf77c1ed5b1d4fa755645a54041588b78364b5b73953ae1f89aa6",
+      "migrated_sha256": "ad7d6b7076aaf77c1ed5b1d4fa755645a54041588b78364b5b73953ae1f89aa6",
+      "adaptations": []
+    }
+  ],
+  "local_additions": [
+    "agent.py: portable host orchestration with three independent date reviews",
+    "model.py: local Codex CLI callbacks, existing login, private outputs",
+    "__main__.py: search/open/verify/serve/mcp entry points",
+    "tests/test_agent.py: offline policy and protocol regression tests"
+  ]
+}

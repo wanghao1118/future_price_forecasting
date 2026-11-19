@@ -1,0 +1,3869 @@
+{
+  "title": "未接入来源：公开抓取与发布时间核查",
+  "checked_at": "2026-11-05T09:40:56.866021+00:00",
+  "source_count": 72,
+  "saved_request_count": 178,
+  "browser_sample_count": 13,
+  "eligible_source_count": 39,
+  "accepted_policy_date": "2026-11-05",
+  "access_review_file": "access-review.json",
+  "availability_rule": "每个来源找到至少一篇身份对应、含可用分析文字及可验证时区发布时间的内容，即认定该来源具备可用入口；入库仍逐条验证时间、时区、原油相关性与分类。",
+  "self_media_timezone_policy": {
+    "id": "self-media-china-user-confirmed-20261105",
+    "confirmed_by": "user",
+    "confirmed_on": "2026-11-05",
+    "statement": "自媒体账号的都是中国时区",
+    "applicable_category": "公众号/自媒体账号",
+    "timezone": "Asia/Shanghai",
+    "offset": "+08:00",
+    "evidence_label": "用户确认的中国标准时间规则（UTC+8），不是源站显式时区声明",
+    "rules": [
+      "只对身份已核对的榜单自媒体账号或其明确署名转载内容的无时区发布时分应用。",
+      "发布时间已包含偏移、Z 或 Unix 时间戳时，保持其绝对时刻，不重新附加 UTC+8。",
+      "必须取得完整年月日和具体时分。缺年份、只有日期、相对时间和语义冲突不能靠本规则补齐。",
+      "近期仅显示相对时间时，继续检查发布时间属性、文章详情及较早文章；禁止按抓取时刻倒推。",
+      "保留原始时间、时间字段、原始证据和用户确认依据，再转换为 UTC+0。",
+      "本规则不自动适用于券商、海外机构或财经媒体。"
+    ]
+  },
+  "time_policy_review_file": "time-policy-review/decisions.json",
+  "counts": {
+    "正文与渠道发布时间已验证": 21,
+    "转载平台时间可用，可开发接入": 18,
+    "已测样本时间待核实": 21,
+    "目标来源身份或入口待确认": 4,
+    "本轮未取得可用正文": 8
+  },
+  "status_labels": {
+    "ready": "正文与渠道发布时间已验证",
+    "platform": "转载平台时间可用，可开发接入",
+    "time_pending": "已测样本时间待核实",
+    "identity_pending": "目标来源身份或入口待确认",
+    "unavailable": "本轮未取得可用正文"
+  },
+  "scope": "基于 2026-11-05 覆盖快照：榜单 95 个来源中，23 个已配置启用采集适配器；本轮检查其余 72 个，其中 11 个已有间接转载覆盖，61 个尚未覆盖。",
+  "limits": [
+    "这是一次有界公开访问抽样测试。全数来源均有实际请求记录，不代表已穷尽所有入口、验证全量历史或保障后续稳定性。",
+    "“正文与渠道发布时间已验证”仅表示所测公开文章可读取且有可验证时区的发布时间，可以优先开发适配器；不保证所有文章合格，也不证明全网最早首发。",
+    "用户已确认：转载采用转载平台本条内容的发布时间，不要求追溯原机构最早首发；自媒体分析采用账号发布时间并以作者账号为来源。公开账号帖中的分析文字可以作为内容，不要求另找外链原文。",
+    "未知时间或时区不推算、不补零；缺年份、日期、相对时间和冲突时间均不转为 UTC。只取得账号资料、标题、登录页或空页面仍不算取得分析正文。",
+    "每个来源找到至少一篇身份对应、含可用分析文字及可验证时区发布时间的内容，即认定该来源具备可用入口；入库仍逐条验证时间、时区、原油相关性与分类。",
+    "用户于2026-11-05确认自媒体账号采用中国标准时间UTC+8。本报告将此依据标为用户确认规则，区别于源站显式偏移；已有Z、数值偏移及Unix时间戳保持原绝对时刻。仅日期、缺年份、相对时间和字段冲突不因此自动通过。",
+    "初轮 30 个时间待核实来源是有界抽样（通常每个 1—2 条内容或页面），不是全量扫描，也不是整站不可用结论。本轮另对 14 个自媒体来源补做浏览器、登录和公开替代入口检查；最新结论覆盖旧失败结论，旧请求证据保留。",
+    "萝卜投研用户登录后已验证正文、刷新、新标签页访问；未测试浏览器重启或长期有效性，后台匿名 HTTP 采集也不会自动复用此登录。今天看啥会员渠道按用户要求跳过。微博复用现有登录，未导出任何凭据。",
+    "Z 或数值偏移取自发布字段；Unix 秒/毫秒表示绝对时刻，不据此推断源站的本地显示时区。修改、建页、抓取、签名、个人资料时间均不替代发布。",
+    "样本用于验证采集可行性，并未逐条进行原油相关性分类；可抓取不等于应当作为原油事件纳入。",
+    "此报告不代表已启用新采集适配器或将样本写入新闻库。用户确认的自媒体分析口径已同步到 agent 溯源规则；env01、时间验证门槛和自动更新设置保持原样。"
+  ],
+  "workbook": "/Users/jasson/Desktop/Forecasting数据库权威榜单.xlsx",
+  "workbook_range": "工作表1!A1:F96",
+  "coverage_snapshot": "../../authority/20261105/coverage.json",
+  "entries": [
+    {
+      "name": "国盛证券",
+      "row": 11,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://research.gszq.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "unavailable",
+      "sample_key": "11-c72e1aed5d31",
+      "content_result": "目录可见，研究详情要求登录",
+      "conclusion": "浏览器实际显示“报告摘要需登录后查看”；未取得公开正文。未尝试登录或绕过访问限制。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "本轮未取得可用正文",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://research.gszq.com/research/report?rid=2118054587402170370",
+      "sample_title": "国盛研究",
+      "sample_fetched_at": "2026-11-05T08:29:46.939989+00:00",
+      "sample_evidence_file": "raw/11-c72e1aed5d31.json",
+      "sample_sha256": "29c5844bd1e90b4c0c58d584fa649be61e6e435d551b5dc70c08744e0229188f",
+      "browser_observation_file": "browser-observations.json",
+      "tested_urls": [
+        {
+          "url": "https://research.gszq.com/research/report?rid=2118054587402170370",
+          "status": 200,
+          "error": null,
+          "key": "11-c72e1aed5d31",
+          "fetched_at": "2026-11-05T08:29:46.939989+00:00"
+        },
+        {
+          "url": "https://research.gszq.com/",
+          "status": 200,
+          "error": null,
+          "key": "11-4343fc9581c1",
+          "fetched_at": "2026-11-05T08:19:47.581743+00:00"
+        }
+      ]
+    },
+    {
+      "name": "国海证券",
+      "row": 18,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.ghzq.com.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "unavailable",
+      "sample_key": "18-d776e7e61fd6",
+      "content_result": "官网动态页面可见，未取得研究详情",
+      "conclusion": "HTTP 是空壳；浏览器显示公司新闻和研究业务导航，尚未定位可公开抓取的研究正文入口。不能据此断言永久不可接入。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "本轮未取得可用正文",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://www.ghzq.com.cn/",
+      "sample_title": "国海证券",
+      "sample_fetched_at": "2026-11-05T08:19:47.582037+00:00",
+      "sample_evidence_file": "raw/18-d776e7e61fd6.json",
+      "sample_sha256": "6289a9de35f5181db0d9fb1c288fb34e8b6db4bdca71fac46d1308558368a60a",
+      "browser_observation_file": "browser-observations.json",
+      "tested_urls": [
+        {
+          "url": "https://www.ghzq.com.cn/",
+          "status": 200,
+          "error": null,
+          "key": "18-d776e7e61fd6",
+          "fetched_at": "2026-11-05T08:19:47.582037+00:00"
+        }
+      ]
+    },
+    {
+      "name": "瑞银",
+      "row": 22,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "All-America十年全勤(2015-2025)",
+      "issuer_news_count": 39,
+      "urls": [
+        "https://www.ubs.com/us/en/wealth-management/insights/market-news.html"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "unavailable",
+      "sample_key": "22-1dbc212797d3",
+      "content_result": "官网页面及官方 PDF 均返回 403",
+      "conclusion": "搜索索引有带 UTC 时刻的 PDF 摘要，但实际下载失败，不能计为正文和时间都已验证。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "本轮未取得可用正文",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://www.ubs.com/us/en/wealth-management/insights/article/_jcr_content.1879922728.file/PS9jb250ZW50L2RhbS9pbXBvcnRlZC9jaW9yZXNlYXJjaC9wZGYvMzcvODEvOTUvOS8zNzgxOTU5L2VuLzM3ODE5NTkucGRm/3781959.pdf",
+      "sample_title": "Access Denied",
+      "sample_fetched_at": "2026-11-05T08:23:33.404556+00:00",
+      "sample_evidence_file": "raw/22-1dbc212797d3.json",
+      "sample_sha256": "4c000f4a37ce76613285bfb7ba977f5c5091833a8559721c330315f62942b712",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.ubs.com/us/en/wealth-management/insights/market-news.html",
+          "status": 403,
+          "error": null,
+          "key": "22-7afc8b1a6a95",
+          "fetched_at": "2026-11-05T08:19:47.582262+00:00"
+        },
+        {
+          "url": "https://www.ubs.com/us/en/wealth-management/insights/article/_jcr_content.1879922728.file/PS9jb250ZW50L2RhbS9pbXBvcnRlZC9jaW9yZXNlYXJjaC9wZGYvMzcvODEvOTUvOS8zNzgxOTU5L2VuLzM3ODE5NTkucGRm/3781959.pdf",
+          "status": 403,
+          "error": null,
+          "key": "22-1dbc212797d3",
+          "fetched_at": "2026-11-05T08:23:33.404556+00:00"
+        }
+      ]
+    },
+    {
+      "name": "美银",
+      "row": 23,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "All-America十年全勤(2015-2025)",
+      "issuer_news_count": 42,
+      "urls": [
+        "https://institute.bankofamerica.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "23-315fd3c1aac0",
+      "content_result": "Bank of America Institute 公开解读及报告摘要",
+      "conclusion": "可取得公开内容，样本只确认到月份；未找到可验证的精确发布时间。",
+      "publication_raw": "October 2026",
+      "publication_field": "正文/报告日期",
+      "timezone_evidence": null,
+      "time_kind": "month",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://institute.bankofamerica.com/economic-insights/business-checkpoint-october-2026.html",
+      "sample_title": "Business Checkpoint: Looking into the logistics",
+      "sample_fetched_at": "2026-11-05T08:19:51.340552+00:00",
+      "sample_evidence_file": "raw/23-315fd3c1aac0.json",
+      "sample_sha256": "88973529f9a2a81b027bc8b5b600cd587c7fb28be4a7ba9b8c2de2e4acefbe08",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://institute.bankofamerica.com/economic-insights/regional-roundup-coast-to-coast-growth.html",
+          "status": 200,
+          "error": null,
+          "key": "23-ef9a55742c8d",
+          "fetched_at": "2026-11-05T08:19:53.009342+00:00"
+        },
+        {
+          "url": "https://institute.bankofamerica.com/",
+          "status": 200,
+          "error": null,
+          "key": "23-feedffa53196",
+          "fetched_at": "2026-11-05T08:19:47.582356+00:00"
+        },
+        {
+          "url": "https://institute.bankofamerica.com/economic-insights/business-checkpoint-october-2026.html",
+          "status": 200,
+          "error": null,
+          "key": "23-315fd3c1aac0",
+          "fetched_at": "2026-11-05T08:19:51.340552+00:00"
+        }
+      ]
+    },
+    {
+      "name": "花旗",
+      "row": 25,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "美股All-America自2022起连续掉出前十",
+      "issuer_news_count": 46,
+      "urls": [
+        "https://www.citigroup.com/global/insights"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "25-d6e816fdd4bf",
+      "content_result": "Citi Institute 公开解读正文",
+      "conclusion": "两个样本的 publishDate 均只有年月日，没有时分及发布时区。",
+      "publication_raw": "2026-02-05",
+      "publication_field": "publishDate",
+      "timezone_evidence": null,
+      "time_kind": "date",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.citigroup.com/global/insights/supply-chain-financing-2026",
+      "sample_title": "Supply Chain Financing",
+      "sample_fetched_at": "2026-11-05T08:19:56.230443+00:00",
+      "sample_evidence_file": "raw/25-d6e816fdd4bf.json",
+      "sample_sha256": "af604c5912dc5fe3bc4786f37333507de6d6517af941d66b0f3010e3eb217d46",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.citigroup.com/global/insights/supply-chain-financing-2026",
+          "status": 200,
+          "error": null,
+          "key": "25-d6e816fdd4bf",
+          "fetched_at": "2026-11-05T08:19:56.230443+00:00"
+        },
+        {
+          "url": "https://www.citigroup.com/global/insights",
+          "status": 200,
+          "error": null,
+          "key": "25-deb1ccd22e1f",
+          "fetched_at": "2026-11-05T08:19:47.582424+00:00"
+        },
+        {
+          "url": "https://www.citigroup.com/global/insights/rebuilding-ukraine",
+          "status": 200,
+          "error": null,
+          "key": "25-b9d2a8ebacae",
+          "fetched_at": "2026-11-05T08:20:04.842310+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Jefferies",
+      "row": 26,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "All-America 2020年起连续在榜",
+      "issuer_news_count": 2,
+      "urls": [
+        "https://www.jefferies.com/Insights/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "26-6cad14c630ca",
+      "content_result": "官网 Insights 公开正文",
+      "conclusion": "两篇文章的 Article datePublished 与发布时间元数据一致。样本来自 2024/2025 年；本轮未证明 2026 年文章供给和完整历史覆盖。",
+      "publication_raw": "2025-05-02T19:18:19+00:00",
+      "publication_field": "Article.datePublished / article:published_time",
+      "timezone_evidence": "发布时间自身包含 +00:00；另有一致的 Z 字段",
+      "time_kind": "iso",
+      "published_utc": "2025-05-02T19:18:19Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.jefferies.com/insights/policy/the-future-of-carbon-removal-according-to-the-people-building-it/",
+      "sample_title": "The Future of Carbon Removal, According to the People Building It | Jefferies.com",
+      "sample_fetched_at": "2026-11-05T08:29:46.940364+00:00",
+      "sample_evidence_file": "raw/26-6cad14c630ca.json",
+      "sample_sha256": "87efc4b73789a1c3ecc09c89a3e76ace354fec65e192df68d790b2ec05c02fc4",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.jefferies.com/insights/leadership-spotlight/whats-driving-the-canadian-economy/",
+          "status": 200,
+          "error": null,
+          "key": "26-5db4dbbbdfe0",
+          "fetched_at": "2026-11-05T08:19:49.986960+00:00"
+        },
+        {
+          "url": "https://www.jefferies.com/Insights/",
+          "status": 200,
+          "error": null,
+          "key": "26-f3f7ecd37c7c",
+          "fetched_at": "2026-11-05T08:19:47.582478+00:00"
+        },
+        {
+          "url": "https://www.jefferies.com/wp-content/uploads/sites/4/2026/09/Jefferies_Culture_and_Community_Report-Sep2026.pdf",
+          "status": 200,
+          "error": "PdfReadError: Invalid object in /Pages",
+          "key": "26-432a534d6519",
+          "fetched_at": "2026-11-05T08:19:52.282426+00:00"
+        },
+        {
+          "url": "https://www.jefferies.com/insights/policy/the-future-of-carbon-removal-according-to-the-people-building-it/",
+          "status": 200,
+          "error": null,
+          "key": "26-6cad14c630ca",
+          "fetched_at": "2026-11-05T08:29:46.940364+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Evercore ISI",
+      "row": 27,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "All-America十年全勤(2015-2025)",
+      "issuer_news_count": 1,
+      "urls": [
+        "https://www.evercore.com/our-business-and-capabilities/equities/research/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "27-05d17c6f1d37",
+      "content_result": "官方公开 PDF 研究样本",
+      "conclusion": "PDF 可下载和提取正文，但只有日期，且样本为 2024 年；未证明 2026 年公开研究文章供给。",
+      "publication_raw": "July 09, 2024",
+      "publication_field": "PDF 正文日期",
+      "timezone_evidence": null,
+      "time_kind": "date",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.evercore.com/wp-content/uploads/2024/08/Industrials-Machinery-July-09-2024.pdf",
+      "sample_title": "PDF document",
+      "sample_fetched_at": "2026-11-05T08:29:46.940562+00:00",
+      "sample_evidence_file": "raw/27-05d17c6f1d37.json",
+      "sample_sha256": "932b29f21784459ad66812c02b1dd79a0ba05900c989aa1b1ccd528998f08d60",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.evercore.com/our-business-and-capabilities/equities/research/",
+          "status": 200,
+          "error": null,
+          "key": "27-c6f0edbfd84e",
+          "fetched_at": "2026-11-05T08:19:47.582738+00:00"
+        },
+        {
+          "url": "https://www.evercore.com/wp-content/uploads/2024/08/Industrials-Machinery-July-09-2024.pdf",
+          "status": 200,
+          "error": null,
+          "key": "27-05d17c6f1d37",
+          "fetched_at": "2026-11-05T08:29:46.940562+00:00"
+        },
+        {
+          "url": "https://www.evercore.com/2026/?post_type=transactions",
+          "status": 200,
+          "error": null,
+          "key": "27-95fb28742392",
+          "fetched_at": "2026-11-05T08:19:50.190950+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Barclays",
+      "row": 28,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "All-America十年全勤(2015-2025)",
+      "issuer_news_count": 23,
+      "urls": [
+        "https://www.ib.barclays/our-insights.html"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "unavailable",
+      "sample_key": "28-b669e24fe500",
+      "content_result": "栏目及主题页面可访问",
+      "conclusion": "尝试五个官网页面，仅获得导航/业务/主题内容；本轮未取得实质研究文章详情及发布时间。需进一步解析动态文章入口。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "本轮未取得可用正文",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://www.ib.barclays/our-insights/themes/macro-shifts.html",
+      "sample_title": "Macro Shifts | Barclays Corporate and Investment Bank",
+      "sample_fetched_at": "2026-11-05T08:23:38.313183+00:00",
+      "sample_evidence_file": "raw/28-b669e24fe500.json",
+      "sample_sha256": "e2b24135b2f557883eab21f563e68b505abfdefdbab95580a6e0e18dee4d9143",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.ib.barclays/investment-banking/mergers-and-acquisitions.html",
+          "status": 200,
+          "error": null,
+          "key": "28-2bb7042d0705",
+          "fetched_at": "2026-11-05T08:19:55.875296+00:00"
+        },
+        {
+          "url": "https://www.ib.barclays/investment-banking.html",
+          "status": 200,
+          "error": null,
+          "key": "28-f5ca4e1c033a",
+          "fetched_at": "2026-11-05T08:19:51.302260+00:00"
+        },
+        {
+          "url": "https://www.ib.barclays/our-insights.html",
+          "status": 200,
+          "error": null,
+          "key": "28-9bec7778aa4f",
+          "fetched_at": "2026-11-05T08:19:47.582827+00:00"
+        },
+        {
+          "url": "https://www.ib.barclays/our-insights/themes/macro-shifts.html",
+          "status": 200,
+          "error": null,
+          "key": "28-b669e24fe500",
+          "fetched_at": "2026-11-05T08:23:38.313183+00:00"
+        },
+        {
+          "url": "https://www.ib.barclays/our-insights/themes.html",
+          "status": 200,
+          "error": null,
+          "key": "28-d7d37dfd6490",
+          "fetched_at": "2026-11-05T08:23:38.311748+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Wells Fargo",
+      "row": 29,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "All-America 2018年起连续在榜",
+      "issuer_news_count": 6,
+      "urls": [
+        "https://www.wellsfargo.com/investment-institute/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "29-187df8418a54",
+      "content_result": "Wells Fargo Investment Institute 公开周报正文",
+      "conclusion": "页面标注 Published November 2, 2026；固定 URL 滚动更新，不能把修改或建页时间作为首发。",
+      "publication_raw": "November 2, 2026",
+      "publication_field": "页面 Published 日期",
+      "timezone_evidence": null,
+      "time_kind": "date",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.wellsfargoadvisors.com/research-analysis/strategy/weekly.htm",
+      "sample_title": "Investment Strategy | Wells Fargo Investment Institute Yes close",
+      "sample_fetched_at": "2026-11-05T08:23:33.405190+00:00",
+      "sample_evidence_file": "raw/29-187df8418a54.json",
+      "sample_sha256": "a3a9b4adaf5a7521e634db727a8b859b5f966411d948a0d7458a7b581ec2053b",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.wellsfargo.com/investment-institute/",
+          "status": 404,
+          "error": null,
+          "key": "29-33a5477f8a15",
+          "fetched_at": "2026-11-05T08:19:47.878708+00:00"
+        },
+        {
+          "url": "https://www.wellsfargoadvisors.com/research-analysis/strategy/weekly.htm",
+          "status": 200,
+          "error": null,
+          "key": "29-187df8418a54",
+          "fetched_at": "2026-11-05T08:23:33.405190+00:00"
+        }
+      ]
+    },
+    {
+      "name": "RBC",
+      "row": 30,
+      "category": "券商/投行",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "All-America十年断续8年在榜",
+      "issuer_news_count": 3,
+      "urls": [
+        "https://www.rbc.com/en/economics/monthly-forecast-update/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "30-8eb5ebce633c",
+      "content_result": "官网独立研究文章正文",
+      "conclusion": "独立文章有明确发布时间；滚动更新的 monthly-forecast 页面不能套用建页或修改时间。",
+      "publication_raw": "2026-01-14T14:46:10+00:00",
+      "publication_field": "Article.datePublished / article:published_time",
+      "timezone_evidence": "发布时间自身包含 +00:00",
+      "time_kind": "iso",
+      "published_utc": "2026-01-14T14:46:10Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.rbc.com/en/economics/financial-markets-monthly/steady-as-she-goes-central-banks-hold-the-line-in-2026/",
+      "sample_title": "Steady as she goes–central banks hold the line in 2026 - RBC Economics",
+      "sample_fetched_at": "2026-11-05T08:23:33.405373+00:00",
+      "sample_evidence_file": "raw/30-8eb5ebce633c.json",
+      "sample_sha256": "a4624762aef7e4dd4acef63a43874563935e81fe28d79c7b4e13381b49cf2955",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.rbc.com/en/economics/financial-markets-monthly/steady-as-she-goes-central-banks-hold-the-line-in-2026/",
+          "status": 200,
+          "error": null,
+          "key": "30-8eb5ebce633c",
+          "fetched_at": "2026-11-05T08:23:33.405373+00:00"
+        },
+        {
+          "url": "https://www.rbc.com/en/economics/monthly-forecast-update/",
+          "status": 200,
+          "error": null,
+          "key": "30-0ee99734de67",
+          "fetched_at": "2026-11-05T08:19:49.190040+00:00"
+        },
+        {
+          "url": "https://www.rbc.com/en/economics/wp-content/uploads/sites/23/2026/10/MFU-Oct-CA.pdf",
+          "status": 200,
+          "error": null,
+          "key": "30-d6610d33122b",
+          "fetched_at": "2026-11-05T08:19:52.656776+00:00"
+        },
+        {
+          "url": "https://www.rbc.com/en/economics/canadian-analysis/featured-analysis/",
+          "status": 200,
+          "error": null,
+          "key": "30-89f779a74d4a",
+          "fetched_at": "2026-11-05T08:23:33.405424+00:00"
+        },
+        {
+          "url": "https://www.rbc.com/en/economics/wp-content/uploads/sites/23/2026/10/MFU-Oct-US.pdf",
+          "status": 200,
+          "error": null,
+          "key": "30-dff421f0a3a5",
+          "fetched_at": "2026-11-05T08:19:58.465640+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Wolfe Research",
+      "row": 31,
+      "category": "独立研究机构",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "All-America 2020年起连续在榜",
+      "issuer_news_count": 2,
+      "urls": [
+        "https://www.wolferesearch.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "31-0ef069fb9cfd",
+      "content_result": "官方公司新闻稿 PDF",
+      "conclusion": "仅取得公司新闻稿，日期为 2026-10-02；未取得公开研究报告正文或精确发布时间。",
+      "publication_raw": "October 2, 2026",
+      "publication_field": "PDF 正文日期",
+      "timezone_evidence": null,
+      "time_kind": "date",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.wolferesearch.com/wp-content/uploads/2026/10/WR_PressRelease_10.2.26.pdf",
+      "sample_title": "PDF document",
+      "sample_fetched_at": "2026-11-05T08:19:56.325609+00:00",
+      "sample_evidence_file": "raw/31-0ef069fb9cfd.json",
+      "sample_sha256": "953848d6105c42b34f7dbbdf2255e67feeebb80a6cd17288624639acabf90267",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.wolferesearch.com/wp-content/uploads/2023/05/WR_15Year_PressRelease.pdf",
+          "status": 200,
+          "error": null,
+          "key": "31-21e5813188e2",
+          "fetched_at": "2026-11-05T08:19:58.939299+00:00"
+        },
+        {
+          "url": "https://www.wolferesearch.com/",
+          "status": 200,
+          "error": null,
+          "key": "31-af37d5217c2a",
+          "fetched_at": "2026-11-05T08:19:50.300719+00:00"
+        },
+        {
+          "url": "https://www.wolferesearch.com/wp-content/uploads/2026/10/WR_PressRelease_10.2.26.pdf",
+          "status": 200,
+          "error": null,
+          "key": "31-0ef069fb9cfd",
+          "fetched_at": "2026-11-05T08:19:56.325609+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Bernstein",
+      "row": 32,
+      "category": "独立研究机构",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "All-America十年断续在榜",
+      "issuer_news_count": 3,
+      "urls": [
+        "https://www.bernsteinresearch.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "unavailable",
+      "sample_key": "32-de970b01f531",
+      "content_result": "TLS 证书链校验失败",
+      "conclusion": "本环境返回 self-signed certificate in certificate chain；未关闭证书校验，不能据此认定源站永久不可用。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "本轮未取得可用正文",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://www.bernsteinresearch.com/",
+      "sample_title": "",
+      "sample_fetched_at": "2026-11-05T08:19:50.986386+00:00",
+      "sample_evidence_file": "raw/32-de970b01f531.json",
+      "sample_sha256": null,
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.bernsteinresearch.com/",
+          "status": null,
+          "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>",
+          "key": "32-de970b01f531",
+          "fetched_at": "2026-11-05T08:19:50.986386+00:00"
+        }
+      ]
+    },
+    {
+      "name": "中国证券报",
+      "row": 33,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.cs.com.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "33-b54cb3572867",
+      "content_result": "中证网公开新闻正文",
+      "conclusion": "两篇样本有时分，但正文与已检查元数据未提供可确认的发布时区。",
+      "publication_raw": "2026-11-04 20:56",
+      "publication_field": "页面发布时间",
+      "timezone_evidence": null,
+      "time_kind": "naive",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.cs.com.cn/ssgs/01/2026/11/04/detail_2026110410049868.html",
+      "sample_title": "第九届进博会中国石化采购签约额达413亿美元",
+      "sample_fetched_at": "2026-11-05T08:19:55.874912+00:00",
+      "sample_evidence_file": "raw/33-b54cb3572867.json",
+      "sample_sha256": "659dfca2d220cf8b8f1f13aec206d7d4686590b3c2aec782fd3fa652edea4ef7",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.cs.com.cn/ssgs/01/2026/11/05/detail_2026110510049983.html",
+          "status": 200,
+          "error": null,
+          "key": "33-b2235c1bb3cf",
+          "fetched_at": "2026-11-05T08:19:52.801958+00:00"
+        },
+        {
+          "url": "https://www.cs.com.cn/",
+          "status": 200,
+          "error": null,
+          "key": "33-1938fc2797f3",
+          "fetched_at": "2026-11-05T08:19:51.306410+00:00"
+        },
+        {
+          "url": "https://www.cs.com.cn/ssgs/01/2026/11/04/detail_2026110410049868.html",
+          "status": 200,
+          "error": null,
+          "key": "33-b54cb3572867",
+          "fetched_at": "2026-11-05T08:19:55.874912+00:00"
+        }
+      ]
+    },
+    {
+      "name": "上海证券报",
+      "row": 34,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.cnstock.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "34-c7623af1f2fd",
+      "content_result": "中国证券网公开文章正文",
+      "conclusion": "文章对象 pubTime 有时分但不含时区；专题页和招聘页不当作有效新闻样本。",
+      "publication_raw": "2026-11-05 07:15",
+      "publication_field": "pageProps.data.pubTime",
+      "timezone_evidence": null,
+      "time_kind": "naive",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.cnstock.com/commonDetail/824222",
+      "sample_title": "东方之约惠全球 开局之年谱新篇——写在第九届中国国际进口博览会开幕之际-上海证券报·中国证券网",
+      "sample_fetched_at": "2026-11-05T08:23:38.313738+00:00",
+      "sample_evidence_file": "raw/34-c7623af1f2fd.json",
+      "sample_sha256": "e97cf950e96ba3af3ebb2ccdd0d04abfb51b572b68b033caaf1a2eca6051d619",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.cnstock.com/topicDetail/822989",
+          "status": 200,
+          "error": null,
+          "key": "34-d59cc0b354d0",
+          "fetched_at": "2026-11-05T08:19:58.939098+00:00"
+        },
+        {
+          "url": "https://www.cnstock.com/",
+          "status": 200,
+          "error": null,
+          "key": "34-b7940ae68e05",
+          "fetched_at": "2026-11-05T08:19:55.876007+00:00"
+        },
+        {
+          "url": "https://www.cnstock.com/topicDetail/126474",
+          "status": 200,
+          "error": null,
+          "key": "34-3d8cb8679494",
+          "fetched_at": "2026-11-05T08:19:57.609587+00:00"
+        },
+        {
+          "url": "https://www.cnstock.com/commonDetail/718950",
+          "status": 200,
+          "error": null,
+          "key": "34-61c8475025f8",
+          "fetched_at": "2026-11-05T08:23:38.514141+00:00"
+        },
+        {
+          "url": "https://www.cnstock.com/commonDetail/824222",
+          "status": 200,
+          "error": null,
+          "key": "34-c7623af1f2fd",
+          "fetched_at": "2026-11-05T08:23:38.313738+00:00"
+        }
+      ]
+    },
+    {
+      "name": "证券日报",
+      "row": 36,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.zqrb.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "36-8939ded57197",
+      "content_result": "证券日报公开 HTTP 新闻正文",
+      "conclusion": "HTTPS 握手报错，官网公开 HTTP 页面可读；发布时间有时分但没有可验证时区。",
+      "publication_raw": "2026-11-05 13:48",
+      "publication_field": "页面发布时间",
+      "timezone_evidence": null,
+      "time_kind": "naive",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "http://www.zqrb.cn/finance/hongguanjingji/2026-11-05/A1793856617291.html",
+      "sample_title": "各地丰富促消费政策工具箱 服务消费唱主角-证券日报网 -证券日报网",
+      "sample_fetched_at": "2026-11-05T08:29:46.940781+00:00",
+      "sample_evidence_file": "raw/36-8939ded57197.json",
+      "sample_sha256": "baed00d63c9b6811ee52bc970864183d6dbb349ee1b463f54199b52fd0cda7a6",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "http://www.zqrb.cn/",
+          "status": 200,
+          "error": null,
+          "key": "36-5db53bf06357",
+          "fetched_at": "2026-11-05T08:23:33.405475+00:00"
+        },
+        {
+          "url": "http://www.zqrb.cn/stock/bankuaijujiao/2026-11-05/A1793856617292.html",
+          "status": 200,
+          "error": null,
+          "key": "36-dc58bb66ecfc",
+          "fetched_at": "2026-11-05T08:29:46.940655+00:00"
+        },
+        {
+          "url": "http://www.zqrb.cn/finance/hongguanjingji/2026-11-05/A1793856617291.html",
+          "status": 200,
+          "error": null,
+          "key": "36-8939ded57197",
+          "fetched_at": "2026-11-05T08:29:46.940781+00:00"
+        },
+        {
+          "url": "https://www.zqrb.cn/",
+          "status": null,
+          "error": "URLError: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1010)>",
+          "key": "36-6f1cbeb62f8d",
+          "fetched_at": "2026-11-05T08:19:56.179606+00:00"
+        }
+      ]
+    },
+    {
+      "name": "金融时报",
+      "row": 37,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.financialnews.com.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "37-b3a3202dcfc1",
+      "content_result": "中国金融新闻网公开新闻正文",
+      "conclusion": "对应中国《金融时报》，不是英国 FT；样本只有日期。",
+      "publication_raw": "2026-11-05",
+      "publication_field": "页面日期",
+      "timezone_evidence": null,
+      "time_kind": "date",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "http://www.financialnews.com.cn/2026-11/05/content_460291.html",
+      "sample_title": "实施好支持资本市场的货币政策工具 巩固完善资本市场稳市机制\n\n    -中国金融新闻网",
+      "sample_fetched_at": "2026-11-05T08:19:58.445778+00:00",
+      "sample_evidence_file": "raw/37-b3a3202dcfc1.json",
+      "sample_sha256": "ae11811a290be2373c087433dd499999f37db3ff6e929f40bef980b2744090fc",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "http://www.financialnews.com.cn/2026-11/04/content_460195.html",
+          "status": 200,
+          "error": null,
+          "key": "37-332721b95d90",
+          "fetched_at": "2026-11-05T08:19:59.140170+00:00"
+        },
+        {
+          "url": "https://www.financialnews.com.cn/",
+          "status": 200,
+          "error": null,
+          "key": "37-1846d2406dd3",
+          "fetched_at": "2026-11-05T08:19:56.608911+00:00"
+        },
+        {
+          "url": "http://www.financialnews.com.cn/2026-11/05/content_460291.html",
+          "status": 200,
+          "error": null,
+          "key": "37-b3a3202dcfc1",
+          "fetched_at": "2026-11-05T08:19:58.445778+00:00"
+        }
+      ]
+    },
+    {
+      "name": "经济参考报",
+      "row": 38,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.jjckb.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "38-dd843b46d559",
+      "content_result": "经济参考网公开新闻正文",
+      "conclusion": "两个样本只获得年月日，不能确认具体发布时间。",
+      "publication_raw": "2026-11-05",
+      "publication_field": "页面日期/日期元数据",
+      "timezone_evidence": null,
+      "time_kind": "date",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.jjckb.cn/20261105/df8edded57a84b2285568a6740d9af9e/c.html",
+      "sample_title": "去年我国具身智能市场规模约9150亿元增长20.4%-经济参考网 _ 新华社《经济参考报》官方网站",
+      "sample_fetched_at": "2026-11-05T08:19:58.970792+00:00",
+      "sample_evidence_file": "raw/38-dd843b46d559.json",
+      "sample_sha256": "ba5fd36045b8547bb8601751f81612b172c6a8df91a31ecdf15c606b55d200ab",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.jjckb.cn/",
+          "status": 200,
+          "error": null,
+          "key": "38-4290e02a179d",
+          "fetched_at": "2026-11-05T08:19:57.898368+00:00"
+        },
+        {
+          "url": "https://www.jjckb.cn/20261105/df8edded57a84b2285568a6740d9af9e/c.html",
+          "status": 200,
+          "error": null,
+          "key": "38-dd843b46d559",
+          "fetched_at": "2026-11-05T08:19:58.970792+00:00"
+        },
+        {
+          "url": "https://www.jjckb.cn/20261104/66145926e0b240e5a11688cef708fb10/c.html",
+          "status": 200,
+          "error": null,
+          "key": "38-37a8701af849",
+          "fetched_at": "2026-11-05T08:20:04.842367+00:00"
+        }
+      ]
+    },
+    {
+      "name": "中国日报",
+      "row": 39,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P0",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.chinadaily.com.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "39-95ae30d27b43",
+      "content_result": "中国日报主站公开新闻正文",
+      "conclusion": "样本为中加能源合作新闻；只确认此文章模板，其他频道仍须逐条验证。",
+      "publication_raw": "2026-11-05T11:14:23+08:00",
+      "publication_field": "NewsArticle.datePublished",
+      "timezone_evidence": "发布时间自身包含 +08:00",
+      "time_kind": "iso",
+      "published_utc": "2026-11-05T03:14:23Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.chinadaily.com.cn/a/202611/05/WS6aebf490e4b03ebf8519a7b5.html",
+      "sample_title": "China, Canada eye deeper energy, trade cooperation - Chinadaily.com.cn",
+      "sample_fetched_at": "2026-11-05T08:19:59.297471+00:00",
+      "sample_evidence_file": "raw/39-95ae30d27b43.json",
+      "sample_sha256": "167d67efc3a2dcd8489497f3d5e458b484afe9c0ebaca8693ffc52e681d79f10",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.chinadaily.com.cn/a/202611/05/WS6aebc274e4b0aac4cf1ee3d9.html",
+          "status": 200,
+          "error": null,
+          "key": "39-54a3279de7f0",
+          "fetched_at": "2026-11-05T08:23:38.951737+00:00"
+        },
+        {
+          "url": "https://www.chinadaily.com.cn/a/202611/05/WS6aebf490e4b03ebf8519a7b5.html",
+          "status": 200,
+          "error": null,
+          "key": "39-95ae30d27b43",
+          "fetched_at": "2026-11-05T08:19:59.297471+00:00"
+        },
+        {
+          "url": "https://www.chinadaily.com.cn/a/202611/04/WS6aeaf1bee4b06d4aa056710a.html",
+          "status": 200,
+          "error": null,
+          "key": "39-858addf1b0da",
+          "fetched_at": "2026-11-05T08:19:59.984207+00:00"
+        },
+        {
+          "url": "https://www.chinadaily.com.cn/a/202611/04/WS6aeb1dffe4b0aac4cf1ee359.html",
+          "status": 200,
+          "error": null,
+          "key": "39-703b6a3dc535",
+          "fetched_at": "2026-11-05T08:23:38.515881+00:00"
+        },
+        {
+          "url": "https://www.chinadaily.com.cn/",
+          "status": 200,
+          "error": null,
+          "key": "39-2d21eb162b63",
+          "fetched_at": "2026-11-05T08:19:58.447595+00:00"
+        }
+      ]
+    },
+    {
+      "name": "第一财经",
+      "row": 41,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 1,
+      "urls": [
+        "https://www.yicai.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "41-8f8026d4be23",
+      "content_result": "官网公开新闻正文",
+      "conclusion": "actime 与可见首发时间一致；autime 是另一更新时间，不采用。另一篇快讯亦有带偏移的 actime。",
+      "publication_raw": "2026-11-01T21:11:04+08",
+      "publication_field": "页面嵌入的 actime",
+      "timezone_evidence": "actime 自带 +08，解析为 UTC+08:00",
+      "time_kind": "iso",
+      "published_utc": "2026-11-01T13:11:04Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.yicai.com/news/103420264.html",
+      "sample_title": "全球资产遭遇洗盘，国内市场迎来两场重磅会议",
+      "sample_fetched_at": "2026-11-05T08:20:04.451878+00:00",
+      "sample_evidence_file": "raw/41-8f8026d4be23.json",
+      "sample_sha256": "de3df5e76bc1d53ddf05f65f4cd2940e943bcce4cceb45ac0e73773cb962c9a1",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.yicai.com/",
+          "status": 200,
+          "error": null,
+          "key": "41-06cf495f547d",
+          "fetched_at": "2026-11-05T08:19:59.417344+00:00"
+        },
+        {
+          "url": "https://www.yicai.com/brief/103427660.html",
+          "status": 200,
+          "error": null,
+          "key": "41-71443b77ec98",
+          "fetched_at": "2026-11-05T08:20:05.091654+00:00"
+        },
+        {
+          "url": "https://www.yicai.com/news/103420264.html",
+          "status": 200,
+          "error": null,
+          "key": "41-8f8026d4be23",
+          "fetched_at": "2026-11-05T08:20:04.451878+00:00"
+        }
+      ]
+    },
+    {
+      "name": "每日经济新闻",
+      "row": 42,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.nbd.com.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "42-16bc5c71ac4e",
+      "content_result": "每经网公开文章正文",
+      "conclusion": "同一页面出现 2026-11-05T14:10:42 与 2026-11-03T10:23:33；另一篇亦有日期冲突。首发/重发/修改语义和时区都待核实。",
+      "publication_raw": "2026-11-05T14:10:42 / 2026-11-03T10:23:33",
+      "publication_field": "多处 pubDate/页面显示值",
+      "timezone_evidence": null,
+      "time_kind": "conflict",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.nbd.com.cn/articles/2026-11-03/4635414.html",
+      "sample_title": "43家上市券商前三季度揽收近5000亿元，资本市场高质量发展大会即将解码机构新生态 | 每经网",
+      "sample_fetched_at": "2026-11-05T08:20:04.451799+00:00",
+      "sample_evidence_file": "raw/42-16bc5c71ac4e.json",
+      "sample_sha256": "d9cd585444df9e94b6c8fb4df5d6e5607ceca66b46b29b8d6abf7390faa1079e",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.nbd.com.cn/articles/2026-11-03/4635414.html",
+          "status": 200,
+          "error": null,
+          "key": "42-16bc5c71ac4e",
+          "fetched_at": "2026-11-05T08:20:04.451799+00:00"
+        },
+        {
+          "url": "https://www.nbd.com.cn/",
+          "status": 200,
+          "error": null,
+          "key": "42-c9bdd23ac082",
+          "fetched_at": "2026-11-05T08:19:59.484049+00:00"
+        },
+        {
+          "url": "https://www.nbd.com.cn/articles/2026-11-04/4637929.html",
+          "status": 200,
+          "error": null,
+          "key": "42-ee8425cd3a1a",
+          "fetched_at": "2026-11-05T08:20:05.166645+00:00"
+        }
+      ]
+    },
+    {
+      "name": "澎湃新闻",
+      "row": 45,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.thepaper.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "45-1a71746f06fd",
+      "content_result": "官网公开新闻正文",
+      "conclusion": "JSON-LD、time 元素及文章数据的 Unix 毫秒发布时间相互吻合。",
+      "publication_raw": "2026-11-05T07:29:08.155Z",
+      "publication_field": "NewsArticle.datePublished / time.datetime",
+      "timezone_evidence": "发布时间自身包含 Z（UTC）",
+      "time_kind": "iso",
+      "published_utc": "2026-11-05T07:29:08.155000Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.thepaper.cn/newsDetail_forward_34411297",
+      "sample_title": "火箭海上回收装置模型、张雪机车……进博会中国馆这些展品很吸睛_浦江头条_澎湃新闻-The Paper",
+      "sample_fetched_at": "2026-11-05T08:20:04.975189+00:00",
+      "sample_evidence_file": "raw/45-1a71746f06fd.json",
+      "sample_sha256": "b3d93517e8f61b2eaef777be166d1498053692cfebfadec781893cff939a8e2f",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.thepaper.cn/",
+          "status": 200,
+          "error": null,
+          "key": "45-1cf6bbca3c77",
+          "fetched_at": "2026-11-05T08:19:59.982576+00:00"
+        },
+        {
+          "url": "https://www.thepaper.cn/newsDetail_forward_34411428",
+          "status": 200,
+          "error": null,
+          "key": "45-6fa3e1b6e8ae",
+          "fetched_at": "2026-11-05T08:20:05.649642+00:00"
+        },
+        {
+          "url": "https://www.thepaper.cn/newsDetail_forward_34411297",
+          "status": 200,
+          "error": null,
+          "key": "45-1a71746f06fd",
+          "fetched_at": "2026-11-05T08:20:04.975189+00:00"
+        }
+      ]
+    },
+    {
+      "name": "券商中国",
+      "row": 46,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.stcn.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "identity_pending",
+      "sample_key": "46-5c4a76a47db7",
+      "content_result": "证券时报平台文章可读，样本来源非券商中国",
+      "conclusion": "不能将证券时报平台整体当作“券商中国”账号覆盖；本轮未拿到明确署名券商中国的匹配详情。需先定位账号或专栏。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "目标来源身份或入口待确认",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://www.stcn.com/article/detail/4323689.html",
+      "sample_title": "事关公募！政策组合拳打出，市场信心能否提振？",
+      "sample_fetched_at": "2026-11-05T08:20:05.949076+00:00",
+      "sample_evidence_file": "raw/46-5c4a76a47db7.json",
+      "sample_sha256": "c52d900a7435ca7dc468366dbf143b69c7486f01d4f95cd078cc4ec37c8ff47a",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.stcn.com/article/detail/4323689.html",
+          "status": 200,
+          "error": null,
+          "key": "46-5c4a76a47db7",
+          "fetched_at": "2026-11-05T08:20:05.949076+00:00"
+        },
+        {
+          "url": "https://www.stcn.com/live/video-detail/26621.html",
+          "status": 200,
+          "error": null,
+          "key": "46-9f782666e6cb",
+          "fetched_at": "2026-11-05T08:20:07.054103+00:00"
+        },
+        {
+          "url": "https://www.stcn.com/",
+          "status": 200,
+          "error": null,
+          "key": "46-a72be2be72bf",
+          "fetched_at": "2026-11-05T08:20:02.061625+00:00"
+        }
+      ]
+    },
+    {
+      "name": "中国基金报",
+      "row": 47,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P1",
+      "notes": "仅采信评论/深度观点",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.chnfund.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "47-f8b3ecf1a8d3",
+      "content_result": "中国基金报公开文章正文",
+      "conclusion": "可获得时分，但尚无足够证据确认时区。",
+      "publication_raw": "2026-11-04 21:01",
+      "publication_field": "页面发布时间",
+      "timezone_evidence": null,
+      "time_kind": "naive",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.chnfund.com/article/AR9514d076-c488-2760-e222-3a24b8361063",
+      "sample_title": "后市怎么走？多家基金公司研判 中国基金报",
+      "sample_fetched_at": "2026-11-05T08:20:06.731404+00:00",
+      "sample_evidence_file": "raw/47-f8b3ecf1a8d3.json",
+      "sample_sha256": "b585c6148116e449ef69081b7b7b9ff5365327a3605e9ea0e8cd543a437324a3",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.chnfund.com/",
+          "status": 200,
+          "error": null,
+          "key": "47-97b69c087d34",
+          "fetched_at": "2026-11-05T08:20:04.844130+00:00"
+        },
+        {
+          "url": "https://www.chnfund.com/article/AR9514d076-c488-2760-e222-3a24b8361063",
+          "status": 200,
+          "error": null,
+          "key": "47-f8b3ecf1a8d3",
+          "fetched_at": "2026-11-05T08:20:06.731404+00:00"
+        },
+        {
+          "url": "https://www.chnfund.com/article/AR9fc4c1bc-e2e5-3b14-ecc5-3a239cfc2042",
+          "status": 200,
+          "error": null,
+          "key": "47-6020fee34ca1",
+          "fetched_at": "2026-11-05T08:20:05.949186+00:00"
+        }
+      ]
+    },
+    {
+      "name": "经济观察报",
+      "row": 48,
+      "category": "财经媒体",
+      "scope": "机构级",
+      "level": "P2",
+      "notes": "仅采信评论/深度观点；",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.eeo.com.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "48-561c00e127c3",
+      "content_result": "经济观察网公开文章正文",
+      "conclusion": "可获得时分，但尚无足够证据确认时区。",
+      "publication_raw": "2026-11-02 18:25",
+      "publication_field": "页面发布时间",
+      "timezone_evidence": null,
+      "time_kind": "naive",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "http://www.eeo.com.cn/2026/1102/1082304.shtml",
+      "sample_title": "经济大省三季报：广东有望时隔四年实现GDP增速目标、湖南跌至十一位 - 经济观察网 － 专业财经新闻网站",
+      "sample_fetched_at": "2026-11-05T08:20:09.706799+00:00",
+      "sample_evidence_file": "raw/48-561c00e127c3.json",
+      "sample_sha256": "abf569fc70cf2e74eddeea2991723eb0f94a62ac4a7f073404e5f9acdd900678",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.eeo.com.cn/",
+          "status": 200,
+          "error": null,
+          "key": "48-3c2cf91aa7a5",
+          "fetched_at": "2026-11-05T08:20:05.093137+00:00"
+        },
+        {
+          "url": "http://www.eeo.com.cn/2026/1102/1082304.shtml",
+          "status": 200,
+          "error": null,
+          "key": "48-561c00e127c3",
+          "fetched_at": "2026-11-05T08:20:09.706799+00:00"
+        },
+        {
+          "url": "http://www.eeo.com.cn/2026/1105/1085051.shtml",
+          "status": 200,
+          "error": null,
+          "key": "48-9dddcd8d489f",
+          "fetched_at": "2026-11-05T08:20:06.486854+00:00"
+        }
+      ]
+    },
+    {
+      "name": "IDC",
+      "row": 49,
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.idc.com/resource-center/press-releases/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "49-ec99b1686173",
+      "content_result": "官方公开新闻稿正文",
+      "conclusion": "新闻稿页面的 datePublished 可读；只适用于公开稿件，不代表付费研究报告可访问。",
+      "publication_raw": "2026-10-29T03:39:18+00:00",
+      "publication_field": "新闻稿 JSON-LD WebPage.datePublished",
+      "timezone_evidence": "发布时间自身包含 +00:00；与 dateModified 分开",
+      "time_kind": "iso",
+      "published_utc": "2026-10-29T03:39:18Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.idc.com/resource-center/press-releases/%e7%ac%ac11%e5%b1%8a2026-idc%e4%b8%ad%e5%9b%bdcio%e5%b3%b0%e4%bc%9a%e5%9c%86%e6%bb%a1%e8%90%bd%e5%b9%95%ef%bc%8c%e6%9c%aa%e6%9d%a5%e4%bc%81%e4%b8%9a%e5%a4%a7%e5%a5%96-%e5%8d%93/",
+      "sample_title": "第11届2026 IDC中国CIO峰会圆满落幕，未来企业大奖——卓越奖荣耀揭晓！ - IDC",
+      "sample_fetched_at": "2026-11-05T08:20:12.756332+00:00",
+      "sample_evidence_file": "raw/49-ec99b1686173.json",
+      "sample_sha256": "cf4260941c3be2288d220d94c8700d3100b77fb965c55cad3faff34676508c15",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.idc.com/resource-center/press-releases/idc-futurescape-2027%e5%b9%b4%e5%ba%a6%e9%a2%84%e6%b5%8b%ef%bc%9a2029%e5%b9%b4%ef%bc%8c60%e7%9a%84%e4%bc%81%e4%b8%9a%e5%a4%9a%e6%95%b0%e4%b8%9a%e5%8a%a1%e6%b5%81%e7%a8%8b%e5%b0%86ai%e4%bc%98%e5%85%88/",
+          "status": 200,
+          "error": null,
+          "key": "49-e15c71c53244",
+          "fetched_at": "2026-11-05T08:23:38.991137+00:00"
+        },
+        {
+          "url": "https://www.idc.com/resource-center/press-releases/",
+          "status": 200,
+          "error": null,
+          "key": "49-4f5b9c6c05bc",
+          "fetched_at": "2026-11-05T08:20:05.651251+00:00"
+        },
+        {
+          "url": "https://www.idc.com/resource-center/press-releases/%e7%ac%ac11%e5%b1%8a2026-idc%e4%b8%ad%e5%9b%bdcio%e5%b3%b0%e4%bc%9a%e5%9c%86%e6%bb%a1%e8%90%bd%e5%b9%95%ef%bc%8c%e6%9c%aa%e6%9d%a5%e4%bc%81%e4%b8%9a%e5%a4%a7%e5%a5%96-%e5%8d%93/",
+          "status": 200,
+          "error": null,
+          "key": "49-ec99b1686173",
+          "fetched_at": "2026-11-05T08:20:12.756332+00:00"
+        },
+        {
+          "url": "https://www.idc.com/resource-center/2025-ceo-priorities/",
+          "status": 200,
+          "error": null,
+          "key": "49-86ab114ab240",
+          "fetched_at": "2026-11-05T08:20:10.589903+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Counterpoint",
+      "row": 50,
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://counterpointresearch.com/insights"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "50-a9ddedb269e7",
+      "content_result": "官方公开研究解读正文",
+      "conclusion": "两篇公开研究解读的 Article 发布时间带 Z；付费报告不在本轮验证范围内。",
+      "publication_raw": "2026-11-05T05:48:00.659Z",
+      "publication_field": "Article.datePublished / article:published_time",
+      "timezone_evidence": "发布时间自身包含 Z（UTC）",
+      "time_kind": "iso",
+      "published_utc": "2026-11-05T05:48:00.659000Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://counterpointresearch.com/en/insights/dram-super-cycle-nears-dollar-200b",
+      "sample_title": "Q3 2026 DRAM Super-Cycle Nears $200B: Samsung Holds No. 1 with 38%, SK hynix Gains",
+      "sample_fetched_at": "2026-11-05T08:23:38.991999+00:00",
+      "sample_evidence_file": "raw/50-a9ddedb269e7.json",
+      "sample_sha256": "c4235c87c65bbbb0aefdcfbeb744bca388d660d21c55ab230a95a3918ae559c2",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://counterpointresearch.com/insights",
+          "status": 200,
+          "error": null,
+          "key": "50-12b1415af6c7",
+          "fetched_at": "2026-11-05T08:20:05.673360+00:00"
+        },
+        {
+          "url": "https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-japan-cloud-and-datacenter-convention-2026",
+          "status": 200,
+          "error": null,
+          "key": "50-26e663b1d049",
+          "fetched_at": "2026-11-05T08:20:16.436890+00:00"
+        },
+        {
+          "url": "https://counterpointresearch.com/en/insights/meet-counterpoint-research-at-mvno-nation-europe-2026",
+          "status": 200,
+          "error": null,
+          "key": "50-71ac0ceec087",
+          "fetched_at": "2026-11-05T08:20:18.371011+00:00"
+        },
+        {
+          "url": "https://counterpointresearch.com/en/insights/dram-super-cycle-nears-dollar-200b",
+          "status": 200,
+          "error": null,
+          "key": "50-a9ddedb269e7",
+          "fetched_at": "2026-11-05T08:23:38.991999+00:00"
+        },
+        {
+          "url": "https://counterpointresearch.com/en/insights/display-equipment-capex-to-fall-49-percent-in-2027-as-sunic-system",
+          "status": 200,
+          "error": null,
+          "key": "50-a42a03cb2d12",
+          "fetched_at": "2026-11-05T08:23:39.114232+00:00"
+        }
+      ]
+    },
+    {
+      "name": "TrendForce集邦",
+      "row": 51,
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.trendforce.com/presscenter/news"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "51-8152c3550192",
+      "content_result": "官方公开研究新闻稿正文",
+      "conclusion": "两个 presscenter 样本均有带时区发布时间；不等于付费报告全文可抓取。",
+      "publication_raw": "2026-11-03T18:15:20+08:00",
+      "publication_field": "TechArticle.datePublished",
+      "timezone_evidence": "发布时间自身包含 +08:00",
+      "time_kind": "iso",
+      "published_utc": "2026-11-03T10:15:20Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.trendforce.com/presscenter/news/20261103-13294.html",
+      "sample_title": "Marvell’s Acquisition of Lumentum to Unite Optical and Electronic Capabilities, Potentially Challenging Broadcom’s Market Leadership, Says TrendForce",
+      "sample_fetched_at": "2026-11-05T08:23:33.405645+00:00",
+      "sample_evidence_file": "raw/51-8152c3550192.json",
+      "sample_sha256": "dd0ab90169035f311609d40db031d7cff710c506c69a185c89ae9ebc4fd9fd63",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.trendforce.com/presscenter/news/20261102-13291.html",
+          "status": 200,
+          "error": null,
+          "key": "51-999384db80fd",
+          "fetched_at": "2026-11-05T08:23:33.405767+00:00"
+        },
+        {
+          "url": "https://www.trendforce.com/research/green-energy-storage",
+          "status": 200,
+          "error": null,
+          "key": "51-6186ec1d2298",
+          "fetched_at": "2026-11-05T08:20:09.706702+00:00"
+        },
+        {
+          "url": "https://www.trendforce.com/presscenter/news/20261103-13294.html",
+          "status": 200,
+          "error": null,
+          "key": "51-8152c3550192",
+          "fetched_at": "2026-11-05T08:23:33.405645+00:00"
+        },
+        {
+          "url": "https://www.trendforce.com/research/st-green-energy-storage",
+          "status": 200,
+          "error": null,
+          "key": "51-4491ccd26590",
+          "fetched_at": "2026-11-05T08:20:12.761263+00:00"
+        },
+        {
+          "url": "https://www.trendforce.com/presscenter/news",
+          "status": 200,
+          "error": null,
+          "key": "51-952a8f9d9508",
+          "fetched_at": "2026-11-05T08:20:05.817694+00:00"
+        }
+      ]
+    },
+    {
+      "name": "高工锂电GGII",
+      "row": 52,
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.gg-lb.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "unavailable",
+      "sample_key": "52-1f3f965315fd",
+      "content_result": "HTTPS 握手失败，HTTP 返回 502",
+      "conclusion": "本轮未取得高工锂电正文；需核对当前官方发布入口及网络可达性。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "本轮未取得可用正文",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "http://www.gg-lb.com/",
+      "sample_title": "",
+      "sample_fetched_at": "2026-11-05T08:23:33.773551+00:00",
+      "sample_evidence_file": "raw/52-1f3f965315fd.json",
+      "sample_sha256": "3d32554b01559bc5e85b256b87dd15f777349171c77ff273c928a8696be204c9",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.gg-lb.com/",
+          "status": null,
+          "error": "URLError: <urlopen error [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1010)>",
+          "key": "52-561301b45b19",
+          "fetched_at": "2026-11-05T08:20:05.966412+00:00"
+        },
+        {
+          "url": "http://www.gg-lb.com/",
+          "status": 502,
+          "error": null,
+          "key": "52-1f3f965315fd",
+          "fetched_at": "2026-11-05T08:23:33.773551+00:00"
+        }
+      ]
+    },
+    {
+      "name": "SMM上海有色",
+      "row": 53,
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://news.smm.cn/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "53-c392b4c46cf8",
+      "content_result": "SMM 自有公开日评正文",
+      "conclusion": "source 为 SMM，JSON-LD 与 pubTimestamp 一致；转载及付费稿需另行区分。",
+      "publication_raw": "2026-11-05T15:32:33+08:00",
+      "publication_field": "NewsArticle.datePublished / newsDetail.pubTimestamp",
+      "timezone_evidence": "发布时间含 +08:00；Unix 秒 1793863953 交叉核对",
+      "time_kind": "iso",
+      "published_utc": "2026-11-05T07:32:33Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://news.smm.cn/news/104207222",
+      "sample_title": "美元两连跌 金属开启“狂欢”模式 金银铂钯暴力拉升 沪镍紧随其后【SMM日评】__上海有色网",
+      "sample_fetched_at": "2026-11-05T08:22:38.201647+00:00",
+      "sample_evidence_file": "raw/53-c392b4c46cf8.json",
+      "sample_sha256": "a04570664cd07edf7094b8d10131899bfd23aa53981e8e995540bcdfd561d9a3",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://news.smm.cn/news/104207222",
+          "status": 200,
+          "error": null,
+          "key": "53-c392b4c46cf8",
+          "fetched_at": "2026-11-05T08:22:38.201647+00:00"
+        },
+        {
+          "url": "https://news.smm.cn/",
+          "status": 200,
+          "error": null,
+          "key": "53-2102984c3afb",
+          "fetched_at": "2026-11-05T08:22:36.710001+00:00"
+        },
+        {
+          "url": "https://news.smm.cn/news/104205434",
+          "status": 200,
+          "error": null,
+          "key": "53-7d75eb988843",
+          "fetched_at": "2026-11-05T08:22:39.253574+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Gartner",
+      "row": 54,
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.gartner.com/en/newsroom"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "unavailable",
+      "sample_key": "54-08375f5318c2",
+      "content_result": "HTTP 403 验证页",
+      "conclusion": "公开 newsroom 请求返回 Just a moment 验证页面，未取得正文；未绕过验证。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "本轮未取得可用正文",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://www.gartner.com/en/newsroom",
+      "sample_title": "Just a moment... | Gartner",
+      "sample_fetched_at": "2026-11-05T08:20:09.708863+00:00",
+      "sample_evidence_file": "raw/54-08375f5318c2.json",
+      "sample_sha256": "e62b40f0a470fa1167844917970e5d45ca8cc83bff90d0f5fead47d48c109535",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.gartner.com/en/newsroom",
+          "status": 403,
+          "error": null,
+          "key": "54-08375f5318c2",
+          "fetched_at": "2026-11-05T08:20:09.708863+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Omdia",
+      "row": 55,
+      "category": "产业研究机构",
+      "scope": "机构级",
+      "level": "P2",
+      "notes": "仅采信其预测(观点)；行业公认数据发布方(非榜单依据)",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://omdia.tech.informa.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "unavailable",
+      "sample_key": "55-15ebcd8d28cc",
+      "content_result": "HTTP 403 验证页",
+      "conclusion": "入口返回 Just a moment 验证页面，未取得正文；未绕过验证。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "本轮未取得可用正文",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://omdia.tech.informa.com/",
+      "sample_title": "Just a moment...",
+      "sample_fetched_at": "2026-11-05T08:20:10.026943+00:00",
+      "sample_evidence_file": "raw/55-15ebcd8d28cc.json",
+      "sample_sha256": "c2a6c141719780e3b63720450dbdc49a078ee4b6edc92d9144f8693f173869e0",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://omdia.tech.informa.com/",
+          "status": 403,
+          "error": null,
+          "key": "55-15ebcd8d28cc",
+          "fetched_at": "2026-11-05T08:20:10.026943+00:00"
+        }
+      ]
+    },
+    {
+      "name": "猛哥看商业",
+      "row": 56,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P0",
+      "notes": "档位随机构级；偏投资操作向·需合规过滤；媒体id=1844177",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.jintiankansha.com/column/AqFc8UztcV"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "56-c056169aad1e",
+      "content_result": "新浪公开转载猛哥看商业分析正文",
+      "conclusion": "今天看啥要求会员，已按用户要求跳过。新浪替代页面明确署名猛哥看商业；采用与可见发布时间一致的 bytedance:published_time。article:published_time 为次日值，与可见时间冲突，不采用。只确认新浪发布时刻。",
+      "publication_raw": "2026-04-26T19:58:50+08:00",
+      "publication_field": "bytedance:published_time（与页面 2026年04月26日 19:58 一致）",
+      "timezone_evidence": "所选发布字段自身含 +08:00；不从所在地推断时区",
+      "time_kind": "iso",
+      "published_utc": "2026-04-26T11:58:50Z",
+      "access_mode": "公开 HTTP，无需登录；会员聚合路线跳过",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "56-f8d366f10492",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-26/doc-inhvvqse9881131.shtml",
+      "sample_title": "【国泰海通消费】季报业绩趋势|国泰_新浪财经_新浪网",
+      "sample_fetched_at": "2026-11-05T09:13:56.931825+00:00",
+      "sample_evidence_file": "raw/56-c056169aad1e.json",
+      "sample_sha256": "b4eb7026f24c1f7b220570e3b3b418170ec4ce922b0a18dd338220fd2823d711",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://finance.sina.com.cn/stock/relnews/cn/2026-04-26/doc-inhvvqse9881131.shtml",
+          "status": 200,
+          "error": null,
+          "key": "56-c056169aad1e",
+          "fetched_at": "2026-11-05T09:13:56.931825+00:00"
+        },
+        {
+          "url": "https://www.jintiankansha.com/column/AqFc8UztcV",
+          "status": 200,
+          "error": null,
+          "key": "56-f8d366f10492",
+          "fetched_at": "2026-11-05T08:21:18.739643+00:00"
+        }
+      ]
+    },
+    {
+      "name": "覃汉研究笔记",
+      "row": 57,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P0",
+      "notes": "档位随机构级；偏投资操作向·需合规过滤；媒体id=2849717",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.haotouxt.com/author-13147"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "time_pending",
+      "sample_key": "57-1d04a2da2bfa",
+      "content_result": "好投汇转载“覃汉研究笔记”正文",
+      "conclusion": "好投汇样本仅显示01-22 10:13，缺完整年份；时区已按用户确认采用UTC+8。仍需取得完整发布日期，不能按采集年份补齐。",
+      "publication_raw": "01-22 10:13",
+      "publication_field": "平台可见时间",
+      "timezone_evidence": null,
+      "time_kind": "partial",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.haotouxt.com/article/18288",
+      "sample_title": "如何定量衡量地缘政治因子？——寻找共识系列二-好投汇-带你学财富管理",
+      "sample_fetched_at": "2026-11-05T08:21:20.091432+00:00",
+      "sample_evidence_file": "raw/57-1d04a2da2bfa.json",
+      "sample_sha256": "8f54a56963000764caea1772be732b07fa63d98e72f85e20986996794eb4ffdd",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.haotouxt.com/author-13147",
+          "status": 200,
+          "error": null,
+          "key": "57-336b6c47b265",
+          "fetched_at": "2026-11-05T08:21:18.739864+00:00"
+        },
+        {
+          "url": "https://www.haotouxt.com/article/18288",
+          "status": 200,
+          "error": null,
+          "key": "57-1d04a2da2bfa",
+          "fetched_at": "2026-11-05T08:21:20.091432+00:00"
+        }
+      ]
+    },
+    {
+      "name": "王涵论宏观",
+      "row": 58,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P0",
+      "notes": "档位随机构级；偏投资操作向·需合规过滤；媒体id=1838091",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.xyzq.com.cn/xysec/info/article/f7e4e74c9e8b4bec98e466e66fbcf0f7",
+        "https://finance.sina.com.cn/wm/2026-05-14/doc-inhxwzrt9734431.shtml"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "58-efbd0f4bc0ce",
+      "content_result": "新浪转载“王涵论宏观”正文",
+      "conclusion": "新浪正文署名王涵论宏观；与页面时分吻合的 bytedance:published_time 已包含 +08:00，采用该发布字段，不用次日更新字段。",
+      "publication_raw": "2026-05-14T23:55:00+08:00",
+      "publication_field": "bytedance:published_time（与可见年月日时分匹配）",
+      "timezone_evidence": "所选发布字段本身带 +08:00；未使用更新时间或冲突的另一元数据。",
+      "time_kind": "iso",
+      "published_utc": "2026-05-14T15:55:00Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-05-14 23:55",
+      "timezone_evidence_type": "explicit_offset",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://finance.sina.com.cn/wm/2026-05-14/doc-inhxwzrt9734431.shtml",
+      "sample_title": "兴证王涵|霸权边界的重构|美国_新浪财经_新浪网",
+      "sample_fetched_at": "2026-11-05T08:21:19.468301+00:00",
+      "sample_evidence_file": "raw/58-efbd0f4bc0ce.json",
+      "sample_sha256": "dbf0036c8b157d1b32ede449b60c896e8af3480b049b4cbfe540f95cbc3f45f2",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://finance.sina.com.cn/wm/2026-05-14/doc-inhxwzrt9734431.shtml",
+          "status": 200,
+          "error": null,
+          "key": "58-efbd0f4bc0ce",
+          "fetched_at": "2026-11-05T08:21:19.468301+00:00"
+        },
+        {
+          "url": "https://finance.sina.com.cn/stock/usstock/c/2026-05-15/doc-inhxxfxu8345500.shtml",
+          "status": 200,
+          "error": null,
+          "key": "58-9b9e4bd65cde",
+          "fetched_at": "2026-11-05T08:21:20.730847+00:00"
+        },
+        {
+          "url": "https://www.xyzq.com.cn/xysec/info/article/f7e4e74c9e8b4bec98e466e66fbcf0f7",
+          "status": 200,
+          "error": null,
+          "key": "58-b458a41b7742",
+          "fetched_at": "2026-11-05T08:21:18.739906+00:00"
+        }
+      ]
+    },
+    {
+      "name": "草叔消费升级研究",
+      "row": 59,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P1",
+      "notes": "档位随机构级；偏投资操作向·需合规过滤；媒体id=1875161",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://finance.sina.com.cn/stock/relnews/cn/2026-02-02/doc-inhkkzkk8072632.shtml"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "follow": false,
+      "status": "platform",
+      "sample_key": "59-e36c5bdf8405",
+      "content_result": "新浪转载“草叔消费升级研究”正文",
+      "conclusion": "新浪正文署名草叔消费升级研究；bytedance:published_time 与可见时分一致并含 +08:00，保留其中的秒，不以更新时间替代。",
+      "publication_raw": "2026-02-02T10:16:42+08:00",
+      "publication_field": "bytedance:published_time（与可见年月日时分匹配）",
+      "timezone_evidence": "所选发布字段本身带 +08:00；未使用更新时间或冲突的另一元数据。",
+      "time_kind": "iso",
+      "published_utc": "2026-02-02T02:16:42Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-02-02 10:16",
+      "timezone_evidence_type": "explicit_offset",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://finance.sina.com.cn/stock/relnews/cn/2026-02-02/doc-inhkkzkk8072632.shtml",
+      "sample_title": "【东吴商社吴劲草】2026年消费-商贸零售&社会服务业的八大预测|分析师_新浪财经_新浪网",
+      "sample_fetched_at": "2026-11-05T08:22:36.710357+00:00",
+      "sample_evidence_file": "raw/59-e36c5bdf8405.json",
+      "sample_sha256": "464d62a9434f4347cc10d86dfb7d4b16db34c848fe67268d2fbaeda8f3a5a2f1",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://finance.sina.com.cn/stock/relnews/cn/2026-02-02/doc-inhkkzkk8072632.shtml",
+          "status": 200,
+          "error": null,
+          "key": "59-e36c5bdf8405",
+          "fetched_at": "2026-11-05T08:22:36.710357+00:00"
+        }
+      ]
+    },
+    {
+      "name": "远川研究所",
+      "row": 60,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P1",
+      "notes": "需外接；需运营核实认证主体",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.weibo.com/u/7467554874"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "ready",
+      "sample_key": "60-7a8eeddc24a9",
+      "content_result": "远川研究所微博头条文章正文可读",
+      "conclusion": "已读远川研究所头条文章全文；关联微博指向同一篇文章，并显示 26-11-4 13:53。按用户确认的中国标准时间解释，时区不再待核实。匿名 HTTP 仍需开发浏览器采集路线。",
+      "publication_raw": "2026-11-04 13:53",
+      "publication_field": "关联微博发布时间；文章页 11-04 13:53",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-11-04T05:53:00Z",
+      "browser_sample_file": "browser-access/60.json",
+      "access_mode": "复用现有微博登录状态",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "60-7a8eeddc24a9",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "26-11-4 13:53",
+      "timezone_evidence_type": "user_confirmed",
+      "time_evidence_file": "time-policy-review/60-post.json",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "minute",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://weibo.com/ttarticle/p/show?id=2309405361528970280964",
+      "sample_title": "吉利的下一轮增长，从何而来？",
+      "sample_fetched_at": "2026-11-05T09:15:31.829Z",
+      "sample_evidence_file": "browser-access/60.json",
+      "sample_sha256": "9f7c89f2f04cafddf16673b7b762e697e8d02360fb77cfa18d09051b04b19270",
+      "browser_observation_file": "browser-access/60.json",
+      "tested_urls": [
+        {
+          "url": "https://www.weibo.com/u/7467554874",
+          "status": 200,
+          "error": null,
+          "key": "60-7a8eeddc24a9",
+          "fetched_at": "2026-11-05T08:21:18.740331+00:00"
+        }
+      ]
+    },
+    {
+      "name": "格隆汇",
+      "row": 61,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P1",
+      "notes": "需外接；需运营核实认证主体；原创占比约1/3；2026-05为最新可查届次",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.gelonghui.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "identity_pending",
+      "sample_key": "61-5e8442c28f68",
+      "content_result": "格隆汇平台专栏正文及时间可读",
+      "conclusion": "样本作者为“山顶的太阳”（专栏 624588），另一篇来源为中国人民银行，不是格隆汇机构原创；不能因此认定榜单机构已验证。须定位格隆汇原创账号。",
+      "publication_raw": 1793846568,
+      "publication_field": "articleInfo.createTimestamp（样本平台文章）",
+      "timezone_evidence": "Unix 秒与样本页面发布时间吻合；仅说明该专栏文章，不说明机构原创",
+      "time_kind": "unix_s",
+      "published_utc": "2026-11-05T02:42:48Z",
+      "status_label": "目标来源身份或入口待确认",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://m.gelonghui.com/p/7299734",
+      "sample_title": "“蓝色浪潮”席卷国会，韩股“躺枪”！",
+      "sample_fetched_at": "2026-11-05T08:29:46.940859+00:00",
+      "sample_evidence_file": "raw/61-5e8442c28f68.json",
+      "sample_sha256": "ff1947e75a32eb08dc26e908e684e355caede1d1dfc3e0774e209f46d46acd55",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.gelonghui.com/",
+          "status": 200,
+          "error": null,
+          "key": "61-a7f7677d5d9c",
+          "fetched_at": "2026-11-05T08:20:10.352347+00:00"
+        },
+        {
+          "url": "https://m.gelonghui.com/p/7299734",
+          "status": 200,
+          "error": null,
+          "key": "61-5e8442c28f68",
+          "fetched_at": "2026-11-05T08:29:46.940859+00:00"
+        },
+        {
+          "url": "https://www.gelonghui.com/p/7299734.html",
+          "status": 200,
+          "error": null,
+          "key": "61-041c5191694e",
+          "fetched_at": "2026-11-05T08:20:14.055769+00:00"
+        },
+        {
+          "url": "https://www.gelonghui.com/p/7304832.html",
+          "status": 200,
+          "error": null,
+          "key": "61-54efdee6495f",
+          "fetched_at": "2026-11-05T08:20:11.945885+00:00"
+        }
+      ]
+    },
+    {
+      "name": "泽平宏观(任泽平)",
+      "row": 62,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P1",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；荣誉为2015-2017历史届次",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://qnmlgb.tech/authors/60d88c1fbddcdb42df9e8766"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "time_pending",
+      "sample_key": "62-80ba6ef4051a",
+      "content_result": "瓦斯阅读的泽平宏观镜像内容",
+      "conclusion": "瓦斯阅读镜像正文可读，时区已按用户确认采用UTC+8；尚未取得可核对的完整发布年月日时分。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://qnmlgb.tech/articles/6adb26db003b07f9afb1c995",
+      "sample_title": "近期市场剧烈波动，悲观情绪蔓延，但趋势大于波动，我认为，此刻更需看清趋势：市场已基本见底，酝酿新一轮反弹，结构性行情展开。 1、政策底和监管底明确，市场底信号有望出现。“政策底”出现，929新政拉开新一轮稳增长序幕：央行下调PSL利率、将“六张网”建设纳入支持范围，新增科技创新再贷款额度；财政部推出首套房贷贴息政策；多地优化房地产限购，多部门共同释放稳增长信号。之后是“监管底”，面对市场急跌、监管层限制卖出、鼓励回购、引导长期资金入市。“市场底”值得期待：当前部分龙头公司估值已处于低位，不能说是遍地黄金，但中长期配置价值凸显，政策底、监管底之后，市场底值得期待。 2、当前经济出现新一轮下行压力，但结构分化，AI科技的基本面向好。二季度以来经济整体承压，内需偏弱、消费投资下滑。但分化明显：AI科技相关的出口和订单火爆，而传统建筑、家居、餐饮持续下滑。近期我调研了多家半导体封测、材料、晶圆制造及GPU企业，订单普遍排到了2027年后。本轮市场调整更多是估值消化与情绪释放，并非基本面恶化。美股科技板块屡创新高，印证了AI科技是全球范围的长期成长主线。 3、短期市场有望迎来修复反弹，中期将展开结构性行情。经历快速下跌后，市场情绪存在内在的修复需求，叠加政策持续发力显效，短期有望迎来修复性反弹。中期市场不会出现全面普涨，而是围绕科技行业展开的结构性行情。这一轮行情的核心驱动力，是新质生产力发展与大国科技博弈，产业趋势的力量远大于短期情绪波动。 4、关注科技主线和强者恒强。强者恒强，重点关注未来产业和优质龙头，AI行业会进入淘汰赛。未来国产大模型和GPU公司最终大概率只有前两三名能活下去，并占据绝大部分份额，这与比亚迪、台积电、英伟达的格局如出一辙。机会总是看不见、看不起、看不懂、来不及。行情总是在绝望中重生，争议中上涨，狂欢中崩盘。关键时期，要与时代的趋势站在一起，与国家的战略站在一起，才能拿到大结果。 - 泽平宏观 - 瓦斯阅读",
+      "sample_fetched_at": "2026-11-05T08:21:20.197282+00:00",
+      "sample_evidence_file": "raw/62-80ba6ef4051a.json",
+      "sample_sha256": "7efe17b55ce559b155980400af0459140e5c566c2154ca59f19be7a93910c85b",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://qnmlgb.tech/authors/60d88c1fbddcdb42df9e8766",
+          "status": 200,
+          "error": null,
+          "key": "62-e7d2a678886a",
+          "fetched_at": "2026-11-05T08:21:18.740588+00:00"
+        },
+        {
+          "url": "https://qnmlgb.tech/articles/6adb26db003b07f9afb1c995",
+          "status": 200,
+          "error": null,
+          "key": "62-80ba6ef4051a",
+          "fetched_at": "2026-11-05T08:21:20.197282+00:00"
+        }
+      ]
+    },
+    {
+      "name": "追寻价值之路",
+      "row": 63,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "方正未进机构级名单·档位待补强；偏投资操作向·需合规过滤；媒体id=1837989",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.nbd.com.cn/articles/2022-02-16/2126103.html"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "follow": false,
+      "status": "identity_pending",
+      "sample_key": "63-1af16a05fcbf",
+      "content_result": "每经网提及“追寻价值之路”的旧研究转载",
+      "conclusion": "只确认 2022 年方正策略相关旧文章；未确定当前原始账号入口、身份连续性及 2026 年文章。不能将提及账号当作直接接入成功。",
+      "publication_raw": null,
+      "publication_field": null,
+      "timezone_evidence": null,
+      "time_kind": null,
+      "published_utc": null,
+      "status_label": "目标来源身份或入口待确认",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://www.nbd.com.cn/articles/2022-02-16/2126103.html",
+      "sample_title": "策略研报：反弹买什么？【方正策略团队】 | 每经网",
+      "sample_fetched_at": "2026-11-05T08:22:36.710485+00:00",
+      "sample_evidence_file": "raw/63-1af16a05fcbf.json",
+      "sample_sha256": "6a48cf802e9094071b46e5adf0e54f90c9b35573a5a9f2a926538ccfd6a2a2a4",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.nbd.com.cn/articles/2022-02-16/2126103.html",
+          "status": 200,
+          "error": null,
+          "key": "63-1af16a05fcbf",
+          "fetched_at": "2026-11-05T08:22:36.710485+00:00"
+        }
+      ]
+    },
+    {
+      "name": "吴晓波频道(吴晓波)",
+      "row": 64,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.jintiankansha.me/column/t5Jetcuhhe"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "64-d5fc35d47216",
+      "content_result": "搜狐吴晓波频道账号公开分析正文",
+      "conclusion": "搜狐账号 121956368 明确为吴晓波频道；正文、账号和 datePublished 已对应。采用用户确认的 UTC+8，不需要今天看啥会员。",
+      "publication_raw": "2026-09-04 13:56:35",
+      "publication_field": "datePublished；浏览器可见时间为 2026-09-04 13:56",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-09-04T05:56:35Z",
+      "access_mode": "公开 HTTP，无需登录；会员聚合路线跳过",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "64-6eee44a709fd",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-09-04 13:56:35",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "second",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://m.sohu.com/a/1071815605_121956368",
+      "sample_title": "吴晓波：我们为什么要做“青承社”_传承_企业_挑战",
+      "sample_fetched_at": "2026-11-05T09:13:56.932407+00:00",
+      "sample_evidence_file": "raw/64-d5fc35d47216.json",
+      "sample_sha256": "7022210350b6c06807428f1242762ad3e684d1c98941848150f2b35780da7b89",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://m.sohu.com/a/1071815605_121956368",
+          "status": 200,
+          "error": null,
+          "key": "64-d5fc35d47216",
+          "fetched_at": "2026-11-05T09:13:56.932407+00:00"
+        },
+        {
+          "url": "https://www.jintiankansha.me/column/t5Jetcuhhe",
+          "status": 200,
+          "error": null,
+          "key": "64-6eee44a709fd",
+          "fetched_at": "2026-11-05T08:21:18.740659+00:00"
+        }
+      ]
+    },
+    {
+      "name": "进击波财经(沈帅波)",
+      "row": 65,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.digitaling.com/people/articles/10471509"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "time_pending",
+      "sample_key": "65-18be8201d4f4",
+      "content_result": "数英认证作者“进击波财经”正文",
+      "conclusion": "数英认证作者10471509可对应，但样本只标2026-08-14，没有具体时分。时区按用户确认采用UTC+8，日期精度不足仍不能入库。",
+      "publication_raw": "2026-08-14",
+      "publication_field": "平台日期",
+      "timezone_evidence": null,
+      "time_kind": "date",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.digitaling.com/articles/1561594.html",
+      "sample_title": "再上央视，钟睒睒给平台经济留下三个巨大的问号 - 数英",
+      "sample_fetched_at": "2026-11-05T08:21:20.548812+00:00",
+      "sample_evidence_file": "raw/65-18be8201d4f4.json",
+      "sample_sha256": "db29dcf5f922c1a2caa4bd9441b9305da018c36927dc7681d7245d300668c3f9",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.digitaling.com/people/articles/10471509",
+          "status": 200,
+          "error": null,
+          "key": "65-604a1e6fae6f",
+          "fetched_at": "2026-11-05T08:21:18.740694+00:00"
+        },
+        {
+          "url": "https://www.digitaling.com/articles/1561594.html",
+          "status": 200,
+          "error": null,
+          "key": "65-18be8201d4f4",
+          "fetched_at": "2026-11-05T08:21:20.548812+00:00"
+        }
+      ]
+    },
+    {
+      "name": "洪灏",
+      "row": 66,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；荣誉为2017历史届次",
+      "issuer_news_count": 0,
+      "urls": [],
+      "discovery_status": "channel_not_yet_verified",
+      "status": "ready",
+      "sample_key": "66-f64e87df6420",
+      "content_result": "华尔街见闻洪灏署名的公开课程文字稿",
+      "conclusion": "浏览器动态加载后可读取实质分析文字，登录按钮仍在；完整课程视频另需购买，未访问付费内容。文章发布时间与作者列表中匹配该文章链接的 time 元素一致。样本为 2025 年，只证明有可用入口，未证明 2026 年覆盖。",
+      "publication_raw": "2025-05-29T12:41:51.000Z",
+      "publication_field": "article:published_time / 文章 time.datetime / 匹配链接的作者列表 time",
+      "timezone_evidence": "文章发布元数据含 Z，页面 time 为对应 +08:00 值",
+      "time_kind": "iso",
+      "published_utc": "2025-05-29T12:41:51Z",
+      "browser_sample_file": "browser-access/66.json",
+      "access_mode": "浏览器公开文字可读，无需登录",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "66-f64e87df6420",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://wallstreetcn.com/member/articles/3598484",
+      "sample_title": "美国经济&股市有哪些周期规律？「大师课入门串讲·综合策略06讲」 - 华尔街见闻",
+      "sample_fetched_at": "2026-11-05T09:14:48.208Z",
+      "sample_evidence_file": "browser-access/66.json",
+      "sample_sha256": "c25eb8970d5a5927b6e5d8da3abf0b801c94d5ad952abc851a0429e54f852640",
+      "browser_observation_file": "browser-access/66.json",
+      "tested_urls": [
+        {
+          "url": "https://wallstreetcn.com/member/articles/3598484",
+          "status": 500,
+          "error": null,
+          "key": "66-f64e87df6420",
+          "fetched_at": "2026-11-05T08:29:47.169134+00:00"
+        },
+        {
+          "url": "https://wallstreetcn.com/authors/134881",
+          "status": 200,
+          "error": null,
+          "key": "66-04255ea5a995",
+          "fetched_at": "2026-11-05T08:23:36.650360+00:00"
+        }
+      ]
+    },
+    {
+      "name": "管清友",
+      "row": 67,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；公众影响力型·研究榜单依据待补强",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.weibo.com/1226106902/profile"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "ready",
+      "sample_key": "67-83a9b67a0aea",
+      "content_result": "管清友微博评论和转载内容可读",
+      "conclusion": "微博现有登录态可用；发布时间链接的 title 为完整年月日时分，虽显示4小时前仍能读到精确字段。按用户确认的 UTC+8 换算。该样本含短评及转载，不能将转载部分冒充管清友原创，原油相关性须另行审核。",
+      "publication_raw": "2026-11-05 13:23",
+      "publication_field": "公开微博显示 26-11-5 13:23",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-11-05T05:23:00Z",
+      "browser_sample_file": "browser-access/67.json",
+      "access_mode": "复用现有微博登录状态",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "67-83a9b67a0aea",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-11-05 13:23",
+      "timezone_evidence_type": "user_confirmed",
+      "time_evidence_file": "time-policy-review/67-full-time.json",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "minute",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://weibo.com/1226106902/RpXSH8gEI",
+      "sample_title": "",
+      "sample_fetched_at": "2026-11-05T09:16:37.331Z",
+      "sample_evidence_file": "browser-access/67.json",
+      "sample_sha256": "8f77136757afd2e82d0954ccbeb9a03193a6bdb64dc933d179e6d1f0f76fc4ec",
+      "browser_observation_file": "browser-access/67.json",
+      "tested_urls": [
+        {
+          "url": "https://www.weibo.com/1226106902/profile",
+          "status": 200,
+          "error": null,
+          "key": "67-83a9b67a0aea",
+          "fetched_at": "2026-11-05T08:21:18.740784+00:00"
+        }
+      ]
+    },
+    {
+      "name": "付鹏",
+      "row": 68,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；公众影响力型·研究榜单依据待补强",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://wallstreetcn.com/authors/100001415753"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "ready",
+      "sample_key": "68-f26642f3f191",
+      "content_result": "华尔街见闻付鹏公开访谈文字稿",
+      "conclusion": "虽然链接含 premium，浏览器实际展示公开访谈文字，未要求登录或购买。文章发布时间与作者列表匹配链接一致；只验证这一公开样本，不代表其所有课程或付费文章开放。样本为 2025 年。",
+      "publication_raw": "2025-09-06T11:42:19.000Z",
+      "publication_field": "article:published_time / 文章 time.datetime / 匹配链接的作者列表 time",
+      "timezone_evidence": "文章发布元数据含 Z，页面 time 为对应 +08:00 值",
+      "time_kind": "iso",
+      "published_utc": "2025-09-06T11:42:19Z",
+      "browser_sample_file": "browser-access/68.json",
+      "access_mode": "浏览器公开文字可读，无需登录",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "68-f26642f3f191",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://wallstreetcn.com/premium/articles/3754240?layout=wscn-layout",
+      "sample_title": "对话付鹏：市场深刻变革！展望2025下半年最值得关注的“引爆点”？【付鹏说特别篇2】 - 华尔街见闻",
+      "sample_fetched_at": "2026-11-05T09:15:15.141Z",
+      "sample_evidence_file": "browser-access/68.json",
+      "sample_sha256": "f0bb0d5de5796acfdadef58121b383e2afba268b9e03c6bd29e7728eed42d7da",
+      "browser_observation_file": "browser-access/68.json",
+      "tested_urls": [
+        {
+          "url": "https://wallstreetcn.com/authors/100001415753",
+          "status": 200,
+          "error": null,
+          "key": "68-b295c562f77a",
+          "fetched_at": "2026-11-05T08:21:19.087877+00:00"
+        },
+        {
+          "url": "https://wallstreetcn.com/premium/articles/3754240?layout=wscn-layout",
+          "status": 500,
+          "error": null,
+          "key": "68-f26642f3f191",
+          "fetched_at": "2026-11-05T08:21:20.091631+00:00"
+        }
+      ]
+    },
+    {
+      "name": "秦朔朋友圈(秦朔)",
+      "row": 69,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "需外接；需运营核实认证主体；个人观点·无机构合规审核；商业评论·非证券研究；公众影响力型",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.cyzone.cn/author/1563266"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "69-d7b1c6db709a",
+      "content_result": "创业邦作者“秦朔朋友圈”文章正文",
+      "conclusion": "作者 ID 1563266 与文章作者一致；只能确定创业邦发布，未核实公众号最早首发。",
+      "publication_raw": 1789457001,
+      "publication_field": "文章对象 published_at",
+      "timezone_evidence": "Unix 秒表示 UTC 绝对时刻；不是对作者所在地时区的推断",
+      "time_kind": "unix_s",
+      "published_utc": "2026-09-15T07:23:21Z",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://www.cyzone.cn/article/846472.html",
+      "sample_title": "南北经济失衡的惯性，终于被打破了 - 创业邦",
+      "sample_fetched_at": "2026-11-05T08:21:20.091504+00:00",
+      "sample_evidence_file": "raw/69-d7b1c6db709a.json",
+      "sample_sha256": "ef4d5c13b9968cbcaeddc0869d56e0e1cef97d3691f5a09ea7a294e5c80a9ffc",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.cyzone.cn/article/846472.html",
+          "status": 200,
+          "error": null,
+          "key": "69-d7b1c6db709a",
+          "fetched_at": "2026-11-05T08:21:20.091504+00:00"
+        },
+        {
+          "url": "https://www.cyzone.cn/author/1563266",
+          "status": 200,
+          "error": null,
+          "key": "69-6ccbcc950dcd",
+          "fetched_at": "2026-11-05T08:21:19.104643+00:00"
+        }
+      ]
+    },
+    {
+      "name": "集微网",
+      "row": 70,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "需外接；需运营核实认证主体；产业垂直媒体·缺账号级榜单·依据待补强",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.ijiwei.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "time_pending",
+      "sample_key": "70-2f46ac2ecbc0",
+      "content_result": "爱集微公开新闻正文",
+      "conclusion": "样本署名爱集微，页面只显示11-03 14:55，缺完整年份证据。时区按用户确认采用UTC+8；仍需取得包含年份的发布字段。",
+      "publication_raw": "11-03 14:55",
+      "publication_field": "页面可见时间",
+      "timezone_evidence": null,
+      "time_kind": "partial",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.ijiwei.com/n/1134668",
+      "sample_title": "科技史上第二大收购案：Marvell 1150 亿美元收购 Lumentum，押注AI光互联",
+      "sample_fetched_at": "2026-11-05T08:20:12.396028+00:00",
+      "sample_evidence_file": "raw/70-2f46ac2ecbc0.json",
+      "sample_sha256": "dd963f0f6d6583f2d6f2ccd44dbff78f31f6eb091c646e5f361619a18a6b35a5",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.ijiwei.com/n/1135545",
+          "status": 200,
+          "error": null,
+          "key": "70-b474e64644ce",
+          "fetched_at": "2026-11-05T08:20:13.679075+00:00"
+        },
+        {
+          "url": "https://www.ijiwei.com/n/1134668",
+          "status": 200,
+          "error": null,
+          "key": "70-2f46ac2ecbc0",
+          "fetched_at": "2026-11-05T08:20:12.396028+00:00"
+        },
+        {
+          "url": "https://www.ijiwei.com/",
+          "status": 200,
+          "error": null,
+          "key": "70-1ba0911bedd0",
+          "fetched_at": "2026-11-05T08:20:10.353416+00:00"
+        }
+      ]
+    },
+    {
+      "name": "半导体行业观察",
+      "row": 71,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "需外接；需运营核实认证主体；缺账号级榜单·依据待补强",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://community.aijishu.com/u/semiinsights"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "time_pending",
+      "sample_key": "71-15d682cba618",
+      "content_result": "极术社区“半导体行业观察”正文",
+      "conclusion": "已按建议补查较早分析文章《从GPU、LPU到MPU》：公开正文可读，但页面仍只显示10月26日，已检查的时间属性和元数据未提供具体时分。时区按用户确认的 UTC+8；这个样本仍缺精确发布时间，不能因一篇缺失而认定整站无合格内容。",
+      "publication_raw": "10月26日",
+      "publication_field": "已补查较早文章的页面发布时间",
+      "timezone_evidence": null,
+      "time_kind": "partial",
+      "published_utc": null,
+      "pre_policy_status": "time_pending",
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://community.aijishu.com/a/1060000000526395",
+      "sample_title": "从GPU、LPU到“MPU”：熵旋芯智以MITA架构重算AI推理成本 - 极术社区 - 连接开发者与智能计算生态",
+      "sample_fetched_at": "2026-11-05T09:34:07.922598+00:00",
+      "sample_evidence_file": "raw/71-15d682cba618.json",
+      "sample_sha256": "319249b74fd0af6dcd566b2e1e17fb54a63b71b157f6b4fed656f9485f7e486a",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://community.aijishu.com/u/semiinsights",
+          "status": 200,
+          "error": null,
+          "key": "71-9203f594355e",
+          "fetched_at": "2026-11-05T08:21:19.203628+00:00"
+        },
+        {
+          "url": "https://community.aijishu.com/a/1060000000526534",
+          "status": 200,
+          "error": null,
+          "key": "71-e0e6521faced",
+          "fetched_at": "2026-11-05T08:23:39.667234+00:00"
+        },
+        {
+          "url": "https://community.aijishu.com/a/1060000000526395",
+          "status": 200,
+          "error": null,
+          "key": "71-15d682cba618",
+          "fetched_at": "2026-11-05T09:34:07.922598+00:00"
+        },
+        {
+          "url": "https://community.aijishu.com/a/1060000000526537",
+          "status": 200,
+          "error": null,
+          "key": "71-c75737afff96",
+          "fetched_at": "2026-11-05T08:23:39.337479+00:00"
+        }
+      ]
+    },
+    {
+      "name": "阿基米德Biotech",
+      "row": 72,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；偏投资操作向·需合规过滤；媒体id=2581507",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://weibo.com/u/6170716985"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "ready",
+      "sample_key": "72-dac49cfa5848",
+      "content_result": "阿基米德Biotech微博公开分析文字可读",
+      "conclusion": "独立微博中可读取数段分析，显示 26-10-28 23:17，按用户确认的 UTC+8 换算；无需先取得外链公众号全文。",
+      "publication_raw": "2026-10-28 23:17",
+      "publication_field": "公开微博显示 26-10-28 23:17",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-10-28T15:17:00Z",
+      "browser_sample_file": "browser-access/72.json",
+      "access_mode": "复用现有微博登录状态",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "72-dac49cfa5848",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "26-10-28 23:17",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "minute",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://weibo.com/6170716985/RoOlO9qBV",
+      "sample_title": "",
+      "sample_fetched_at": "2026-11-05T09:15:52.365Z",
+      "sample_evidence_file": "browser-access/72.json",
+      "sample_sha256": "079c11806cef5c3603161c8024a0a3d0a48c9196cc999984463d8f7a6f409a73",
+      "browser_observation_file": "browser-access/72.json",
+      "tested_urls": [
+        {
+          "url": "https://weibo.com/u/6170716985",
+          "status": 200,
+          "error": null,
+          "key": "72-dac49cfa5848",
+          "fetched_at": "2026-11-05T08:21:19.771130+00:00"
+        }
+      ]
+    },
+    {
+      "name": "互联网怪盗团",
+      "row": 73,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；偏投资操作向·需合规过滤；媒体id=1837897",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://m.pedaily.cn/author/763"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "follow": false,
+      "status": "platform",
+      "sample_key": "73-90919d663275",
+      "content_result": "投资界转载正文，署名互联网怪盗团",
+      "conclusion": "页面明确标注转载来源；此时间是投资界发布，不能替代公众号首发时间。",
+      "publication_raw": "2026-10-28T10:42:00+08:00",
+      "publication_field": "NewsArticle.datePublished / time.datetime",
+      "timezone_evidence": "转载发布时间自身包含 +08:00",
+      "time_kind": "iso",
+      "published_utc": "2026-10-28T02:42:00Z",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://m.pedaily.cn/news/570973",
+      "sample_title": "中国互联网的现状，离不开电视的退场；现在电视要回来了吗？|投资界",
+      "sample_fetched_at": "2026-11-05T08:23:40.112871+00:00",
+      "sample_evidence_file": "raw/73-90919d663275.json",
+      "sample_sha256": "278431085e2c1c2613369760e7e3ffc6d89dd91bcf83c6f3cd41463dc5dfb474",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://m.pedaily.cn/author/763",
+          "status": 200,
+          "error": null,
+          "key": "73-93d561721130",
+          "fetched_at": "2026-11-05T08:22:36.710529+00:00"
+        },
+        {
+          "url": "https://m.pedaily.cn/news/570973",
+          "status": 200,
+          "error": null,
+          "key": "73-90919d663275",
+          "fetched_at": "2026-11-05T08:23:40.112871+00:00"
+        },
+        {
+          "url": "https://m.pedaily.cn/news/570006",
+          "status": 200,
+          "error": null,
+          "key": "73-ff6c91dd9c63",
+          "fetched_at": "2026-11-05T08:23:40.113788+00:00"
+        }
+      ]
+    },
+    {
+      "name": "市值风云",
+      "row": 74,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=475229",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.wogoo.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "74-7d0af1c25494",
+      "content_result": "市值风云研报中心文章正文",
+      "conclusion": "正文与 authorCompany 对应市值风云。使用 T_RELEASE_TM_ORIGINAL 原始发布时间，按用户确认的 UTC+8 换算，不采用 lastUpdateTime。",
+      "publication_raw": "2026-11-05 10:31:25",
+      "publication_field": "T_RELEASE_TM_ORIGINAL",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-11-05T02:31:25Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-11-05 10:31:25",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "second",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.wogoo.com/sq/w/0d4cbba343c44b729d41365a140693d8",
+      "sample_title": "合同负债同比增长52%，账面存货2216亿，比亚迪的真实盈利有多猛？_市值风云",
+      "sample_fetched_at": "2026-11-05T08:31:14.033306+00:00",
+      "sample_evidence_file": "raw/74-7d0af1c25494.json",
+      "sample_sha256": "adb27faf2dfd362063b1cae5be8a1ae9ac299aa19bae55cb96cdec8a822ec73d",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.wogoo.com/yb",
+          "status": 200,
+          "error": null,
+          "key": "74-3455e07bd308",
+          "fetched_at": "2026-11-05T08:29:47.113350+00:00"
+        },
+        {
+          "url": "https://www.wogoo.com/sq/t/1372dde633b74c4da0f1ba506dfb03c6",
+          "status": 200,
+          "error": null,
+          "key": "74-4ad5605f83b2",
+          "fetched_at": "2026-11-05T08:20:16.437539+00:00"
+        },
+        {
+          "url": "https://www.wogoo.com/",
+          "status": 200,
+          "error": null,
+          "key": "74-ea9a8b4db8df",
+          "fetched_at": "2026-11-05T08:20:10.757178+00:00"
+        },
+        {
+          "url": "https://www.wogoo.com/sq/t/7ebaef66142f43e090f097b9e171ca81",
+          "status": 200,
+          "error": null,
+          "key": "74-452ca2801d39",
+          "fetched_at": "2026-11-05T08:20:17.868452+00:00"
+        },
+        {
+          "url": "https://www.wogoo.com/sq/w/0d4cbba343c44b729d41365a140693d8",
+          "status": 200,
+          "error": null,
+          "key": "74-7d0af1c25494",
+          "fetched_at": "2026-11-05T08:31:14.033306+00:00"
+        }
+      ]
+    },
+    {
+      "name": "易简财经",
+      "row": 75,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2914298",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.yemacaijing.com/user/tdwz/uid/323.html"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "75-a6ffccdee504",
+      "content_result": "野马财经“易简财经”账号正文",
+      "conclusion": "野马财经作者账号 323 与易简财经署名对应；页面完整时间到秒，按用户确认的 UTC+8 换算。",
+      "publication_raw": "2026-08-20 17:43:15",
+      "publication_field": "页面发布时间",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-08-20T09:43:15Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-08-20 17:43:15",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "second",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://www.yemacaijing.com/Index/view/id/95663.html",
+      "sample_title": "清华大学，将收获一个具身智能IPO",
+      "sample_fetched_at": "2026-11-05T08:21:21.965511+00:00",
+      "sample_evidence_file": "raw/75-a6ffccdee504.json",
+      "sample_sha256": "d7d8f54372d81b9b2d939241e612c28581763f117ca7b77b9e2b5c37eb4d83a2",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.yemacaijing.com/user/tdwz/uid/323.html",
+          "status": 200,
+          "error": null,
+          "key": "75-4dd139859a19",
+          "fetched_at": "2026-11-05T08:21:20.198396+00:00"
+        },
+        {
+          "url": "https://www.yemacaijing.com/Index/view/id/95663.html",
+          "status": 200,
+          "error": null,
+          "key": "75-a6ffccdee504",
+          "fetched_at": "2026-11-05T08:21:21.965511+00:00"
+        }
+      ]
+    },
+    {
+      "name": "阿尔法工场研究院",
+      "row": 76,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1961340",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.arfgc.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "76-ff9cf28158f7",
+      "content_result": "动态文章块中的完整分析正文与发布时间已配对",
+      "conclusion": "重新读取动态页面，已将浙商银行分析正文与同一文章块内 2026-11-03 15:07 配对保存。按用户确认的 UTC+8 换算。此入口为动态列表，aid 参数不是已验证的稳定文章 ID；适配器须按文章块提取及去重。",
+      "publication_raw": "2026-11-03 15:07",
+      "publication_field": "同一文章块中的可见发布时间",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-11-03T07:07:00Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-11-03 15:07",
+      "timezone_evidence_type": "user_confirmed",
+      "browser_sample_file": "time-policy-review/76-article.json",
+      "access_mode": "浏览器公开可读，无需登录；按文章块提取",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "minute",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.arfgc.com/newest.html?aid=100072",
+      "sample_title": "* 浙商银行2026年前三季度营收、净利润同比正增长",
+      "sample_fetched_at": "2026-11-05T09:37:19.556Z",
+      "sample_evidence_file": "time-policy-review/76-article.json",
+      "sample_sha256": "86fe3b2026b1295372b000012c5f17f937d4e7e19f8d06109923c60a8f6a5d6f",
+      "browser_observation_file": "time-policy-review/76-article.json",
+      "tested_urls": [
+        {
+          "url": "https://www.arfgc.com/",
+          "status": 200,
+          "error": null,
+          "key": "76-a0c2f3ba08e2",
+          "fetched_at": "2026-11-05T08:20:12.406477+00:00"
+        },
+        {
+          "url": "https://www.arfgc.com/newest.html?aid=100072",
+          "status": 200,
+          "error": null,
+          "key": "76-ff9cf28158f7",
+          "fetched_at": "2026-11-05T08:23:36.965838+00:00"
+        }
+      ]
+    },
+    {
+      "name": "Mr蒋静的资本圈",
+      "row": 77,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=2121884",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://xw.qianzhan.com/analyst/profile/14536.html"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "77-0cce75f442e5",
+      "content_result": "前瞻网认证机构作者转载正文",
+      "conclusion": "前瞻网认证账号 14536 与 Mr蒋静的资本圈对应；完整日期时分按用户确认的 UTC+8 换算。样本为2021年，仅证明可用入口，不证明2026年历史覆盖。",
+      "publication_raw": "2021-06-29 07:40",
+      "publication_field": "平台可见时间",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2021-06-28T23:40:00Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2021-06-29 07:40",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "minute",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://xw.qianzhan.com/analyst/detail/329/210628-f6687878.html",
+      "sample_title": "碳排放要求陡增，工程机械电动化迎来拐点，万亿市场待渗透_经济学人 - 手机前瞻网",
+      "sample_fetched_at": "2026-11-05T08:21:21.576438+00:00",
+      "sample_evidence_file": "raw/77-0cce75f442e5.json",
+      "sample_sha256": "82767202f6275ce2592a9846a26e499d885c4e2fc4d9a11e6f225d4151c6adc0",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://xw.qianzhan.com/analyst/profile/14536.html",
+          "status": 200,
+          "error": null,
+          "key": "77-f7fb5a6afe13",
+          "fetched_at": "2026-11-05T08:21:20.324349+00:00"
+        },
+        {
+          "url": "https://xw.qianzhan.com/analyst/detail/329/210628-f6687878.html",
+          "status": 200,
+          "error": null,
+          "key": "77-0cce75f442e5",
+          "fetched_at": "2026-11-05T08:21:21.576438+00:00"
+        }
+      ]
+    },
+    {
+      "name": "深潜atom",
+      "row": 78,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=2184487",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.sohu.com/media/100150"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "78-c2bd37e0b70c",
+      "content_result": "搜狐“深潜atom”账号文章正文",
+      "conclusion": "搜狐账号 100150 与深潜atom对应；datePublished 按用户确认的 UTC+8 换算，采用该平台发布时间。",
+      "publication_raw": "2026-10-28 16:35",
+      "publication_field": "datePublished",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-10-28T08:35:00Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-10-28 16:35",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "minute",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://www.sohu.com/a/1093915069_100150?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+      "sample_title": "同比之外——五粮液三季报的三个观察窗口_净利润_公司_基数",
+      "sample_fetched_at": "2026-11-05T08:21:21.741334+00:00",
+      "sample_evidence_file": "raw/78-c2bd37e0b70c.json",
+      "sample_sha256": "f7c782ef2aca33c2656c92b1d1986c3eefa656695517bb4eb1750e64efa7b4c8",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.sohu.com/a/1093915069_100150?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+          "status": 200,
+          "error": null,
+          "key": "78-c2bd37e0b70c",
+          "fetched_at": "2026-11-05T08:21:21.741334+00:00"
+        },
+        {
+          "url": "https://www.sohu.com/media/100150",
+          "status": 200,
+          "error": null,
+          "key": "78-781b5fff977d",
+          "fetched_at": "2026-11-05T08:21:20.732057+00:00"
+        }
+      ]
+    },
+    {
+      "name": "市值观察",
+      "row": 79,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2065064",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.tmtpost.com/user/4876088"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "79-acd3415ee3cb",
+      "content_result": "钛媒体市值观察账号文章正文",
+      "conclusion": "账号 4876088 可对应。采用 time_published，不能采用较早的 time_created；原公众号首发未核实。",
+      "publication_raw": 1793698748,
+      "publication_field": "匹配当前标题的 Nuxt 文章对象 time_published",
+      "timezone_evidence": "Unix 秒表示 UTC 绝对时刻",
+      "time_kind": "unix_s",
+      "published_utc": "2026-11-03T09:39:08Z",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://www.tmtpost.com/8191205.html",
+      "sample_title": "营收新高，报表优化，主动终止H股IPO，欣旺达的价值重构-钛媒体官方网站",
+      "sample_fetched_at": "2026-11-05T08:21:23.168018+00:00",
+      "sample_evidence_file": "raw/79-acd3415ee3cb.json",
+      "sample_sha256": "695e242cf80f8085abec53e2fd88e472d628f52fa0f9932ea6affd34cdcf7918",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.tmtpost.com/user/4876088",
+          "status": 200,
+          "error": null,
+          "key": "79-6f10e141be0c",
+          "fetched_at": "2026-11-05T08:21:21.385597+00:00"
+        },
+        {
+          "url": "https://www.tmtpost.com/8191205.html",
+          "status": 200,
+          "error": null,
+          "key": "79-acd3415ee3cb",
+          "fetched_at": "2026-11-05T08:21:23.168018+00:00"
+        }
+      ]
+    },
+    {
+      "name": "远川科技评论",
+      "row": 80,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=615577",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.36kr.com/p/3957753994313097"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "follow": false,
+      "status": "platform",
+      "sample_key": "80-9332468ed3f1",
+      "content_result": "36氪远川科技评论账号文章正文",
+      "conclusion": "作者 ID 5060931。两篇历史文章顶部 article:published_time 接近抓取时间，与正文日期冲突；文章对象 publishTime 与正文日期吻合。只确认 36氪发布时间。",
+      "publication_raw": 1787882500942,
+      "publication_field": "当前文章对象 publishTime（毫秒），排除顶部元数据和推荐文章",
+      "timezone_evidence": "Unix 毫秒表示 UTC 绝对时刻",
+      "time_kind": "unix_ms",
+      "published_utc": "2026-08-28T02:01:40.942000Z",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://www.36kr.com/p/3957753994313097",
+      "sample_title": "你不说是GPU，我以为房地产呢-36氪",
+      "sample_fetched_at": "2026-11-05T08:22:36.710642+00:00",
+      "sample_evidence_file": "raw/80-9332468ed3f1.json",
+      "sample_sha256": "abde182dc08db0973df477a599f558989f9c9b2e5da4f54c6ede2ff00dc84a14",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.36kr.com/p/3957753994313097",
+          "status": 200,
+          "error": null,
+          "key": "80-9332468ed3f1",
+          "fetched_at": "2026-11-05T08:22:36.710642+00:00"
+        },
+        {
+          "url": "https://www.36kr.com/p/3636418561983748",
+          "status": 200,
+          "error": null,
+          "key": "80-87d4c9b46f77",
+          "fetched_at": "2026-11-05T08:23:37.780665+00:00"
+        }
+      ]
+    },
+    {
+      "name": "财经无忌",
+      "row": 81,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1880640",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.tmtpost.com/user/297172"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "81-1030244e5d1f",
+      "content_result": "钛媒体财经无忌账号文章正文",
+      "conclusion": "账号 297172 可对应；仅确定平台发布，未核实公众号首发。",
+      "publication_raw": 1791797743,
+      "publication_field": "匹配当前标题的 Nuxt 文章对象 time_published",
+      "timezone_evidence": "Unix 秒表示 UTC 绝对时刻；与页面 2026.10.12 17:35 日期时分吻合",
+      "time_kind": "unix_s",
+      "published_utc": "2026-10-12T09:35:43Z",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://www.tmtpost.com/8165049.html",
+      "sample_title": "李小龙的功夫哲学，藏着长三角的经济密码-钛媒体官方网站",
+      "sample_fetched_at": "2026-11-05T08:21:24.234142+00:00",
+      "sample_evidence_file": "raw/81-1030244e5d1f.json",
+      "sample_sha256": "40956ab6846ffa4e472ad301a77e8cfd258dc184dcc0fb61c32e664c7138a804",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.tmtpost.com/8165049.html",
+          "status": 200,
+          "error": null,
+          "key": "81-1030244e5d1f",
+          "fetched_at": "2026-11-05T08:21:24.234142+00:00"
+        },
+        {
+          "url": "https://www.tmtpost.com/user/297172",
+          "status": 200,
+          "error": null,
+          "key": "81-bc73c1340192",
+          "fetched_at": "2026-11-05T08:21:21.386666+00:00"
+        }
+      ]
+    },
+    {
+      "name": "达摩财经",
+      "row": 82,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2849940",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://xueqiu.com/u/1078525202"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "ready",
+      "sample_key": "82-4e99d95596ac",
+      "content_result": "雪球达摩财经账号公开分析正文",
+      "conclusion": "浏览器加载后无需登录即可阅读；账号名与正文出品署名均为达摩财经。文章 time.datetime 带 Z，与页面 2026-11-05 16:49 对应。之前静态 HTTP 取得防护页不代表浏览器无法访问。",
+      "publication_raw": "2026-11-05T08:49:32.000Z",
+      "publication_field": "文章 time.datetime",
+      "timezone_evidence": "发布时间 DOM datetime 自带 Z",
+      "time_kind": "iso",
+      "published_utc": "2026-11-05T08:49:32Z",
+      "browser_sample_file": "browser-access/82.json",
+      "access_mode": "浏览器公开文字可读，无需登录",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "82-4e99d95596ac",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.xueqiu.com/1078525202/415693408",
+      "sample_title": "倍轻松炸雷！实控人操纵自家股票被罚千万，火速卸任董事长 出品｜达摩财经“智能按摩第一股” 倍轻松 （688793.SH）实控人处罚落地，“闪电”般卸去了公司所有职务。11月4日... - 雪球",
+      "sample_fetched_at": "2026-11-05T09:14:48.053Z",
+      "sample_evidence_file": "browser-access/82.json",
+      "sample_sha256": "98ba68fb53951040c98e077fcf023e650f12b2bbd5a0804266fb3d7cbc92583c",
+      "browser_observation_file": "browser-access/82.json",
+      "tested_urls": [
+        {
+          "url": "https://xueqiu.com/u/1078525202",
+          "status": 200,
+          "error": null,
+          "key": "82-4e99d95596ac",
+          "fetched_at": "2026-11-05T08:21:21.578371+00:00"
+        }
+      ]
+    },
+    {
+      "name": "节点财经",
+      "row": 83,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=526320",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.jiediancj.com/"
+      ],
+      "discovery_status": "seeded_public_endpoint",
+      "status": "ready",
+      "sample_key": "83-9d86f50d3477",
+      "content_result": "节点财经官网公开正文",
+      "conclusion": "文章 datePublished 和 time 元素一致，修改时间另有字段。",
+      "publication_raw": "2026-11-03T18:41:11+08:00",
+      "publication_field": "Article.datePublished / time.datetime",
+      "timezone_evidence": "发布时间自身包含 +08:00",
+      "time_kind": "iso",
+      "published_utc": "2026-11-03T10:41:11Z",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.jiediancj.com/archives/46375",
+      "sample_title": "从流量游牧到“经营定居”，抖音商城双11给商家发了什么底牌？ - 节点财经",
+      "sample_fetched_at": "2026-11-05T08:20:16.552590+00:00",
+      "sample_evidence_file": "raw/83-9d86f50d3477.json",
+      "sample_sha256": "5e040f43dbab93e5acd604df7e642209194f9c69c4265783f4148cdccaa743b7",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.jiediancj.com/archives/46375",
+          "status": 200,
+          "error": null,
+          "key": "83-9d86f50d3477",
+          "fetched_at": "2026-11-05T08:20:16.552590+00:00"
+        },
+        {
+          "url": "https://www.jiediancj.com/",
+          "status": 200,
+          "error": null,
+          "key": "83-2eb4e1e6245e",
+          "fetched_at": "2026-11-05T08:20:13.703300+00:00"
+        },
+        {
+          "url": "https://www.jiediancj.com/archives/4547",
+          "status": 200,
+          "error": null,
+          "key": "83-7e48217269b9",
+          "fetched_at": "2026-11-05T08:20:15.122032+00:00"
+        }
+      ]
+    },
+    {
+      "name": "连线Insight",
+      "row": 84,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1323561",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://a.sina.cn/t/author/18450766/"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "time_pending",
+      "sample_key": "84-fef0eb149a9c",
+      "content_result": "新浪连线Insight账号公开分析正文",
+      "conclusion": "新浪账号和分析正文已对应；时区按用户确认采用UTC+8。详情时间2020/10/27 17:47与作者目录同日另一时间存在差异，尚未解决字段语义冲突，暂不转换；仅验证旧样本。",
+      "publication_raw": "2020/10/27 17:47（详情页）",
+      "publication_field": "详情页可见发布时间；与作者目录时间存在差异",
+      "timezone_evidence": null,
+      "time_kind": "conflict",
+      "published_utc": null,
+      "browser_sample_file": "browser-access/84.json",
+      "access_mode": "浏览器公开文字可读，无需登录",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "84-fef0eb149a9c",
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://k.sina.cn/article_6540389704_185d66d4800100pw9p.html?from=auto&ab=qiche&_rewriteTime=1793870153382",
+      "sample_title": "降价“割韭菜”、业绩创纪录，特斯拉到底赢在哪？",
+      "sample_fetched_at": "2026-11-05T09:16:37.425Z",
+      "sample_evidence_file": "browser-access/84.json",
+      "sample_sha256": "848cc65bc7ab7adbfb1a9e8f63215f515a9eb41565768defe6141f2b178442a5",
+      "browser_observation_file": "browser-access/84.json",
+      "tested_urls": [
+        {
+          "url": "https://a.sina.cn/t/author/18450766/",
+          "status": 200,
+          "error": null,
+          "key": "84-fef0eb149a9c",
+          "fetched_at": "2026-11-05T08:21:21.578563+00:00"
+        }
+      ]
+    },
+    {
+      "name": "汽车K线",
+      "row": 85,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=1109997",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://m.sohu.com/media/115871"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "85-fe28b14c3aae",
+      "content_result": "搜狐“汽车K线”账号文章正文",
+      "conclusion": "搜狐账号 115871 和正文出品均为汽车K线；datePublished 到秒，按用户确认的 UTC+8 换算。",
+      "publication_raw": "2026-10-13 11:01:34",
+      "publication_field": "datePublished",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-10-13T03:01:34Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-10-13 11:01:34",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "second",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://m.sohu.com/a/1087073316_115871?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+      "sample_title": "汽车资本市场，要爆发了？_跌幅_科技_路特斯",
+      "sample_fetched_at": "2026-11-05T08:21:22.711179+00:00",
+      "sample_evidence_file": "raw/85-fe28b14c3aae.json",
+      "sample_sha256": "08658fa10434f246f6b23ebe94292bf5ab1d48f2bb0052665706704b5cd254b6",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://m.sohu.com/media/115871",
+          "status": 200,
+          "error": null,
+          "key": "85-ded2b102bb9d",
+          "fetched_at": "2026-11-05T08:21:21.636342+00:00"
+        },
+        {
+          "url": "https://m.sohu.com/a/1087073316_115871?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+          "status": 200,
+          "error": null,
+          "key": "85-fe28b14c3aae",
+          "fetched_at": "2026-11-05T08:21:22.711179+00:00"
+        }
+      ]
+    },
+    {
+      "name": "投资作业本Pro",
+      "row": 86,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2919469",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.huxiu.com/article/4841669.html"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "ready",
+      "sample_key": "86-50f2f468a76d",
+      "content_result": "虎嗅投资作业本账号公开分析正文",
+      "conclusion": "浏览器无需登录可读取长篇文字；页面作者投资作业本©，正文明确来自微信公众号投资作业本Pro。article:published_time 自带偏移，并与可见文章日期一致。",
+      "publication_raw": "2026-03-13T12:56:11+08:00",
+      "publication_field": "article:published_time / bytedance:published_time",
+      "timezone_evidence": "发布时间自身包含 +08:00",
+      "time_kind": "iso",
+      "published_utc": "2026-03-13T04:56:11Z",
+      "browser_sample_file": "browser-access/86.json",
+      "access_mode": "浏览器公开文字可读，无需登录",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "86-50f2f468a76d",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.huxiu.com/article/4841669.html",
+      "sample_title": "年轻人的机会真正来了-虎嗅网",
+      "sample_fetched_at": "2026-11-05T09:13:46.956Z",
+      "sample_evidence_file": "browser-access/86.json",
+      "sample_sha256": "3f0cac4fee4ac9e52029bd2ba03eafa2e3bcca0f07d1570625ce97ae0ea1d054",
+      "browser_observation_file": "browser-access/86.json",
+      "tested_urls": [
+        {
+          "url": "https://www.huxiu.com/article/4841669.html",
+          "status": 200,
+          "error": null,
+          "key": "86-50f2f468a76d",
+          "fetched_at": "2026-11-05T08:21:21.798159+00:00"
+        }
+      ]
+    },
+    {
+      "name": "港股研究社",
+      "row": 87,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=549568",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.tmtpost.com/user/3837030"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "87-54cbfdc1f3a9",
+      "content_result": "钛媒体港股研究社账号文章正文",
+      "conclusion": "账号 3837030 可对应；仅确定平台发布，未核实公众号首发。",
+      "publication_raw": 1793764980,
+      "publication_field": "匹配当前标题的 Nuxt 文章对象 time_published",
+      "timezone_evidence": "Unix 秒表示 UTC 绝对时刻",
+      "time_kind": "unix_s",
+      "published_utc": "2026-11-04T04:03:00Z",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://www.tmtpost.com/8192640.html",
+      "sample_title": "AI被“催收”的财报季，腾讯、阿里开启智力产能重估-钛媒体官方网站",
+      "sample_fetched_at": "2026-11-05T08:21:24.765300+00:00",
+      "sample_evidence_file": "raw/87-54cbfdc1f3a9.json",
+      "sample_sha256": "0cb9ccf20f941ae63a95518b4b195c9ed87bf83b2c2043e87902a4c72dd94307",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.tmtpost.com/8192640.html",
+          "status": 200,
+          "error": null,
+          "key": "87-54cbfdc1f3a9",
+          "fetched_at": "2026-11-05T08:21:24.765300+00:00"
+        },
+        {
+          "url": "https://www.tmtpost.com/user/3837030",
+          "status": 200,
+          "error": null,
+          "key": "87-52e716abba22",
+          "fetched_at": "2026-11-05T08:21:21.967082+00:00"
+        }
+      ]
+    },
+    {
+      "name": "韭圈儿",
+      "row": 88,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2666608",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://h5-ai.jiucaishuo.com/course"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "follow": false,
+      "status": "identity_pending",
+      "sample_key": "88-88101a0ab871",
+      "content_result": "韭圈公开内容流可读，但含大量 AI 生成频道",
+      "conclusion": "公开信息流无需登录，但大量频道标注AI生成，尚未定位榜单账号的原创分析入口；年月日时分亦未完整核对。时区规则采用用户确认的UTC+8，身份问题仍待解决。",
+      "publication_raw": "月日时分",
+      "publication_field": "公开信息流时间",
+      "timezone_evidence": null,
+      "time_kind": "partial",
+      "published_utc": null,
+      "browser_sample_file": "browser-access/88.json",
+      "access_mode": "公开信息流无需登录，目标分析账号身份待定位",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "88-88101a0ab871",
+      "status_label": "目标来源身份或入口待确认",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "",
+      "sample_url": "https://h5-ai.jiucaishuo.com/feed",
+      "sample_title": "投研工作台 · 韭圈",
+      "sample_fetched_at": "2026-11-05T09:16:37.871Z",
+      "sample_evidence_file": "browser-access/88.json",
+      "sample_sha256": "701049c607143d79d76026a251c85e93f63bafd4d59dcb8f8a27a61e13adce88",
+      "browser_observation_file": "browser-access/88.json",
+      "tested_urls": [
+        {
+          "url": "https://h5-ai.jiucaishuo.com/course",
+          "status": 200,
+          "error": null,
+          "key": "88-88101a0ab871",
+          "fetched_at": "2026-11-05T08:22:36.710690+00:00"
+        }
+      ]
+    },
+    {
+      "name": "萝卜投研",
+      "row": 89,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1860320",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://robo.datayes.com/"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "89-b3f5b656cdac",
+      "content_result": "萝卜投研历史文章正文及完整发布时间可读",
+      "conclusion": "已登录浏览器中翻到复盘总结第5页，历史文章详情显示完整时间 2026-10-30 17:07，正文可读，来源署名彬哥看盘。转为 UTC+0 是2026-10-30 09:07。近期只显示几小时前的条目仍需取得精确字段后才可入库；后台登录态采集适配器尚未接入。",
+      "publication_raw": "2026-10-30 17:07",
+      "publication_field": "历史文章详情 time 文本；栏目第5页同条时间一致",
+      "timezone_evidence": "用户于2026-11-05确认自媒体采用中国标准时间 UTC+8；采用萝卜投研转载本条的发布时间。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-10-30T09:07:00Z",
+      "browser_sample_file": "time-policy-review/89-older.json",
+      "access_mode": "用户已登录；历史文章具体时分可读",
+      "session_result": {
+        "body": true,
+        "reload": true,
+        "new_tab": true,
+        "browser_restart_tested": false,
+        "backend_integrated": false
+      },
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "89-b3f5b656cdac",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-10-30 17:07",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "minute",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://robo.datayes.com/v2/details/feed/662865",
+      "sample_title": "10.30收盘：A股科技杀跌的真实逻辑 - 萝卜投研",
+      "sample_fetched_at": "2026-11-05T09:35:05.475Z",
+      "sample_evidence_file": "time-policy-review/89-older.json",
+      "sample_sha256": "40c83ee9e6e5fe2aa73af42bfb950587f9c7f69b95515cca4f30260804b2e0f4",
+      "browser_observation_file": "time-policy-review/89-older.json",
+      "tested_urls": [
+        {
+          "url": "https://robo.datayes.com/",
+          "status": 200,
+          "error": null,
+          "key": "89-b3f5b656cdac",
+          "fetched_at": "2026-11-05T08:21:21.987533+00:00"
+        }
+      ]
+    },
+    {
+      "name": "财富FORTUNE",
+      "row": 90,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2754702",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.fortunechina.com/"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "time_pending",
+      "sample_key": "90-d9b218c06fbe",
+      "content_result": "财富中文网公开文章正文",
+      "conclusion": "财富中文网样本只有2026-11-04，缺具体时分；时区按用户确认采用UTC+8，不能把日期补成午夜。",
+      "publication_raw": "2026-11-04",
+      "publication_field": "页面日期",
+      "timezone_evidence": null,
+      "time_kind": "date",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.fortunechina.com/shangye/c/2026-11/04/content_477936.htm",
+      "sample_title": "暹罗水泥集团CEO：东南亚工厂须扩大规模，方能在区域市场立足 - 财富中文网",
+      "sample_fetched_at": "2026-11-05T08:21:23.316915+00:00",
+      "sample_evidence_file": "raw/90-d9b218c06fbe.json",
+      "sample_sha256": "d3a744d24527e48181d1a7f02de0a2dcf5583c7b80cd7005d560808da6a6e2e9",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.fortunechina.com/shangye/c/2026-11/04/content_477936.htm",
+          "status": 200,
+          "error": null,
+          "key": "90-d9b218c06fbe",
+          "fetched_at": "2026-11-05T08:21:23.316915+00:00"
+        },
+        {
+          "url": "https://www.fortunechina.com/",
+          "status": 200,
+          "error": null,
+          "key": "90-f69a38096d49",
+          "fetched_at": "2026-11-05T08:21:22.232234+00:00"
+        }
+      ]
+    },
+    {
+      "name": "尺度商业",
+      "row": 91,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2909969",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.sohu.com/a/727725189_157944"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "91-a0ea67e3874c",
+      "content_result": "搜狐账号的“尺度商业”品牌更名公告",
+      "conclusion": "搜狐账号更名公告确认德林社与尺度商业的关系，datePublished 按用户确认的 UTC+8 换算。样本为2023年品牌公告，仅证明该账号发布入口和时间可用，不证明2026年原油分析供给。",
+      "publication_raw": "2023-10-12 17:44",
+      "publication_field": "datePublished",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2023-10-12T09:44:00Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2023-10-12 17:44",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "minute",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://www.sohu.com/a/727725189_157944",
+      "sample_title": "关于“德林社”更名为“尺度商业”的品牌升级公告_价值_公司_文明",
+      "sample_fetched_at": "2026-11-05T08:21:22.292056+00:00",
+      "sample_evidence_file": "raw/91-a0ea67e3874c.json",
+      "sample_sha256": "60a571de92b6d9a8d5d25fa8afd03f5606b743c5e528299b259fc60ecda6289e",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.sohu.com/a/727725189_157944",
+          "status": 200,
+          "error": null,
+          "key": "91-a0ea67e3874c",
+          "fetched_at": "2026-11-05T08:21:22.292056+00:00"
+        },
+        {
+          "url": "https://mt.sohu.com/kindfeed/business/20261105/1",
+          "status": 200,
+          "error": null,
+          "key": "91-e6979c31f7de",
+          "fetched_at": "2026-11-05T08:21:23.168085+00:00"
+        }
+      ]
+    },
+    {
+      "name": "乔令投研",
+      "row": 92,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；个人观点·无机构合规审核；媒体id=2892862",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://xueqiu.com/4164170693"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "ready",
+      "sample_key": "92-3a65fc719920",
+      "content_result": "雪球乔令投研账号公开分析正文",
+      "conclusion": "账号认证与文章署名对应，浏览器无需登录可读分析全文；文章 time.datetime 为带 Z 的绝对时刻，与页面日期时分吻合。",
+      "publication_raw": "2026-08-22T06:20:50.000Z",
+      "publication_field": "文章 time.datetime",
+      "timezone_evidence": "发布时间 DOM datetime 自带 Z",
+      "time_kind": "iso",
+      "published_utc": "2026-08-22T06:20:50Z",
+      "browser_sample_file": "browser-access/92.json",
+      "access_mode": "浏览器公开文字可读，无需登录",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "92-3a65fc719920",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.xueqiu.com/4164170693/406167386",
+      "sample_title": "LABUBU降温，泡泡玛特还有预期？ 财报之前，卖方给 泡泡玛特 的预期本来就不算乐观，起码Labubu的下滑以及海外业务的下滑是预期之内的，但财报开出来的结... - 雪球",
+      "sample_fetched_at": "2026-11-05T09:15:15.110Z",
+      "sample_evidence_file": "browser-access/92.json",
+      "sample_sha256": "dc6c20a9a164fcd1b55d3e00cfb09b85a13517621da56764ad8974ef5ee0b6cb",
+      "browser_observation_file": "browser-access/92.json",
+      "tested_urls": [
+        {
+          "url": "https://xueqiu.com/4164170693",
+          "status": 200,
+          "error": null,
+          "key": "92-3a65fc719920",
+          "fetched_at": "2026-11-05T08:21:22.745407+00:00"
+        }
+      ]
+    },
+    {
+      "name": "嗨牛财经",
+      "row": 93,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=1206101",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://xueqiu.com/2122410628"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "ready",
+      "sample_key": "93-317895cf0ea4",
+      "content_result": "雪球嗨牛财经账号公开分析正文",
+      "conclusion": "浏览器无需登录可读账号分析正文；文章 time.datetime 为带 Z 的绝对时刻，与页面日期时分吻合。",
+      "publication_raw": "2026-11-03T15:17:17.000Z",
+      "publication_field": "文章 time.datetime",
+      "timezone_evidence": "发布时间 DOM datetime 自带 Z",
+      "time_kind": "iso",
+      "published_utc": "2026-11-03T15:17:17Z",
+      "browser_sample_file": "browser-access/93.json",
+      "access_mode": "浏览器公开文字可读，无需登录",
+      "baseline_status": "unavailable",
+      "baseline_sample_key": "93-317895cf0ea4",
+      "status_label": "正文与渠道发布时间已验证",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "",
+      "sample_url": "https://www.xueqiu.com/2122410628/415361455",
+      "sample_title": "伊利股份2027液奶将迎来收获期，一场提前两年的渠道主动调整释放长期增长韧性 最近如果你留意过超市的货架，可能会发现一个不起眼的变化：摆在显眼位置的 伊利 牛奶，生产日期比以前新了很多。这不是错觉。... - 雪球",
+      "sample_fetched_at": "2026-11-05T09:13:46.914Z",
+      "sample_evidence_file": "browser-access/93.json",
+      "sample_sha256": "e892be19ad7e8ddc6d9c55e33a5202d2b250025caab3d10fe558af4ed6acb43a",
+      "browser_observation_file": "browser-access/93.json",
+      "tested_urls": [
+        {
+          "url": "https://xueqiu.com/2122410628",
+          "status": 200,
+          "error": null,
+          "key": "93-317895cf0ea4",
+          "fetched_at": "2026-11-05T08:21:23.020511+00:00"
+        }
+      ]
+    },
+    {
+      "name": "公司研究室",
+      "row": 94,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2627695",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://news.stockstar.com/source_list/%E5%85%AC%E5%8F%B8%E7%A0%94%E7%A9%B6%E5%AE%A4_5.shtml"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "94-7fec575947a8",
+      "content_result": "证券之星转载“公司研究室”正文",
+      "conclusion": "证券之星明确署名公司研究室；转载平台时间到秒，按用户确认的 UTC+8 换算，原公众号首发无需另行追溯。",
+      "publication_raw": "2026-06-15 18:17:00",
+      "publication_field": "页面发布时间",
+      "timezone_evidence": "用户于2026-11-05确认：自媒体账号时间采用中国标准时间 UTC+8；依据 self_media_timezone_policy.json，非源站时区声明。",
+      "time_kind": "user_confirmed_naive",
+      "published_utc": "2026-06-15T10:17:00Z",
+      "pre_policy_status": "time_pending",
+      "publication_literal": "2026-06-15 18:17:00",
+      "timezone_evidence_type": "user_confirmed",
+      "source_timezone": "Asia/Shanghai",
+      "timezone_policy_id": "self-media-china-user-confirmed-20261105",
+      "publication_precision": "second",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://finance.stockstar.com/IG2026061500024530.shtml",
+      "sample_title": "燧原科技科创板IPO过会，“国产GPU四小龙”资本市场会师_财经频道_证券之星",
+      "sample_fetched_at": "2026-11-05T08:21:24.591045+00:00",
+      "sample_evidence_file": "raw/94-7fec575947a8.json",
+      "sample_sha256": "1b5a55fcaf8719251c90d7eed55c6c119766ac3b94b4eee8da865b6d00f1821d",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://news.stockstar.com/source_list/%E5%85%AC%E5%8F%B8%E7%A0%94%E7%A9%B6%E5%AE%A4_5.shtml",
+          "status": 200,
+          "error": null,
+          "key": "94-eaf1c7973340",
+          "fetched_at": "2026-11-05T08:21:23.170456+00:00"
+        },
+        {
+          "url": "https://finance.stockstar.com/IG2026061500024530.shtml",
+          "status": 200,
+          "error": null,
+          "key": "94-7fec575947a8",
+          "fetched_at": "2026-11-05T08:21:24.591045+00:00"
+        }
+      ]
+    },
+    {
+      "name": "本原财经",
+      "row": 95,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2964486",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.tmtpost.com/7829884.html"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "platform",
+      "sample_key": "95-a7767c79d3d2",
+      "content_result": "钛媒体转载正文，署名本原财经",
+      "conclusion": "正文“文｜本原财经”；创建时间早于发布，不能使用 time_created；原公众号首发未核实。",
+      "publication_raw": 1767517905,
+      "publication_field": "匹配当前标题的 Nuxt 文章对象 time_published",
+      "timezone_evidence": "Unix 秒表示 UTC 绝对时刻；与页面 2026.1.04 17:11 日期时分吻合",
+      "time_kind": "unix_s",
+      "published_utc": "2026-01-04T09:11:45Z",
+      "status_label": "转载平台时间可用，可开发接入",
+      "sample_meets_accepted_time_policy": true,
+      "policy_note": "按用户确认口径，采用所测转载平台的发布时间即可；不以缺少原机构最早首发时间作为排除理由。自媒体分析以本篇作者账号为来源。",
+      "sample_url": "https://www.tmtpost.com/7829884.html",
+      "sample_title": "字节上春晚，C位不给豆包？-钛媒体官方网站",
+      "sample_fetched_at": "2026-11-05T08:21:23.762615+00:00",
+      "sample_evidence_file": "raw/95-a7767c79d3d2.json",
+      "sample_sha256": "56ee7498a620d111b573bc6616da6a67770d4dd7589357891e51832afeb99f30",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.tmtpost.com/nictation/8194789.html",
+          "status": 200,
+          "error": null,
+          "key": "95-2d5467163f68",
+          "fetched_at": "2026-11-05T08:21:27.380777+00:00"
+        },
+        {
+          "url": "https://www.tmtpost.com/7829884.html",
+          "status": 200,
+          "error": null,
+          "key": "95-a7767c79d3d2",
+          "fetched_at": "2026-11-05T08:21:23.762615+00:00"
+        }
+      ]
+    },
+    {
+      "name": "伯虎财经",
+      "row": 96,
+      "category": "公众号/自媒体账号",
+      "scope": "账号级",
+      "level": "P2",
+      "notes": "运营精选池=接入资格≠档位证据；外部榜单依据待补强；媒体id=2964011",
+      "issuer_news_count": 0,
+      "urls": [
+        "https://www.laohu8.com/personal/3579157352266218/"
+      ],
+      "discovery_status": "public_profile_or_distributor_to_verify",
+      "sample_count": 1,
+      "status": "time_pending",
+      "sample_key": "96-9772b4527959",
+      "content_result": "老虎社区“伯虎财经”账号文章正文",
+      "conclusion": "老虎社区伯虎财经账号3579157352266218有公开文章，但样本仅有2021-06-01日期。时区按用户确认采用UTC+8；未证明具体时分和2026年供给。",
+      "publication_raw": "2021-06-01",
+      "publication_field": "文章可见日期",
+      "timezone_evidence": null,
+      "time_kind": "date",
+      "published_utc": null,
+      "status_label": "已测样本时间待核实",
+      "sample_meets_accepted_time_policy": false,
+      "policy_note": "这是抽样结论，不能推断该来源所有可抓内容均缺时间。后续逐条验证，合格的条目可正常纳入。",
+      "sample_url": "https://www.laohu8.com/post/119128241",
+      "sample_title": "为了做好一盒鲜奶，这群人已与时间赛跑了近十年_老虎社区_美港股上老虎 - 老虎社区 点赞 回复 编组 21备份 2 矩形 形状备份",
+      "sample_fetched_at": "2026-11-05T08:23:40.677049+00:00",
+      "sample_evidence_file": "raw/96-9772b4527959.json",
+      "sample_sha256": "ac9b7118667328efa383b4e54e740b23c3d802003cdd9fcc689bf8794fb5f20b",
+      "browser_observation_file": null,
+      "tested_urls": [
+        {
+          "url": "https://www.laohu8.com/post/119128241",
+          "status": 200,
+          "error": null,
+          "key": "96-9772b4527959",
+          "fetched_at": "2026-11-05T08:23:40.677049+00:00"
+        },
+        {
+          "url": "https://www.laohu8.com/post/132414816",
+          "status": 200,
+          "error": null,
+          "key": "96-10a1ad6ddf79",
+          "fetched_at": "2026-11-05T08:23:40.781640+00:00"
+        },
+        {
+          "url": "https://www.laohu8.com/personal/3579157352266218/",
+          "status": 200,
+          "error": null,
+          "key": "96-9c71478b5728",
+          "fetched_at": "2026-11-05T08:21:23.798119+00:00"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>来源接入测试 · 最新核查清单</title>
+<style>
+:root{font:14px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#26342d;background:#f7f8f4;color-scheme:light}
+*{box-sizing:border-box}body{margin:0}main{max-width:1580px;margin:auto;padding:36px 28px}h1{font-size:28px;font-weight:600;margin:12px 0}h2{font-size:17px;font-weight:500;margin:24px 0 10px}p{margin:8px 0;color:#61705f}a{color:#42683c;text-decoration:underline;text-underline-offset:3px}a:hover{color:#243f1e}.meta{font-size:12px;color:#74816e}.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:24px 0}.card{background:#fff;border:1px solid #dee5d9;padding:16px;border-radius:8px}.card strong{display:block;font-size:30px;font-weight:500}.card span{font-size:13px}.controls{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 8px}input,select{font:inherit;padding:10px 12px;background:white;border:1px solid #ccd8c5;border-radius:6px;color:inherit}input{flex:1;min-width:200px}input:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid #527a45;outline-offset:3px}.table{overflow:auto;background:white;border:1px solid #dee5d9;border-radius:8px}table{border-collapse:collapse;width:100%;min-width:1100px}th{background:#edf1e8;color:#57674f;text-align:left;font-weight:500;padding:14px;font-size:12px;white-space:nowrap}td{border-top:1px solid #e3e9df;padding:14px;vertical-align:top;min-width:140px}td:nth-child(1){width:16%}td:nth-child(2){width:20%}td:nth-child(3){width:26%}td:nth-child(4){width:38%}.name{font-size:15px}.muted{color:#7b8675;font-size:12px}.badge{display:inline-block;padding:3px 7px;background:#eff2eb;color:#4c6045;border-radius:4px;margin-bottom:8px;font-size:12px}.ready{background:#e6f1df;color:#39602c}.platform{background:#e6f1df;color:#39602c}.time_pending,.identity_pending{background:#f9efdb;color:#815f28}.unavailable{background:#f1e8e3;color:#805143}.stamp{font-variant-numeric:tabular-nums;overflow-wrap:anywhere;font-size:12px;margin:4px 0}.note{font-size:13px;line-height:1.8}summary{cursor:pointer;color:#496b3d;font-size:12px;margin-top:12px}details p{overflow-wrap:anywhere;font-size:12px}ul{padding-left:20px;color:#65725e}li{margin:6px 0}.links{display:flex;gap:18px;margin:12px 0}.empty{text-align:center;padding:36px}footer{margin-top:26px;font-size:12px;color:#74816e}@media(max-width:900px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:20px 16px}h1{font-size:24px}}@media print{.controls,.links{display:none}.table{overflow:visible}table{min-width:0;font-size:10px}td{min-width:0}main{padding:0}.cards{grid-template-columns:repeat(5,1fr)}a{color:inherit}}
+.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.card strong{font-size:38px}.card.passed{background:#edf5e8;border-color:#d3e4c9}.card.pending{background:#fff8e9;border-color:#ebdfc6}.card small{display:block;color:#71806a;margin-top:5px}.nav{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:25px}.breakdown{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 22px}.breakdown button{font:inherit;color:#665f4d;background:#fff;border:1px solid #e2dfd5;border-radius:6px;padding:8px 13px;cursor:pointer}.breakdown button[aria-pressed="true"]{background:#f9efdb;border-color:#b69a61}.breakdown button:focus-visible{outline:2px solid #527a45;outline-offset:3px}.access{margin-top:9px;font-size:12px;color:#66785f}#updated{margin-top:12px}.badge{max-width:100%}.detail-policy{color:#74816e}@media(max-width:600px){.cards{gap:8px}.card{padding:12px}.card strong{font-size:30px}.card small{font-size:11px}.nav{font-size:12px}}@media print{.nav,.breakdown{display:none}.cards{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body><main>
+<nav class="nav"><a href="http://localhost:8765/">返回原油新闻研究台</a><a href="http://localhost:8765/source-archive-coverage.html">查看新闻库实际覆盖</a></nav>
+<div class="meta">来源接入核查 · 一次性测试结果</div>
+<h1>来源接入测试</h1>
+<p id="scope"></p>
+<p class="note">后续接入状态：39 个样本测试通过的来源已加入自动更新尝试队列；后台实际可用性与浏览器抽样结果可能不同。请在<a href="/?settings=sources">设置 → 信源维护</a>查看最新检测、失败原因并重测。下表保留原始抽样证据。</p>
+<p id="accepted-policy"></p>
+<p id="timezone-policy" class="meta"></p>
+<p id="updated" class="meta"></p>
+<div id="cards" class="cards"></div>
+<div id="breakdown" class="breakdown" aria-label="按未通过原因筛选"></div>
+<details><summary>查看测试口径与边界</summary><ul id="limits"></ul></details>
+<div class="links"><a href="source-feasibility.csv" download>下载逐项 CSV</a><a href="source-feasibility.json" download>下载完整 JSON</a></div>
+<div class="controls"><input id="query" type="search" aria-label="搜索来源或原因" placeholder="搜索来源、平台或未通过原因"><select id="status" aria-label="测试结论"><option value="pending" selected>尚未通过</option><option value="passed">已通过</option><option value="">全部来源</option></select><select id="level" aria-label="榜单置信等级"><option value="">全部置信等级</option><option>P0</option><option>P1</option><option>P2</option></select></div>
+<p id="count" class="meta" role="status"></p>
+<div class="table"><table><thead><tr><th>榜单来源</th><th>公开内容与结论</th><th>样本发布时间</th><th>证据与限制</th></tr></thead><tbody id="rows"></tbody></table></div>
+<footer id="footer"></footer>
+</main>
+<script src="/source-coverage.js" defer></script></body></html>

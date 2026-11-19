@@ -1,0 +1,20 @@
+[Unit]
+Description=Read-only futures research page through local reverse SSH
+After=network.target
+
+[Service]
+Type=simple
+DynamicUser=yes
+WorkingDirectory=/data/futures_price_forecasting-forward
+ExecStart=/usr/bin/python3 /data/futures_price_forecasting-forward/public_proxy.py --bind 0.0.0.0 --port 8765 --upstream-port 18765 --backend-host 127.0.0.1:8765 --analysis-upstream-port 18778 --analysis-backend-host 127.0.0.1:4178
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

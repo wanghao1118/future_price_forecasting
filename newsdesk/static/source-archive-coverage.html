@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>榜单来源覆盖 · 原油新闻研究台</title>
+  <style>
+    :root{color-scheme:light;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:#26342d;background:#f7f8f4;font-size:14px}
+    body{margin:0}main{max-width:1440px;margin:auto;padding:36px 30px}a{color:#527347;text-decoration:none}h1{font-size:28px;margin:20px 0 12px;font-weight:600}p{line-height:1.8;color:#667364}.muted{color:#75806e;font-size:12px}.summary{display:flex;gap:16px;margin:24px 0;flex-wrap:wrap}.summary div{background:white;border:1px solid #dfe5db;padding:18px 22px;min-width:160px}.summary strong{display:block;font-size:30px;font-weight:500;margin-bottom:6px}.controls{display:flex;gap:10px;margin:22px 0 14px;flex-wrap:wrap}input,select{font:inherit;border:1px solid #d5ddcf;border-radius:5px;padding:10px;background:white;color:inherit}input{min-width:230px;flex:1}.table-wrap{overflow:auto;background:white;border:1px solid #dfe5db}table{border-collapse:collapse;width:100%;min-width:1000px}th{text-align:left;background:#edf1e8;color:#637356;font-size:12px;font-weight:500;padding:14px;white-space:nowrap}td{padding:14px;border-top:1px solid #e6ebe1;line-height:1.6;vertical-align:top}td:nth-child(2){white-space:nowrap}td:nth-child(3),td:nth-child(4){font-variant-numeric:tabular-nums;text-align:right}.source small{display:block;color:#7c8676;font-size:11px;margin-top:4px}.source{min-width:150px}details{max-width:370px;font-size:12px;color:#667364}summary{cursor:pointer;color:#527347}details p{margin:7px 0;overflow-wrap:anywhere}.empty{padding:30px}.error{color:#a84632}footer{margin:22px 0;font-size:12px;line-height:1.8;color:#788271}@media(max-width:600px){main{padding:22px 16px}.summary{gap:8px}.summary div{min-width:110px;padding:15px}.summary strong{font-size:26px}}
+  </style>
+</head>
+<body><main>
+  <a href="/">返回原油新闻研究台</a>
+  <h1>新闻库实际覆盖</h1><p><a href="/source-coverage.html">查看最新来源接入测试</a></p>
+  <p id="intro">正在核对当前新闻库与数据库权威榜单……</p>
+  <div id="summary" class="summary"></div>
+  <div class="controls"><input id="query" aria-label="搜索来源" placeholder="搜索来源名称或分类"><select id="coverage" aria-label="覆盖状态"><option value="">全部覆盖状态</option><option>已有新闻</option><option>已接入，暂无有效入库</option><option>未覆盖</option></select><select id="level" aria-label="置信等级"><option value="">全部等级</option><option>P0</option><option>P1</option><option>P2</option></select></div>
+  <p class="muted" id="count"></p>
+  <div class="table-wrap"><table><thead><tr><th>榜单来源</th><th>置信等级</th><th>原始发布机构<br>新闻数</th><th>作为采集信源<br>新闻数</th><th>采集接入</th><th>覆盖情况</th><th>依据与备注</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <footer>原始发布机构新闻数按已审核的“来源”匹配；采集信源新闻数按“信源”匹配。同一条新闻可能涉及多个发布机构，各行数量不宜直接相加。<br>“已接入”表示配置了采集适配器，不代表已经获得满足原油相关性、精确时间和时区要求的新闻。正文中仅提及机构、关联公司或发布平台不计作该来源覆盖。<br>置信等级沿用榜单的“档位”列；准入依据、适用范围和备注保留原文。它是来源档位，单条新闻的判断确信度仍单独保留。</footer>
+</main>
+<script src="/source-archive-coverage.js" defer></script></body></html>

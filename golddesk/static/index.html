@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f1">
+  <meta name="description" content="本地黄金期货新闻研究台：查看上海黄金合约行情，按事件分类归档新闻。">
+  <title>GOLD SIGNAL · 黄金期货新闻研究台</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./redirect.js"></script>
+  <script src="./contracts.js" defer></script>
+  <script src="./news-factor.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" id="overview-link" href="./" aria-label="黄金期货新闻研究台行情首页"><span class="brand-symbol"><i></i><i></i><i></i></span><span>GOLD SIGNAL<small>黄金期货新闻研究台</small></span></a>
+      <div class="sidebar-navigation">
+        <section class="research-navigation" aria-labelledby="news-factor-heading">
+          <div class="nav-section-heading"><h2 id="news-factor-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="news-factor" aria-label="新闻因子挖掘" aria-expanded="true" aria-controls="news-factor-nav"><span>新闻因子挖掘</span><span class="nav-heading-meta"><span class="nav-count">04</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="news-factor-nav" aria-label="新闻因子挖掘"><button type="button" class="nav-item research-nav-item" data-research-section="news-factor" data-research-subsection="bmk"><span>BMK</span></button><button type="button" class="nav-item research-nav-item" data-research-section="news-factor" data-research-subsection="experiments"><span>experiments</span></button><button type="button" class="nav-item research-nav-item" data-research-section="news-factor" data-research-subsection="factor-base"><span>factor base</span></button><button type="button" class="nav-item research-nav-item" data-research-section="news-factor" data-research-subsection="strategy-base"><span>strategy base</span></button></nav>
+        </section>
+        <section class="contract-navigation" aria-labelledby="contract-heading">
+          <div class="nav-section-heading"><h2 id="contract-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="contracts" aria-label="黄金合约" aria-expanded="true" aria-controls="contract-nav"><span>黄金合约</span><span class="nav-heading-meta"><span class="nav-count">1</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="contract-nav" aria-label="黄金合约品种与月份"></nav>
+        </section>
+        <section class="news-navigation" aria-labelledby="global-news-heading">
+          <div class="nav-section-heading"><h2 id="global-news-heading"><button type="button" class="nav-section-toggle" data-nav-toggle="news" aria-label="全球黄金新闻" aria-expanded="true" aria-controls="category-nav"><span>全球黄金新闻</span><span class="nav-heading-meta"><span class="nav-count" id="all-count">—</span><span class="nav-chevron" data-icon="chevron-right"></span></span></button></h2></div>
+          <nav id="category-nav" aria-label="黄金新闻分类"></nav>
+        </section>
+      </div>
+      <div class="sidebar-settings" id="sidebar-settings">
+        <div class="settings-popover" id="settings-popover" hidden>
+          <button type="button" id="general-settings">通用设置</button>
+        </div>
+        <button type="button" class="settings-trigger" id="settings-button" aria-expanded="false" aria-controls="settings-popover"><span>设置</span><span data-icon="chevron-up"></span></button>
+      </div>
+    </aside>
+    <div class="main-shell">
+      <main>
+        <div class="page-heading">
+          <button class="icon-button mobile-menu" id="menu-button" aria-label="打开分类菜单" aria-expanded="false"><span data-icon="menu"></span></button>
+          <div class="page-heading-content"><div class="eyebrow">GOLD FUTURES INTELLIGENCE</div><h1 id="page-title">AU2612<span class="title-dot">.</span></h1><p id="page-subtitle">按月份查看上海黄金期货 K 线与研究新闻。</p></div>
+        </div>
+        <section class="market-dashboard" id="overview" aria-label="黄金合约 K 线"><div class="loading-state"><div class="spinner"></div>正在载入合约图表</div></section>
+        <section class="news-workspace" id="news-workspace" aria-label="分类新闻" hidden>
+          <div class="workspace-header"><div class="section-title"><h2>事件列表</h2><span id="result-badge" class="count-badge">0</span></div><div class="workspace-header-right"><span class="saved-label" id="saved-label">本地档案</span><button class="icon-button" id="refresh-button" title="刷新新闻" aria-label="刷新新闻"><span data-icon="refresh"></span></button></div></div>
+          <div class="filter-bar">
+            <label class="search-field"><span data-icon="search"></span><input type="search" id="search-input" placeholder="搜索标题、正文、地区或事件编号…" aria-label="搜索新闻"><kbd>⌘ K</kbd></label>
+            <label class="select-filter source-filter"><select id="source-filter" aria-label="筛选新闻信源"><option value="">全部信源</option></select></label>
+            <label class="select-filter"><span data-icon="globe"></span><select id="asset-filter" aria-label="筛选期货品种"><option value="">全部品种</option><option>AU</option></select></label>
+            <label class="select-filter"><span data-icon="signal"></span><select id="direction-filter" aria-label="筛选影响方向"><option value="">全部方向</option><option>偏多</option><option>偏空</option><option>混合</option><option>不确定</option></select></label>
+            <button class="button filter-button" id="more-filters" aria-expanded="false"><span data-icon="filter"></span>筛选<span id="filter-dot"></span></button>
+          </div>
+          <div class="advanced-filters" id="advanced-filters" hidden><label>核验状态<select id="verification-filter"><option value="">全部状态</option><option>待核验</option><option>已确认</option><option>存在争议</option></select></label><label>记录类型<select id="demo-filter"><option value="">全部记录</option><option value="real" selected>正式记录</option><option value="demo">演示记录</option></select></label><label>首发时间（UTC+0）<select id="time-filter" aria-label="按首发时间筛选新闻"><option value="">全部时间</option><option value="today">今天</option><option value="7d">近 7 天</option><option value="30d">近 30 天</option><option value="90d">近 3 个月</option><option value="year">今年</option></select></label><button class="text-button" id="reset-filters">重置筛选</button></div>
+          <div class="list-toolbar"><span id="result-description">正在读取本地新闻…</span><div><select id="sort-select" aria-label="排序方式"><option value="published">首发时间最新</option><option value="updated">最近更新</option><option value="oldest">首发时间最早</option></select><div class="view-toggle" aria-label="视图切换"><button class="active" id="list-view" aria-label="列表视图" title="列表视图"><span data-icon="list"></span></button><button id="grid-view" aria-label="卡片视图" title="卡片视图"><span data-icon="grid"></span></button></div></div></div>
+          <div id="news-content" aria-live="polite"><div class="loading-state"><div class="spinner"></div>正在读取本地档案</div></div>
+          <div class="pagination" id="pagination"></div>
+        </section>
+        <section class="research-workspace" id="research-workspace" aria-label="新闻因子挖掘" hidden></section>
+      </main>
+    </div>
+  </div>
+  <div id="overlay-root"></div>
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+</body>
+</html>

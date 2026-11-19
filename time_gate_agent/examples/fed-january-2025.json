@@ -1,0 +1,13 @@
+{
+  "case_id": "fed-january-2025-migration-smoke",
+  "question": "At its January 29, 2025 meeting, did the FOMC leave the federal funds target range unchanged from its December 18, 2024 level?",
+  "answer_type": "choice",
+  "options": [
+    {"label": "A", "text": "Unchanged"},
+    {"label": "B", "text": "Changed"}
+  ],
+  "topic": "macroeconomics and interest rates",
+  "cutoff": "2025-01-01T00:00:00+00:00",
+  "target_date": "2025-01-29T19:00:00+00:00",
+  "resolution_rule": "Use the original Federal Reserve FOMC statement published on January 29, 2025."
+}

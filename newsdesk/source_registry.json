@@ -1,0 +1,814 @@
+{
+  "version": 2,
+  "checked_at": "2026-10-28T11:49:04+00:00",
+  "source_document": "2026-10-28-全量信源.md",
+  "source_document_window": "2026-10-27T09:35:00+08:00/2026-10-28T09:35:00+08:00",
+  "source_group_count": 51,
+  "named_label_count": 50,
+  "document_item_count": 937,
+  "status_meaning": {
+    "adapter_verified": "本次实测公开内容并有采集适配器；逐条分类才可入库",
+    "homepage_only": "官网可访问，但未接入新闻/研报采集",
+    "parser_pending": "公开入口已探测，解析适配尚未完成",
+    "requires_access": "已见登录入口，不下载受限内容",
+    "request_failed": "本次普通请求失败",
+    "needs_account_list": "缺少具体账号/Feed/API",
+    "needs_identity": "标签身份或原始渠道不确定",
+    "not_tested": "尚未实测",
+    "live_check_required": "已纳入自动更新，运行连通性以信源维护检测结果为准",
+    "adapter_blocked": "已加入自动更新尝试；后台访问或目录发现受阻，尚未正式跑通"
+  },
+  "sources": [
+    {
+      "id": "jin10",
+      "name": "金十数据",
+      "document_group": "news",
+      "document_count": 166,
+      "type": "financial_flash",
+      "official_url": "https://www.jin10.com/",
+      "enabled": true,
+      "adapter": "news_sources",
+      "access_status": "adapter_verified",
+      "note": "官方首页JS公开调用的flash-api已实测成功，使用网页公开应用头，无用户登录/Cookie；仅采集非VIP公开快讯，保留原消息详情链接。",
+      "time_audit": {
+        "checked_at": "2026-11-02T05:43:10+00:00",
+        "version": "source-timezone-v1-20261102",
+        "scope": "2026-11-02 visible archive; new candidates rechecked from raw responses",
+        "finding": "官方快讯脚本指定 Asia/Shanghai（UTC+8）",
+        "status_counts": {
+          "verified_site_timezone": 904
+        },
+        "evidence_urls": [
+          "https://flash.jin10.com/detail/20261102125233688800",
+          "https://www.jin10.com/new/js/index.5afc042c17.js"
+        ],
+        "audit_summary": "data/timezone-verification/20261102/applied/summary.json"
+      }
+    },
+    {
+      "id": "cls",
+      "name": "财联社",
+      "document_group": "news",
+      "document_count": 81,
+      "type": "financial_flash",
+      "official_url": "https://www.cls.cn/",
+      "enabled": true,
+      "adapter": "news_sources",
+      "access_status": "adapter_verified",
+      "note": "公开快讯/新闻适配器已实测取得候选；内容须经 agent 判定后才能入新闻库。",
+      "time_audit": {
+        "checked_at": "2026-11-02T05:43:10+00:00",
+        "version": "source-timezone-v1-20261102",
+        "scope": "2026-11-02 visible archive; new candidates rechecked from raw responses",
+        "finding": "原始 Unix 时间戳（确定时刻，转换为 UTC；无须猜测地域时区）",
+        "status_counts": {
+          "verified_epoch": 9976
+        },
+        "evidence_urls": [
+          "https://www.cls.cn/detail/2522262"
+        ],
+        "audit_summary": "data/timezone-verification/20261102/applied/summary.json"
+      }
+    },
+    {
+      "id": "ths",
+      "name": "同花顺",
+      "document_group": "news",
+      "document_count": 60,
+      "type": "financial_media",
+      "official_url": "https://news.10jqka.com.cn/",
+      "enabled": true,
+      "adapter": "news_sources",
+      "access_status": "adapter_verified",
+      "note": "公开快讯/新闻适配器已实测取得候选；内容须经 agent 判定后才能入新闻库。",
+      "time_audit": {
+        "checked_at": "2026-11-02T05:43:10+00:00",
+        "version": "source-timezone-v1-20261102",
+        "scope": "2026-11-02 visible archive; new candidates rechecked from raw responses",
+        "finding": "Asia/Shanghai（UTC+8）；跨 1—11 月的 11 对文章/列表与 UTC 元数据对照一致",
+        "status_counts": {
+          "verified_site_timezone": 3194,
+          "verified_offset": 59
+        },
+        "evidence_urls": [
+          "https://stock.10jqka.com.cn/20261102/c681337150.shtml",
+          "https://stock.10jqka.com.cn/20260101/c673690685.shtml",
+          "https://goodsfu.10jqka.com.cn/20260202/c674472684.shtml",
+          "https://stock.10jqka.com.cn/20260302/c675007039.shtml",
+          "https://stock.10jqka.com.cn/20260404/c675770355.shtml",
+          "https://stock.10jqka.com.cn/20260506/c676477038.shtml",
+          "https://stock.10jqka.com.cn/20260602/c677142328.shtml",
+          "https://goodsfu.10jqka.com.cn/20260702/c677891178.shtml",
+          "https://stock.10jqka.com.cn/20260804/c678670418.shtml",
+          "https://stock.10jqka.com.cn/20260902/c679521552.shtml",
+          "https://stock.10jqka.com.cn/20261102/c681337658.shtml"
+        ],
+        "audit_summary": "data/timezone-verification/20261102/applied/summary.json"
+      }
+    },
+    {
+      "id": "jiemian",
+      "name": "界面快报",
+      "document_group": "news",
+      "document_count": 39,
+      "type": "financial_media",
+      "official_url": "https://www.jiemian.com/",
+      "enabled": true,
+      "adapter": "news_sources",
+      "access_status": "adapter_verified",
+      "note": "公开快讯/新闻适配器已实测取得候选；内容须经 agent 判定后才能入新闻库。",
+      "time_audit": {
+        "checked_at": "2026-11-02T05:43:10+00:00",
+        "version": "source-timezone-v1-20261102",
+        "scope": "2026-11-02 visible archive; new candidates rechecked from raw responses",
+        "finding": "原始 Unix 时间戳（确定时刻，转换为 UTC；无须猜测地域时区）",
+        "status_counts": {
+          "verified_epoch": 117
+        },
+        "evidence_urls": [
+          "https://www.jiemian.com/article/15281572.html"
+        ],
+        "audit_summary": "data/timezone-verification/20261102/applied/summary.json"
+      }
+    },
+    {
+      "id": "stcn",
+      "name": "证券时报",
+      "document_group": "news",
+      "document_count": 34,
+      "type": "financial_media",
+      "official_url": "https://www.stcn.com/",
+      "enabled": true,
+      "adapter": "news_sources",
+      "access_status": "adapter_verified",
+      "note": "公开快讯/新闻适配器已实测取得候选；内容须经 agent 判定后才能入新闻库。",
+      "time_audit": {
+        "checked_at": "2026-11-02T05:43:10+00:00",
+        "version": "source-timezone-v1-20261102",
+        "scope": "2026-11-02 visible archive; new candidates rechecked from raw responses",
+        "finding": "原始 Unix 时间戳（确定时刻，转换为 UTC；无须猜测地域时区）",
+        "status_counts": {
+          "verified_epoch": 82
+        },
+        "evidence_urls": [
+          "https://www.stcn.com/article/detail/4317223.html"
+        ],
+        "audit_summary": "data/timezone-verification/20261102/applied/summary.json"
+      }
+    },
+    {
+      "id": "aastocks",
+      "name": "阿斯达克研报",
+      "document_group": "news",
+      "document_count": 12,
+      "type": "financial_media",
+      "official_url": "https://www.aastocks.com/sc/stocks/news/aafn",
+      "enabled": true,
+      "adapter": "additional_sources",
+      "access_status": "adapter_verified",
+      "note": "公开新闻列表及文章 HTML 已实测，取得20条；按页面显示首发时间解析，全部主题交agent判断。",
+      "time_audit": {
+        "checked_at": "2026-11-02T05:43:10+00:00",
+        "version": "source-timezone-v1-20261102",
+        "scope": "2026-11-02 visible archive; new candidates rechecked from raw responses",
+        "finding": "官方 ConvertToLocalTime 指定 Asia/Hong_Kong（UTC+8）",
+        "status_counts": {
+          "verified_site_timezone": 135
+        },
+        "evidence_urls": [
+          "https://www.aastocks.com/sc/stocks/news/aafn-con/NOW.1552412/top-news/AAFN",
+          "https://www.aastocks.com/sc/resources/script/js_std?v=GyLFPVh7sh5_6KvZJeafqy3zji36l98xva2bs7rBR941"
+        ],
+        "audit_summary": "data/timezone-verification/20261102/applied/summary.json"
+      }
+    },
+    {
+      "id": "institution_18",
+      "name": "兴业证券",
+      "document_group": "views",
+      "document_count": 8,
+      "type": "domestic_securities",
+      "official_url": "https://www.xyzq.com.cn/",
+      "enabled": true,
+      "adapter": "xingye_source",
+      "access_status": "adapter_verified",
+      "note": "同花顺公开F10含10月28日兴业署名研报；认证专栏明确归属兴业证券研究所策略团队，另有9月历史研究。集合页报告按站内ID去重，不用同一URL覆盖多份报告。",
+      "probe": {
+        "name": "兴业证券",
+        "requested_url": "https://www.xyzq.com.cn/",
+        "final_url": "https://www.xyzq.com.cn/",
+        "http_status": 200,
+        "title": "兴业证券官方网站",
+        "status": "homepage_reachable"
+      },
+      "checked_at": "2026-10-28T11:49:04+00:00",
+      "collection_platform": "同花顺公开F10研报；格隆汇认证专栏",
+      "entry_urls": [
+        "https://basic.10jqka.com.cn/48/300750/worth.html",
+        "https://m.gelonghui.com/column/624647"
+      ],
+      "coverage": {
+        "earliest_publication": "2026-08-31T23:08:49+00:00",
+        "latest_publication": "2026-09-16T23:06:28+00:00",
+        "recent_30_days": 0,
+        "freshness": "historical_only",
+        "current_f10_publication_date": "2026-10-28",
+        "historical_column_period": "2026-09-01/2026-09-17"
+      },
+      "latest_probe": {
+        "source_id": "institution_18",
+        "source_name": "兴业证券",
+        "status": "ok",
+        "count": 5,
+        "entry_urls": [
+          "https://m.gelonghui.com/column/624647"
+        ],
+        "collection_platform": "格隆汇认证专栏",
+        "errors": [],
+        "coverage": {
+          "earliest_publication": "2026-08-31T23:08:49+00:00",
+          "latest_publication": "2026-09-16T23:06:28+00:00",
+          "recent_30_days": 0,
+          "freshness": "historical_only",
+          "current_f10_publication_date": "2026-10-28",
+          "historical_column_period": "2026-09-01/2026-09-17"
+        },
+        "notes": [
+          "账号及文章均明确标为兴业证券研究所策略团队，原文只收公开文字，不含图表。",
+          "该专栏本次最新文章超过30天，属于历史研究覆盖，不能作为本日新发布新闻。"
+        ],
+        "report_path": "/Users/jasson/Documents/ChatGPT/futures_price_forecasting/newsdesk/data/ingestion/institution-expansion/xingye-gap/xingye-run-a2fb503a.json"
+      },
+      "time_audit": {
+        "checked_at": "2026-11-02T05:43:10+00:00",
+        "version": "source-timezone-v1-20261102",
+        "scope": "2026-11-02 visible archive; new candidates rechecked from raw responses",
+        "finding": "原始 Unix 时间戳（确定时刻，转换为 UTC；无须猜测地域时区）",
+        "status_counts": {
+          "verified_epoch": 39
+        },
+        "evidence_urls": [
+          "https://m.gelonghui.com/p/4007332"
+        ],
+        "audit_summary": "data/timezone-verification/20261102/applied/summary.json"
+      }
+    },
+    {
+      "id": "institution_46",
+      "name": "野村",
+      "document_group": "views",
+      "document_count": 1,
+      "type": "international_financial_institution",
+      "official_url": "https://www.nomura.com/",
+      "enabled": true,
+      "adapter": "overseas_sources",
+      "access_status": "adapter_verified",
+      "note": "已实取公开内容并核对机构署名；采集渠道：机构官网。正文或摘要范围在每条记录中明示。",
+      "probe": {
+        "name": "野村",
+        "requested_url": "https://www.nomura.com/",
+        "final_url": "https://www.nomura.com/",
+        "http_status": 200,
+        "title": "Home - NOMURA",
+        "status": "homepage_reachable"
+      },
+      "checked_at": "2026-10-28T11:49:04+00:00",
+      "collection_platform": "机构官网",
+      "entry_urls": [
+        "https://www.nomuraconnects.com/Articles/"
+      ],
+      "coverage": {},
+      "latest_probe": {
+        "source_id": "institution_46",
+        "source_name": "野村",
+        "status": "ok",
+        "count": 8,
+        "errors": [],
+        "entry_urls": [
+          "https://www.nomuraconnects.com/Articles/"
+        ],
+        "report_path": "/Users/jasson/Documents/ChatGPT/futures_price_forecasting/newsdesk/data/ingestion/overseas-run-20261028T113253621922Z-overseas.json"
+      },
+      "time_audit": {
+        "checked_at": "2026-11-02T05:43:10+00:00",
+        "version": "source-timezone-v1-20261102",
+        "scope": "2026-11-02 visible archive; new candidates rechecked from raw responses",
+        "finding": "文章 datePublished 显式 +00:00；2 条午夜占位仅保留日期",
+        "status_counts": {
+          "verified_offset": 26,
+          "date_only": 2
+        },
+        "evidence_urls": [
+          "https://www.nomuraconnects.com/focused-thinking-posts/asia-economic-monthly-asian-central-banks-hormuz-dilemma/"
+        ],
+        "audit_summary": "data/timezone-verification/20261102/applied/summary.json"
+      }
+    },
+    {
+      "id": "authority_26",
+      "name": "Jefferies",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "institution_public",
+      "official_url": "https://www.jefferies.com/insights/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 26,
+      "authority_level": "P0",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_30",
+      "name": "RBC",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "institution_public",
+      "official_url": "https://www.rbc.com/en/economics/monthly-forecast-update/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 30,
+      "authority_level": "P1",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_39",
+      "name": "中国日报",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "institution_public",
+      "official_url": "https://www.chinadaily.com.cn/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 39,
+      "authority_level": "P0",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_41",
+      "name": "第一财经",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "institution_public",
+      "official_url": "https://www.yicai.com/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 41,
+      "authority_level": "P1",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_45",
+      "name": "澎湃新闻",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "institution_public",
+      "official_url": "https://www.thepaper.cn/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 45,
+      "authority_level": "P1",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_49",
+      "name": "IDC",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "institution_public",
+      "official_url": "https://www.idc.com/resource-center/press-releases/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 49,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_51",
+      "name": "TrendForce集邦",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "institution_public",
+      "official_url": "https://www.trendforce.com/presscenter/news",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 51,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_53",
+      "name": "SMM上海有色",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "institution_public",
+      "official_url": "https://news.smm.cn/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 53,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_56",
+      "name": "猛哥看商业",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://finance.sina.com.cn/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 56,
+      "authority_level": "P0",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_58",
+      "name": "王涵论宏观",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://finance.sina.com.cn/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 58,
+      "authority_level": "P0",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_59",
+      "name": "草叔消费升级研究",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://finance.sina.com.cn/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 59,
+      "authority_level": "P1",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_60",
+      "name": "远川研究所",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://m.pedaily.cn/author/579",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 60,
+      "authority_level": "P1",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_64",
+      "name": "吴晓波频道(吴晓波)",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://m.sohu.com/media/121956368",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 64,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_66",
+      "name": "洪灏",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://wallstreetcn.com/authors/134881",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 66,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_67",
+      "name": "管清友",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.xueqiu.com/u/2371289267",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 67,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_68",
+      "name": "付鹏",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://wallstreetcn.com/authors/100001415753",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 68,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_69",
+      "name": "秦朔朋友圈(秦朔)",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.cyzone.cn/author/1563266",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 69,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_72",
+      "name": "阿基米德Biotech",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.xueqiu.com/u/3609410221",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 72,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_73",
+      "name": "互联网怪盗团",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://m.pedaily.cn/author/763",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 73,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_74",
+      "name": "市值风云",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.wogoo.com/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 74,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_75",
+      "name": "易简财经",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.yemacaijing.com/user/tdwz/uid/323.html",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 75,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_76",
+      "name": "阿尔法工场研究院",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.arfgc.com/newest.html",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 76,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_77",
+      "name": "Mr蒋静的资本圈",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://xw.qianzhan.com/analyst/profile/14536.html",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 77,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_78",
+      "name": "深潜atom",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.sohu.com/media/100150",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 78,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_79",
+      "name": "市值观察",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.tmtpost.com/user/4876088",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 79,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_80",
+      "name": "远川科技评论",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.cyzone.cn/author/1545715",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 80,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_81",
+      "name": "财经无忌",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.tmtpost.com/user/297172",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 81,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_82",
+      "name": "达摩财经",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://m.sohu.com/media/100011510",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 82,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_83",
+      "name": "节点财经",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.jiediancj.com/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 83,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_85",
+      "name": "汽车K线",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.sohu.com/media/115871",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 85,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_87",
+      "name": "港股研究社",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.tmtpost.com/user/3837030",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 87,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_91",
+      "name": "尺度商业",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.sohu.com/media/157944",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 91,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_92",
+      "name": "乔令投研",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.xueqiu.com/u/4164170693",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 92,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_93",
+      "name": "嗨牛财经",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.laohu8.com/m/user/3557188805155421/",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 93,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_94",
+      "name": "公司研究室",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://news.stockstar.com/source_list/%E5%85%AC%E5%8F%B8%E7%A0%94%E7%A9%B6%E5%AE%A4_5.shtml",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 94,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    },
+    {
+      "id": "authority_95",
+      "name": "本原财经",
+      "document_group": "authority_workbook",
+      "document_count": 0,
+      "type": "analysis_account",
+      "official_url": "https://www.tmtpost.com/user/7125739",
+      "enabled": true,
+      "adapter": "verified_sources",
+      "access_status": "adapter_verified",
+      "authority_row": 95,
+      "authority_level": "P2",
+      "note": "后台当前目录、正文与 UTC 时间验证通过；不保证转载渠道与原账号同步。"
+    }
+  ],
+  "updated_at": "2026-11-05T11:15:31+00:00",
+  "active_source_count": 44
+}

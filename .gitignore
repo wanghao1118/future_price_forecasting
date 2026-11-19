@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Local databases and generated run artifacts
+newsdesk/data/*
+!newsdesk/data/news.sqlite3
+golddesk/data/
+analysis/
+search-strategy/
+newsdesk/fixtures/
+ops/tencent-forward/analysis-forward-validation.json
+*.log
