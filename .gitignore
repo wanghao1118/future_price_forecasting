@@ -5,6 +5,7 @@ __pycache__/
 # Local databases and generated run artifacts
 newsdesk/data/*
 !newsdesk/data/news.sqlite3
+golddesk/
 golddesk/data/
 analysis/
 search-strategy/

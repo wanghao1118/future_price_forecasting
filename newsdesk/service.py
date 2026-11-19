@@ -1,4 +1,4 @@
-"""Keep the oil and gold workbenches running in the current user's session.
+"""Keep the oil workbench running in the current user's session.
 
 Run detached from an authorized terminal; this does not install a login service.
 Only one supervisor may run for this workspace. Logs never include environment
@@ -39,7 +39,6 @@ def main():
         terminated_children = set()
         child_specs = {
             "oil": ([sys.executable, "-u", "-m", "newsdesk.server", "--port", "8765"], STATE / "server.pid"),
-            "gold": ([sys.executable, "-u", "-m", "golddesk.server", "--port", "8785"], STATE / "gold-server.pid"),
         }
 
         def launch(name, command, pid_path):
