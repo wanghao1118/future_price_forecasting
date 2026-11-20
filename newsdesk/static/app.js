@@ -26,7 +26,7 @@ const paths = {
 function icon(name) { return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${paths[name] || paths.file}"/></svg>`; }
 function hydrateIcons(root = document) { $$('[data-icon]', root).forEach(element => { element.innerHTML = icon(element.dataset.icon); }); }
 const shortNames = {supply:'生产与供应', demand:'需求与经济', inventory:'库存与储备', refining:'炼厂与成品油', geopolitics:'地缘与制裁', logistics:'运输与交付', macro:'宏观与流动性', policy:'能源与政策', positioning:'资金与交易', weather:'天气与灾害'};
-let state = {items:[], config:null, category:'', researchSection:'', researchSubsection:'', researchMode:'backtest', researchFamily:'all', researchQuery:'', contractId:'wti-202612', query:'', source:'', asset:'', direction:'', verification:'', demo:'real', time:'', sort:'published', view:'list', page:1, perPage:10, modal:null, detailId:null, loading:true};
+let state = {items:[], total:0, realTotal:0, categoryTotals:{}, config:null, category:'', researchSection:'', researchSubsection:'', researchMode:'backtest', researchFamily:'all', researchQuery:'', contractId:'wti-202612', query:'', source:'', asset:'', direction:'', verification:'', demo:'real', time:'', sort:'published', view:'list', page:1, perPage:10, modal:null, detailId:null, loading:true};
 let returnFocus = null;
 let currentFormItem = null;
 let formDirty = false;
@@ -288,9 +288,9 @@ function benchmarkV2Subtitle() {
 function renderNavigation() {
   renderContractNavigation();
   const realItems = state.items.filter(item => !item.is_demo);
-  $('#all-count').textContent = realItems.length;
+  $('#all-count').textContent = state.realTotal || realItems.length;
   $('#category-nav').innerHTML = state.config.categories.map(category => {
-    const count = realItems.filter(item => newsCategories(item).includes(category.id)).length;
+    const count = state.categoryTotals[category.id] ?? realItems.filter(item => newsCategories(item).includes(category.id)).length;
     return `<button class="nav-item ${state.category === category.id ? 'active' : ''}" data-category="${category.id}" title="${escapeHTML(category.description)}" ${state.category === category.id ? 'aria-current="page"' : ''}><span>${escapeHTML(category.name)}</span><span class="nav-count">${count}</span></button>`;
   }).join('');
   const selected = selectedContract();
@@ -362,7 +362,9 @@ function renderList() {
   const displayed = items.slice(start, start + state.perPage);
   $('#result-badge').textContent = items.length;
   const hasFilter = state.query || state.source || state.asset || state.direction || state.verification || state.demo !== 'real' || state.time;
-  const categoryTotal = state.items.filter(item => newsCategories(item).includes(state.category) && matchesRecordType(item)).length;
+  const categoryTotal = hasFilter
+    ? state.items.filter(item => newsCategories(item).includes(state.category) && matchesRecordType(item)).length
+    : (state.categoryTotals[state.category] ?? state.items.filter(item => newsCategories(item).includes(state.category) && matchesRecordType(item)).length);
   $('#result-description').textContent = hasFilter ? `筛选到 ${items.length} 条新闻，该分类共 ${categoryTotal} 条` : `该分类共 ${items.length} 条新闻 · 点击记录查看完整属性`;
   $('#list-view').classList.toggle('active', state.view === 'list');
   $('#grid-view').classList.toggle('active', state.view === 'grid');
@@ -407,7 +409,13 @@ function render() {
   if (!tradingReturnResearch) window.TradingReturn?.hide();
 }
 async function reload(showToast = false) {
-  const data = await api('/api/news?limit=3000'); state.items = data.items; state.loading = false; render();
+  const data = await api('/api/news?limit=3000');
+  state.items = data.items;
+  state.total = data.total || state.items.length;
+  state.realTotal = data.real_total || state.items.filter(item => !item.is_demo).length;
+  state.categoryTotals = data.category_totals || {};
+  state.loading = false;
+  render();
   if (showToast) toast('本地档案已刷新');
 }
 function changeCategory(id) {

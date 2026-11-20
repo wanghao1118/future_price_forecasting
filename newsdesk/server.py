@@ -733,6 +733,11 @@ class NewsHandler(BaseHTTPRequestHandler):
                 needle = query["q"][0].casefold()
                 items = [item for item in items if needle in json.dumps(item, ensure_ascii=False).casefold()]
             total = len(items)
+            real_items = [item for item in items if not item.get("is_demo")]
+            category_totals = {
+                category["id"]: sum(1 for item in real_items if category["id"] in item.get("categories", [item.get("category")]))
+                for category in CATEGORIES
+            }
             limit_value = query.get("limit", [None])[0]
             offset_value = query.get("offset", ["0"])[0]
             if limit_value is None:
@@ -747,7 +752,8 @@ class NewsHandler(BaseHTTPRequestHandler):
                     self.json_response({"error": "limit 必须为 1–5000，offset 必须为非负整数"}, 400)
                     return
                 items = items[offset:offset + limit]
-            self.json_response({"items": items, "total": total,
+            self.json_response({"items": items, "total": total, "real_total": len(real_items),
+                                "category_totals": category_totals,
                                 **({"limit": limit, "offset": int(offset_value), "truncated": total > int(offset_value) + limit}
                                    if limit is not None else {})})
         elif path == "/api/export":
