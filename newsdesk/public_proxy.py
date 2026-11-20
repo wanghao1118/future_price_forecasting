@@ -14,19 +14,30 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import parse_qsl, urlencode, urlsplit
 
 
-STATIC_PATHS = {"/", "/index.html", "/favicon.svg", "/styles.css", "/app.js", "/contracts.js", "/benchmark.js", "/trading-return.js"}
+STATIC_PATHS = {
+    "/", "/index.html", "/favicon.svg", "/styles.css", "/app.js", "/contracts.js",
+    "/benchmark.js", "/news-factor.js", "/source-maintenance.js", "/source-coverage.js",
+    "/source-archive-coverage.js", "/source-coverage.html", "/source-archive-coverage.html",
+    "/trading-return.js",
+}
 OIL_PREFIX = "/oil/"
 FUTUREX_PREFIX = "/futurex/"
 FUTUREX_FILES = {"", "index.html", "styles.css", "app.js", "data.js", "data.json"}
 FUTUREX_API_PATHS = {"api/finance-data-lake"}
 ANALYSIS_PREFIX = "/analysis/exp01/"
 ANALYSIS_SNAPSHOT = re.compile(r"snapshot\.[a-f0-9]{64}\.json")
-API_PATHS = {"/api/config", "/api/settings", "/api/research", "/api/trading-return", "/api/trading-return/experiments", "/api/benchmark", "/api/benchmark/questions",
-             "/api/evaluations", "/api/market/contracts", "/api/news", "/api/export"}
+API_PATHS = {
+    "/api/config", "/api/settings", "/api/research", "/api/source-coverage",
+    "/api/sources/health", "/api/trading-return", "/api/trading-return/experiments",
+    "/api/trading-return/model-test", "/api/trading-return/env-test", "/api/trading-return/mcp-test",
+    "/api/benchmark", "/api/benchmark/build", "/api/benchmark/questions", "/api/evaluations",
+    "/api/market/contracts", "/api/news", "/api/export",
+}
 API_PATTERNS = (
     re.compile(r"/api/market/(?:wti|brent|sc)-\d{6}(?:/indicators)?"),
     re.compile(r"/api/news/[A-Za-z0-9_-]+"),
     re.compile(r"/api/evaluations/[A-Za-z0-9_-]+(?:/cases/[A-Za-z0-9_-]+/trace)?"),
+    re.compile(r"/api/trading-return/experiments/[A-Za-z0-9_-]+"),
 )
 RESPONSE_HEADERS = {"content-type", "content-disposition", "cache-control", "last-modified", "etag", "x-content-type-options"}
 MAX_RESPONSE_BYTES = 32 * 1024 * 1024
