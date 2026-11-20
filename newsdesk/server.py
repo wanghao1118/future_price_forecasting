@@ -8,6 +8,7 @@ import re
 import signal
 import sqlite3
 import sys
+import time
 import uuid
 from contextlib import contextmanager
 from datetime import datetime, timezone
@@ -460,7 +461,10 @@ class NewsHandler(BaseHTTPRequestHandler):
             self.send_header(key, value)
         self.end_headers()
         if self.command != "HEAD":
-            self.wfile.write(body)
+            try:
+                self.wfile.write(body)
+            except (BrokenPipeError, ConnectionResetError):
+                return
 
     def valid_host(self):
         host = self.headers.get("Host", "")
@@ -519,12 +523,19 @@ class NewsHandler(BaseHTTPRequestHandler):
         elif path == "/api/sources/health":
             self.json_response(self.server.sources.snapshot())
         elif path == "/api/research":
+            cached = self.server._research_cache
+            if cached is not None and time.monotonic() - self.server._research_cache_at < 10:
+                self.json_response(cached)
+                return
             from newsdesk.environment_policy import memory_environment
             catalog = self.server.evaluations.catalog()
             catalog["environments"] = list(catalog.get("environments", [])) + [memory_environment()]
-            self.json_response({"benchmark": self.server.benchmarks.summary(),
-                                "benchmarks": self.server.benchmarks.catalog(),
-                                **catalog, "memory_benchmark": self.server.memory_evaluations.catalog()})
+            result = {"benchmark": self.server.benchmarks.summary(),
+                      "benchmarks": self.server.benchmarks.catalog(),
+                      **catalog, "memory_benchmark": self.server.memory_evaluations.catalog()}
+            self.server._research_cache = result
+            self.server._research_cache_at = time.monotonic()
+            self.json_response(result)
         elif path == "/api/trading-return":
             from newsdesk.trading_return import catalog
             self.json_response(catalog())
@@ -538,7 +549,11 @@ class NewsHandler(BaseHTTPRequestHandler):
                 self.json_response({"error": "实验编号无效"}, 400)
                 return
             try:
-                self.json_response(self.server.experiments.detail(identifier))
+                query = parse_qs(parsed.query)
+                page = query.get("page", ["1"])[0]
+                page_size = query.get("page_size", ["10"])[0]
+                mode = query.get("mode", ["all"])[0]
+                self.json_response(self.server.experiments.detail(identifier, page=page, page_size=page_size, mode=mode))
             except KeyError:
                 self.json_response({"error": "实验不存在"}, 404)
         elif path == "/api/benchmark/memory-leakage" or (path == "/api/benchmark" and parse_qs(parsed.query).get("kind") == ["memory-leakage"]):
@@ -717,7 +732,24 @@ class NewsHandler(BaseHTTPRequestHandler):
             if query.get("q"):
                 needle = query["q"][0].casefold()
                 items = [item for item in items if needle in json.dumps(item, ensure_ascii=False).casefold()]
-            self.json_response({"items": items, "total": len(items)})
+            total = len(items)
+            limit_value = query.get("limit", [None])[0]
+            offset_value = query.get("offset", ["0"])[0]
+            if limit_value is None:
+                limit = None
+            else:
+                try:
+                    limit = int(limit_value)
+                    offset = int(offset_value)
+                    if not 1 <= limit <= 5000 or offset < 0:
+                        raise ValueError
+                except ValueError:
+                    self.json_response({"error": "limit 必须为 1–5000，offset 必须为非负整数"}, 400)
+                    return
+                items = items[offset:offset + limit]
+            self.json_response({"items": items, "total": total,
+                                **({"limit": limit, "offset": int(offset_value), "truncated": total > int(offset_value) + limit}
+                                   if limit is not None else {})})
         elif path == "/api/export":
             self.json_response({"version": 1, "exported_at": now_iso(), "items": self.server.store.all()}, headers={"Content-Disposition": 'attachment; filename="oil-signal-news.json"'})
         elif path.startswith("/api/news/"):
@@ -832,7 +864,7 @@ class NewsHandler(BaseHTTPRequestHandler):
                 except (OSError, RuntimeError, KeyError, TypeError):
                     self.json_response({"error": "MCP 测试暂不可用，请稍后重试"}, 503)
             elif method == "POST" and path == "/api/trading-return/experiments":
-                allowed = {"name", "submitter", "models", "mcp", "environment", "evaluator", "bmk", "strategy_doc", "prompt"}
+                allowed = {"name", "submitter", "models", "mcp", "environment", "evaluator", "strategy_mode", "bmk", "strategy_doc", "prompt"}
                 required = {"name", "submitter", "models", "mcp", "bmk", "strategy_doc"}
                 if set(data) - allowed or not required.issubset(data):
                     raise ValidationError("创建实验需要名称、提交人、模型、MCP、Env、BMK 和策略文档")
@@ -859,6 +891,18 @@ class NewsHandler(BaseHTTPRequestHandler):
                 except KeyError:
                     self.json_response({"error": "实验不存在"}, 404)
                 except (RuntimeError, ValueError) as error:
+                    raise ValidationError(str(error))
+            elif method == "POST" and path.startswith("/api/trading-return/experiments/") and path.endswith("/restart"):
+                identifier = unquote(path[len("/api/trading-return/experiments/"):-len("/restart")].rstrip("/"))
+                if not identifier or "/" in identifier:
+                    raise ValidationError("实验编号无效")
+                models = data.get("models")
+                aggregator_model = data.get("aggregator_model", "gpt-6.1-sol")
+                try:
+                    self.json_response(self.server.experiments.restart_experiment(identifier, models, aggregator_model))
+                except KeyError:
+                    self.json_response({"error": "实验不存在"}, 404)
+                except ValueError as error:
                     raise ValidationError(str(error))
             elif method == "POST" and path.startswith("/api/trading-return/experiments/") and path.endswith("/stop-live"):
                 identifier = unquote(path[len("/api/trading-return/experiments/"):-len("/stop-live")].rstrip("/"))
@@ -969,6 +1013,8 @@ class LocalNewsServer(ThreadingHTTPServer):
         from newsdesk.experiments import ExperimentStore
 
         self.store = store
+        self._research_cache = None
+        self._research_cache_at = 0.0
         from newsdesk.source_maintenance import SourceMaintenance
         self.sources = SourceMaintenance(store.path.parent)
         self.market_data = MarketData(cache_dir=store.path.parent / "market")

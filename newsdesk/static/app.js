@@ -407,7 +407,7 @@ function render() {
   if (!tradingReturnResearch) window.TradingReturn?.hide();
 }
 async function reload(showToast = false) {
-  const data = await api('/api/news'); state.items = data.items; state.loading = false; render();
+  const data = await api('/api/news?limit=3000'); state.items = data.items; state.loading = false; render();
   if (showToast) toast('本地档案已刷新');
 }
 function changeCategory(id) {
